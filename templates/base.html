@@ -38,6 +38,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
     integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
   </script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/20d4ac6c68.js" crossorigin="anonymous"></script>
   {% endblock %}
 
   <!-- Additional JS -->
@@ -50,7 +53,113 @@
 
 <body>
   <!-- Fixed, full-width header -->
-  <header class="container-fluid fixed-top"></header>
+  <header class="container-fluid fixed-top">
+    <!-- Promo Banner -->
+    <div id="promo-banner" class="row text-center">
+      <div class="col bg-dark text-white align-items-center justify-content-center">
+        <p class="text-uppercase p-0 m-0">Free delivery when you spend £30 or more!</p>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="row justify-content-end bg-light">
+      <!-- Logo -->
+      <div class="col-12 col-lg-4 d-flex justify-content-center align-content-center">
+        <a class="navbar-brand m-0" href="#"><img src="{% static 'images/logos/alchemy-aleworks-black.png' %}" alt="Alchemy Aleworks Black Logo"></a>
+      </div>
+    
+      <!-- Mobile Nav, Search, Accounts, & Cart -->
+      <div class="col-12 col-lg-4 align-content-center">
+        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+          <!-- Mobile Nav -->
+          <li class="list-inline-item p-0 m-0 d-lg-none">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <a class="text-black text-uppercase nav-link" href="#">
+                Home
+              </a>
+              <a class="text-black text-uppercase nav-link" href="#">
+                Beers
+              </a>
+              <a class="text-black text-uppercase nav-link" href="#">
+                Merch
+              </a>
+              <a class="text-black text-uppercase nav-link" href="#">
+                Taproom
+              </a>
+              <a class="text-black text-uppercase nav-link" href="#">
+                About
+              </a>
+            </div>
+            <a class="navbar-toggler text-black nav-link" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa-solid fa-bars fa-lg"></i>
+            </a>
+          </li>
+
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black nav-link" href="#">
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </a>
+          </li>
+          <li class="list-inline-item dropdown p-0 m-0">
+              <a class="text-black nav-link" href="#" id="account-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-user fa-lg"></i>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="account-menu">
+                  {% if request.user.is_authenticated %}
+                      {% if request.user.is_superuser %}
+                          <a href="" class="text-black text-uppercase nav-link">Product Management</a>
+                      {% endif %}
+                      <a href="" class="text-black text-uppercase nav-link">My Profile</a>
+                      <a href="{% url 'account_logout' %}" class="text-black text-uppercase nav-link">Logout</a>
+                  {% else %}
+                      <a href="{% url 'account_signup' %}" class="text-black text-uppercase nav-link">Register</a>
+                      <a href="{% url 'account_login' %}" class="text-black text-uppercase nav-link">Login</a>
+                  {% endif %}
+              </div>
+          </li>
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black nav-link" href="#">
+              <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Force next columns to break to new line -->
+      <div class="w-100"></div>
+
+      <!-- Main Menu -->
+      <div class="col-12 d-none d-lg-flex justify-content-center">
+        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black text-uppercase nav-link" href="#">
+              Home
+            </a>
+          </li>
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black text-uppercase nav-link" href="#">
+              Beer
+            </a>
+          </li>
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black text-uppercase nav-link" href="#">
+              Merch
+            </a>
+          </li>
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black text-uppercase nav-link" href="#">
+              Taproom
+            </a>
+          </li>
+          <li class="list-inline-item p-0 m-0">
+            <a class="text-black text-uppercase nav-link" href="#">
+              About
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
   <!-- Messages Block -->
   {% if messages %}
