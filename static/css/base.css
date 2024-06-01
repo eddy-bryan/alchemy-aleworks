@@ -1,7 +1,3 @@
-html {
-    height: 100vh;
-}
-
 body {
     font-family: "Inter", sans-serif;
     font-weight: 900;
@@ -12,6 +8,11 @@ body {
 
 header {
     background-color: #fff;
+    z-index: 999999 !important;
+}
+
+main {
+    margin-top: 151px;
 }
 
 footer {
@@ -22,12 +23,20 @@ footer i {
     font-size: 1.5rem;
 }
 
+footer a i:hover {
+    color: #545454;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 900 !important;
 }
 
 hr {
     width: 150px;
+}
+
+#promo-banner {
+    font-size: 14px;
 }
 
 .navbar-brand img {
@@ -76,10 +85,6 @@ hr {
 
 #contact-us li {
     font-size: 0.7rem;
-}
-
-footer a i:hover {
-    color: #545454;
 }
 
 /* Utility */
