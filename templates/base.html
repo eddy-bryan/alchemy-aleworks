@@ -70,17 +70,17 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="row justify-content-end bg-light">
+    <nav class="row justify-content-end">
       <!-- Logo -->
       <div class="col-12 col-lg-4 d-flex justify-content-center align-content-center" id="nav-logo-container">
-        <a class="navbar-brand m-0 d-flex align-items-center" href="#">
+        <a class="navbar-brand m-0 d-flex align-items-center" href="{% url 'home' %}">
           <img src="{% static 'images/logos/alchemy-aleworks-black.png' %}" alt="Alchemy Aleworks Black Logo">
         </a>
       </div>
 
       <!-- Mobile Nav Menu -->
       <div class="collapse col-12 text-center" id="navbarToggleMobileMenu">
-        <a class="text-black text-uppercase nav-link" href="#">
+        <a class="text-black text-uppercase nav-link" href="{% url 'home' %}">
           Home
         </a>
         <a class="text-black text-uppercase nav-link" href="#">
@@ -157,28 +157,28 @@
       <div class="col-12 d-none d-lg-flex justify-content-center nav-menu">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black text-uppercase nav-link" href="#">
-              <span>Home</span>
+            <a class="text-black text-uppercase nav-link" href="{% url 'home' %}">
+              <span class="{% if request.path == '/' %}active{% endif %}">Home</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              <span>Beer</span>
+              <span class="{% if request.path == '/beer/' %}active{% endif %}">Beer</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              <span>Merch</span>
+              <span class="{% if request.path == '/merch/' %}active{% endif %}">Merch</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              <span>Taproom</span>
+              <span class="{% if request.path == '/taproom/' %}active{% endif %}">Taproom</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              <span>About</span>
+              <span class="{% if request.path == '/about/' %}active{% endif %}">About</span>
             </a>
           </li>
         </ul>
@@ -194,6 +194,153 @@
   <!-- Content Block -->
   {% block content %}
   {% endblock %}
+
+  <!-- Fixed, full-width footer -->
+  <footer class="container-fluid text-white">
+    <!-- Logo -->
+    <div class="container-fluid" id="newsletter-container">
+      <div class="row justify-content-center mt-4" id="footer-logo-container">
+        <img class="h-100" src="{% static 'images/logos/alchemy-aleworks-white-symbol-only.png' %}" alt="Alchemy Aleworks White Symbol Logo">
+      </div>
+      <div class="row justify-content-center">
+        <p class="text-center" id="newsletter-text">Stay in the loop! Sign up for our newsletter to stay updated on the latest releases and exclusive offers</p>
+      </div>
+      <div class="row justify-content-center">
+        <form class="form w-100" id="newsletter-form" method="POST" action="">
+          <div class="input-group w-100 px-2">
+            <input type="email" class="form-control rounded-0 mr-3" name="email" placeholder="Enter email">
+            <div class="input-group-apend">
+              <button class="form-control btn-white rounded-0" type="submit">
+                Sign up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr class="bg-white my-0">
+    <div class="container-fluid d-flex justify-content-between" id="footer-menus">
+      <div class="row"></div>
+        <!-- Footer Nav -->
+        <div class="col-6 col-lg-4 my-4 p-0 d-flex justify-content-center" id="footer-nav">
+          <div class="container width-fit-content">
+            <div class="footer-heading">
+              <img id="footer-nav-logo" src="{% static 'images/logos/alchemy-aleworks-white-text-only.png' %}" alt="Alchemy Aleworks White Text Logo">
+            </div>
+            <ul class="list-unstyled my-0">
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="{% url 'home' %}">
+                  Home
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Beer
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Merch
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Taproom
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Contact Us (Large Screen Sizes) -->
+        <div class="col-4 my-4 p-0 d-none d-lg-flex justify-content-center" id="contact-us">
+          <div class="container width-fit-content">
+            <div class="footer-heading">
+              <h4 class="text-uppercase">Contact Us</h4>
+            </div>
+            <h6 class="text-uppercase my-0">Customer Service Contact</h6>
+            <ul class="list-unstyled mb-3">
+              <li class="text-uppercase p-0 m-0">
+                Email: support@alchemyaleworks.com
+              </li>
+              <li class="text-uppercase p-0 m-0">
+                Phone: 01234 567890
+              </li>
+            </ul>
+            <h6 class="text-uppercase my-0">Trade Contact</h6>
+            <ul class="list-unstyled my-0">
+              <li class="text-uppercase p-0 m-0">
+                Email: trade@alchemyaleworks.com
+              </li>
+              <li class="text-uppercase p-0 m-0">
+                Phone: 01234 567891
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Policies -->
+        <div class="col-6 col-lg-4 my-4 p-0 d-flex justify-content-center" id="policies">
+          <div class="container width-fit-content">
+            <div class="footer-heading">
+              <h4 class="text-uppercase">Policies</h4>
+            </div>
+            <ul class="list-unstyled my-0">
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Orders and Returns
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Terms and Conditions
+                </a>
+              </li>
+              <li class="p-0 m-0">
+                <a class="text-uppercase text-white" href="#">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Us -->
+      <div class="row">
+        <div class="col-12 my-4 p-0 d-flex d-lg-none justify-content-center text-center" id="contact-us">
+          <div class="container width-fit-content">
+            <div class="footer-heading">
+              <h4 class="text-uppercase">Contact Us</h4>
+            </div>
+            <h6 class="text-uppercase my-0">Customer Service Contact</h6>
+            <ul class="list-unstyled mb-3">
+              <li class="text-uppercase p-0 m-0">
+                Email: support@alchemyaleworks.com
+              </li>
+              <li class="text-uppercase p-0 m-0">
+                Phone: 01234 567890
+              </li>
+            </ul>
+            <h6 class="text-uppercase my-0">Trade Contact</h6>
+            <ul class="list-unstyled my-0">
+              <li class="text-uppercase p-0 m-0">
+                Email: trade@alchemyaleworks.com
+              </li>
+              <li class="text-uppercase p-0 m-0">
+                Phone: 01234 567891
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Additional JavaScript loaded after page content -->
   {% block end_js %}

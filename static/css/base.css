@@ -5,6 +5,25 @@ html {
 body {
     font-family: "Inter", sans-serif;
     font-weight: 900;
+
+    /* TEMPORARY */
+    background-color: orange;
+}
+
+header {
+    background-color: #fff;
+}
+
+footer {
+    background-color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900 !important;
+}
+
+hr {
+    width: 150px;
 }
 
 .navbar-brand img {
@@ -27,6 +46,35 @@ body {
     color: #545454;
 }
 
+#footer-logo-container {
+    height: 200px;
+}
+
+#newsletter-container {
+    height: 350px;
+}
+
+#newsletter-text {
+    max-width: 640px;
+}
+
+#newsletter-form {
+    max-width: 540px;
+}
+
+#footer-nav-logo {
+    height: 30px;
+}
+
+.footer-heading {
+    height: 60px;
+}
+
+#contact-us li {
+    font-size: 0.7rem;
+}
+
+/* Utility */
 .hover-gray {
     background-color: #545454;
 }
@@ -37,4 +85,27 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.active {
+    border-bottom: 3px solid #000;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #000;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 900 !important;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+/* XXL Screen Size */
+@media (min-width: 1440px) {
+    #footer-menus {
+        width: 80%;
+    }
 }
