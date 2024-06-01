@@ -2,5 +2,13 @@
 {% load static %}
 
 {% block content %}
-
+<div class="overflow-hidden position-relative" id="hero-section">
+    <img src="/static/images/hero.jpg" alt="Hero Image" class="h-100 w-100" id="hero-image">
+    <div class="overlay position-absolute h-100 w-100"></div>
+    <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6" id="hero-content">
+      <h1 class="mb-4">Alchemy in every sip, elixir for every soul</h1>
+      <a class="btn-gray" href="#">Shop Beers</a>
+      <a class="btn-gray" href="#">Shop Merch</a>
+    </div>
+  </div>
 {% endblock %}

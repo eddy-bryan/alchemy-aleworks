@@ -1,9 +1,6 @@
 body {
     font-family: "Inter", sans-serif;
     font-weight: 900;
-
-    /* TEMPORARY */
-    background-color: orange;
 }
 
 header {
@@ -13,6 +10,7 @@ header {
 
 main {
     margin-top: 151px;
+    min-height: 500px;
 }
 
 footer {
@@ -87,6 +85,28 @@ hr {
     font-size: 0.7rem;
 }
 
+#hero-section {
+    width: 100vw;
+    height: calc(100vh - 151px);
+}
+
+#hero-image {
+    object-fit: cover;
+}
+
+.overlay {
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#hero-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
 /* Utility */
 .hover-gray {
     background-color: #545454;
@@ -110,6 +130,28 @@ hr {
     text-transform: uppercase;
     border: none;
     font-weight: 900 !important;
+}
+
+.btn-white:hover {
+    background-color: #545454;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-gray {
+    background-color: #202020;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 900 !important;
+    padding: 15px;
+    margin: 15px;
+}
+
+.btn-gray:hover {
+    background-color: #545454;
+    color: #fff;
+    text-decoration: none;
 }
 
 .width-fit-content {
