@@ -17,10 +17,18 @@
 
   <!-- Core CSS Block -->
   {% block CSS %}
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   {% endblock %}
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
   <!-- Additional CSS -->
   {% block additional_css %}
@@ -56,55 +64,72 @@
   <header class="container-fluid fixed-top">
     <!-- Promo Banner -->
     <div id="promo-banner" class="row text-center">
-      <div class="col bg-dark text-white align-items-center justify-content-center">
-        <p class="text-uppercase p-0 m-0">Free delivery when you spend £30 or more!</p>
+      <div class="col hover-gray text-white align-items-center justify-content-center">
+        <p class="text-uppercase font-weight-normal p-0 m-0">Free delivery when you spend £30 or more!</p>
       </div>
     </div>
 
     <!-- Navbar -->
-    <div class="row justify-content-end bg-light">
+    <nav class="row justify-content-end bg-light">
       <!-- Logo -->
-      <div class="col-12 col-lg-4 d-flex justify-content-center align-content-center">
-        <a class="navbar-brand m-0" href="#"><img src="{% static 'images/logos/alchemy-aleworks-black.png' %}" alt="Alchemy Aleworks Black Logo"></a>
+      <div class="col-12 col-lg-4 d-flex justify-content-center align-content-center" id="nav-logo-container">
+        <a class="navbar-brand m-0 d-flex align-items-center" href="#">
+          <img src="{% static 'images/logos/alchemy-aleworks-black.png' %}" alt="Alchemy Aleworks Black Logo">
+        </a>
+      </div>
+
+      <!-- Mobile Nav Menu -->
+      <div class="collapse col-12 text-center" id="navbarToggleMobileMenu">
+        <a class="text-black text-uppercase nav-link" href="#">
+          Home
+        </a>
+        <a class="text-black text-uppercase nav-link" href="#">
+          Beers
+        </a>
+        <a class="text-black text-uppercase nav-link" href="#">
+          Merch
+        </a>
+        <a class="text-black text-uppercase nav-link" href="#">
+          Taproom
+        </a>
+        <a class="text-black text-uppercase nav-link" href="#">
+          About
+        </a>
       </div>
     
       <!-- Mobile Nav, Search, Accounts, & Cart -->
       <div class="col-12 col-lg-4 align-content-center">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-          <!-- Mobile Nav -->
+          <!-- Mobile Nav Toggler -->
           <li class="list-inline-item p-0 m-0 d-lg-none">
-            <div class="collapse" id="navbarToggleExternalContent">
-              <a class="text-black text-uppercase nav-link" href="#">
-                Home
-              </a>
-              <a class="text-black text-uppercase nav-link" href="#">
-                Beers
-              </a>
-              <a class="text-black text-uppercase nav-link" href="#">
-                Merch
-              </a>
-              <a class="text-black text-uppercase nav-link" href="#">
-                Taproom
-              </a>
-              <a class="text-black text-uppercase nav-link" href="#">
-                About
-              </a>
-            </div>
-            <a class="navbar-toggler text-black nav-link" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-toggler text-black nav-link" type="button" data-toggle="collapse" data-target="#navbarToggleMobileMenu" aria-controls="navbarToggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
               <i class="fa-solid fa-bars fa-lg"></i>
             </a>
           </li>
 
+          <!-- Search, Accounts & Cart -->
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black nav-link" href="#">
+            <a class="text-black nav-link nav-action" href="#" id="search-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
             </a>
+            <div class="dropdown-menu border-black rounded-0" aria-labelledby="search-bar">
+              <form class="form" method="GET" action="">
+                <div class="input-group w-100 px-2">
+                  <input type="text" class="form-control border rounded-0" name="q" placeholder="Search the store!">
+                  <div class="input-group-apend">
+                    <button class="form-control btn btn-dark border rounded-0" type="submit">
+                      <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </li>
           <li class="list-inline-item dropdown p-0 m-0">
-              <a class="text-black nav-link" href="#" id="account-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="text-black nav-link nav-action" href="#" id="account-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa-solid fa-user fa-lg"></i>
               </a>
-              <div class="dropdown-menu border-0" aria-labelledby="account-menu">
+              <div class="dropdown-menu border-black rounded-0" aria-labelledby="account-menu">
                   {% if request.user.is_authenticated %}
                       {% if request.user.is_superuser %}
                           <a href="" class="text-black text-uppercase nav-link">Product Management</a>
@@ -118,7 +143,7 @@
               </div>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black nav-link" href="#">
+            <a class="text-black nav-link nav-action" href="#">
               <i class="fa-solid fa-cart-shopping fa-lg"></i>
             </a>
           </li>
@@ -129,36 +154,36 @@
       <div class="w-100"></div>
 
       <!-- Main Menu -->
-      <div class="col-12 d-none d-lg-flex justify-content-center">
+      <div class="col-12 d-none d-lg-flex justify-content-center nav-menu">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              Home
+              <span>Home</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              Beer
+              <span>Beer</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              Merch
+              <span>Merch</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              Taproom
+              <span>Taproom</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              About
+              <span>About</span>
             </a>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Messages Block -->

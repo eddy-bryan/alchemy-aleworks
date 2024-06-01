@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.nav-menu {
+    height: 40px;
+}
+
+#nav-logo-container {
+    height: 90px;
+}
+
+.nav-link span:hover {
+    border-bottom: 3px solid #000;
+}
+
+.nav-action i:hover {
+    color: #545454;
+}
+
+.hover-gray {
+    background-color: #545454;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
