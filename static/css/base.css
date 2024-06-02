@@ -170,6 +170,10 @@ hr {
     background-color: #000;
 }
 
+.bg-gray {
+    background-color: #eee;
+}
+
 .width-fit-content {
     width: fit-content;
 }
