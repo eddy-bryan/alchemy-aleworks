@@ -87,7 +87,6 @@ hr {
 }
 
 #hero-section {
-    width: 100vw;
     height: calc(100vh - 151px);
 }
 
@@ -106,10 +105,6 @@ hr {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-}
-
-#limited-edition-section {
-    width: 100vw;
 }
 
 #limited-content {
