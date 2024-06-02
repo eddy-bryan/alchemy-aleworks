@@ -3,12 +3,48 @@
 
 {% block content %}
 <div class="overflow-hidden position-relative" id="hero-section">
-    <img src="/static/images/hero.jpg" alt="Hero Image" class="h-100 w-100" id="hero-image">
-    <div class="overlay position-absolute h-100 w-100"></div>
-    <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6" id="hero-content">
-      <h1 class="mb-4">Alchemy in every sip, elixir for every soul</h1>
-      <a class="btn-gray" href="#">Shop Beers</a>
-      <a class="btn-gray" href="#">Shop Merch</a>
-    </div>
+  <img src="/static/images/hero.jpg" alt="Hero Image" class="h-100 w-100" id="hero-image">
+  <div class="overlay position-absolute h-100 w-100"></div>
+  <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6" id="hero-content">
+    <h1 class="mb-4">Alchemy in every sip, elixir for every soul</h1>
+    <a class="btn-gray" href="#">Shop Beers</a>
+    <a class="btn-gray" href="#">Shop Merch</a>
   </div>
+</div>
+
+<div class="overflow-hidden position-relative py-4" id="limited-edition-section">
+  <div class="text-center text-uppercase col-12" id="limited-edition-content">
+    <h3 class="mb-3">Limited Edition Brews</h3>
+    <hr class="bg-black my-0">
+    <div class="d-flex justify-content-center my-3">
+      <div class="card border-0 align-items-center mx-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 200px; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Beer Name</h5>
+          <p class="card-text">Type of Beer / ?.?%</p>
+        </div>
+      </div>
+      <div class="card border-0 align-items-center mx-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 200px; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Beer Name</h5>
+          <p class="card-text">Type of Beer / ?.?%</p>
+        </div>
+      </div>
+      <div class="card border-0 align-items-center mx-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 200px; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Beer Name</h5>
+          <p class="card-text">Type of Beer / ?.?%</p>
+        </div>
+      </div>
+    </div>
+    <a class="btn-gray" href="#">Shop Now</a>
+  </div>
+</div>
+
+<div class="bg-dark" style="height: 100px;"></div>
 {% endblock %}

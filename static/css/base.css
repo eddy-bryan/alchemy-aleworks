@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 hr {
     width: 150px;
+    height: 2px;
 }
 
 #promo-banner {
@@ -107,6 +108,16 @@ hr {
     z-index: 1;
 }
 
+#limited-edition-section {
+    width: 100vw;
+}
+
+#limited-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Utility */
 .hover-gray {
     background-color: #545454;
@@ -136,6 +147,8 @@ hr {
     background-color: #545454;
     color: #000;
     text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .btn-gray {
@@ -144,14 +157,20 @@ hr {
     text-transform: uppercase;
     border: none;
     font-weight: 900 !important;
-    padding: 15px;
-    margin: 15px;
+    padding: 13px 15px;
+    margin: 0 15px;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .btn-gray:hover {
     background-color: #545454;
     color: #fff;
     text-decoration: none;
+}
+
+.bg-black {
+    background-color: #000;
 }
 
 .width-fit-content {
