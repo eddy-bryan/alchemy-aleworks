@@ -36,6 +36,7 @@ hr {
 
 #promo-banner {
     font-size: 14px;
+    background-color: #545454;
 }
 
 .navbar-brand img {
@@ -90,7 +91,7 @@ hr {
     height: calc(100vh - 151px);
 }
 
-#hero-image {
+#hero-image, .taproom-image {
     object-fit: cover;
 }
 
@@ -100,7 +101,7 @@ hr {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#hero-content {
+#hero-content, #taproom-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -114,8 +115,9 @@ hr {
 }
 
 /* Utility */
-.hover-gray {
-    background-color: #545454;
+.hover-gray:hover {
+    color: #545454 !important;
+    text-decoration: none;
 }
 
 .text-black {
@@ -170,6 +172,10 @@ hr {
 
 .width-fit-content {
     width: fit-content;
+}
+
+.height-fit-content {
+    height: fit-content;
 }
 
 /* XXL Screen Size */
