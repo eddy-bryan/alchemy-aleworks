@@ -12,7 +12,7 @@
             "description": "", // Description to add
             "sized_item": "False",
             "price": 1.99,
-            "image": "circle-coaster.jpg"
+            "image": "/media/merch/circle-coaster.jpg"
         }
     },
     {
@@ -25,7 +25,7 @@
             "description": "", // Description to add
             "sized_item": "True",
             "price": 37.99,
-            "image": "hoodie.webp" // Check image file types and convert as necessary
+            "image": "/media/merch/hoodie.webp" // Check image file types and convert as necessary
         }
     }
 ]

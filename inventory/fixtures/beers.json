@@ -10,7 +10,7 @@
             "description": "Arcane Amber is a modern take on a classic style, boasting caramel and biscuit malt flavors with a subtle hop bitterness, creating a balanced and approachable ale with a hint of mystery.",
             "alcohol_content": 5.2,
             "price": 2.00,
-            "image": "/media/beers/arcane-amber.jpg"
+            "image": "/beers/arcane-amber.webp"
         }
     },
     {
@@ -24,7 +24,7 @@
             "description": "Celestial Citra is a modern IPA showcasing the vibrant Citra hop, bursting with citrus, tropical fruit, and floral aromas and flavors, balanced by a clean malt backbone and a smooth, bitter finish.",
             "alcohol_content": 4.1,
             "price": 1.80,
-            "image": "/media/beers/celestial-citra.jpg"
+            "image": "/beers/celestial-citra.webp"
         }
     },
     {
@@ -38,7 +38,7 @@
             "description": "Dark Enchantment is a limited edition milk stout brewed with chocolate malt and cocoa nibs, creating a rich and indulgent beer with flavors of dark chocolate, roasted coffee, and a creamy, sweet finish.",
             "alcohol_content": 6.4,
             "price": 2.50,
-            "image": "/media/beers/dark-enchantment.jpg"
+            "image": "/beers/dark-enchantment.webp"
         }
     },
     {
@@ -52,7 +52,7 @@
             "description": "Druid's Delight is an American amber ale with a rich malt backbone and a subtle hop bitterness, delivering flavors of caramel, toasted bread, and a hint of citrus, creating a delightful potion for any occasion.",
             "alcohol_content": 4.2,
             "price": 1.80,
-            "image": "/media/beers/druids-delight.jpg"
+            "image": "/beers/druids-delight.webp"
         }
     },
     {
@@ -66,7 +66,7 @@
             "description": "Enigma Elixir is a hazy IPA brewed with oats and wheat for a soft mouthfeel and dry-hopped with Enigma hops, imparting flavors of tropical fruit, citrus, and stone fruit, creating a magical elixir of flavor.",
             "alcohol_content": 5.8,
             "price": 2.10,
-            "image": "/media/beers/enigma-elixir.jpg"
+            "image": "/beers/enigma-elixir.webp"
         }
     },
     {
@@ -80,7 +80,7 @@
             "description": "Magus Maple is a bewitching ale brewed with rich, caramelized maple syrup, offering flavors of toasted nuts, toffee, and a hint of maple sweetness, creating a comforting elixir perfect for autumn nights.",
             "alcohol_content": 4.5,
             "price": 1.80,
-            "image": "/media/beers/magus-maple.jpg"
+            "image": "/beers/magus-maple.webp"
         }
     },
     {
@@ -94,7 +94,7 @@
             "description": "Midnight Porter is a limited edition brew with roasted malt flavors reminiscent of dark chocolate and coffee, balanced with a subtle sweetness and a smooth, velvety finish, perfect for unraveling the mysteries of the night.",
             "alcohol_content": 5.5,
             "price": 2.40,
-            "image": "/media/beers/midnight-porter.jpg"
+            "image": "/beers/midnight-porter.webp"
         }
     },
     {
@@ -108,7 +108,7 @@
             "description": "Mystic Malt is a classic English-style pale ale brewed with traditional English hops and malt, offering biscuity malt flavors with earthy and floral hop notes, resulting in a balanced and flavorful ale.",
             "alcohol_content": 4.4,
             "price": 1.80,
-            "image": "/media/beers/mystic-malt.jpg"
+            "image": "/beers/mystic-malt.webp"
         }
     },
     {
@@ -122,7 +122,7 @@
             "description": "Potion Pale is a light and refreshing session pale ale bursting with tropical fruit aromas and flavors from a blend of Citra and Amarillo hops, making it the perfect potion for easy-drinking enchantment.",
             "alcohol_content": 3.7,
             "price": 1.70,
-            "image": "/media/beers/potion-pale.jpg"
+            "image": "/beers/potion-pale.webp"
         }
     },
     {
@@ -136,7 +136,7 @@
             "description": "Sorcerer's Stout is a bold and robust imperial stout brewed with roasted barley, chocolate malt, and a touch of lactose, resulting in rich flavors of dark chocolate, espresso, and a hint of sweetness.",
             "alcohol_content": 6.2,
             "price": 2.10,
-            "image": "/media/beers/sorcerers-stout.jpg"
+            "image": "/beers/sorcerers-stout.webp"
         }
     },
     {
@@ -150,7 +150,7 @@
             "description": "Sorcery Sour is a limited edition sour ale brewed with tart cherries, creating a bright and refreshing beer with a puckering acidity and fruity sweetness, perfect for enchanting the taste buds.",
             "alcohol_content": 6.8,
             "price": 2.60,
-            "image": "/media/beers/sorcery-sour.jpg"
+            "image": "/beers/sorcery-sour.webp"
         }
     },
     {
@@ -164,7 +164,7 @@
             "description": "Spellbound Session is a low-alcohol IPA bursting with juicy hop flavors of mango, papaya, and pine, balanced with a light malt backbone, providing a refreshing and bewitching experience.",
             "alcohol_content": 3.9,
             "price": 1.70,
-            "image": "/media/beers/spellbound-session.jpg"
+            "image": "/beers/spellbound-session.webp"
         }
     }
 ]
