@@ -1,0 +1,31 @@
+// SKU: TYPE-COLOUR-UNIQUE_NUMBER
+// Example: Black T-Shirt = TSBL001 where 001 would be the next number
+
+[
+    {
+        "pk": 1,
+        "model": "inventory.merch-item",
+        "fields": {
+            "sku": "COWH001",
+            "name": "Circle Coaster",
+            "category": "Drinkware",
+            "description": "", // Description to add
+            "sized_item": "False",
+            "price": 1.99,
+            "image": "circle-coaster.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "inventory.merch-item",
+        "fields": {
+            "sku": "HOWH002",
+            "name": "Hoodie",
+            "category": "Apparel & Accessories",
+            "description": "", // Description to add
+            "sized_item": "True",
+            "price": 37.99,
+            "image": "hoodie.webp" // Check image file types and convert as necessary
+        }
+    }
+]
