@@ -1,31 +1,93 @@
-// SKU: TYPE-COLOUR-UNIQUE_NUMBER
-// Example: Black T-Shirt = TSBL001 where 001 would be the next number
-
 [
     {
         "pk": 1,
-        "model": "inventory.merch-item",
+        "model": "inventory.merchitem",
         "fields": {
             "sku": "COWH001",
             "name": "Circle Coaster",
             "category": "Drinkware",
-            "description": "", // Description to add
+            "description": "Keep your bar or table safe in style with our Circle Coaster. Crafted with the same attention to quality as our brews, it's not just functional but adds a touch of brewery charm to your home.",
             "sized_item": "False",
             "price": 1.99,
-            "image": "/media/merch/circle-coaster.jpg"
+            "image": "/merch/circle-coaster.webp"
         }
     },
     {
         "pk": 2,
-        "model": "inventory.merch-item",
+        "model": "inventory.merchitem",
         "fields": {
             "sku": "HOWH002",
             "name": "Hoodie",
             "category": "Apparel & Accessories",
-            "description": "", // Description to add
+            "description": "Embrace the brewery lifestyle with our brewery-branded Hoodie. Designed for comfort and style, it's perfect for chilly evenings at the taproom or exploring the outdoors.",
             "sized_item": "True",
             "price": 37.99,
-            "image": "/media/merch/hoodie.webp" // Check image file types and convert as necessary
+            "image": "/merch/hoodie.webp"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "inventory.merchitem",
+        "fields": {
+            "sku": "MAWH003",
+            "name": "Magnet",
+            "category": "Apparel & Accessories",
+            "description": "Add a touch of brewery flair to your kitchen with our brewery-themed Magnet. Whether it's holding up your shopping list or decorating your fridge, it's a small but mighty statement piece.",
+            "sized_item": "False",
+            "price": 2.99,
+            "image": "/merch/magnet.webp"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "inventory.merchitem",
+        "fields": {
+            "sku": "GLCL004",
+            "name": "Pint Glass",
+            "category": "Drinkware",
+            "description": "Sip your favorite brews in style with our brewery-branded Pint Glass. Crafted for both form and function, it's the perfect vessel for enjoying the full flavor profile of our handcrafted creations.",
+            "sized_item": "False",
+            "price": 9.99,
+            "image": "/merch/pint-glass.webp"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "inventory.merchitem",
+        "fields": {
+            "sku": "COWH005",
+            "name": "Square Coaster",
+            "category": "Drinkware",
+            "description": "Elevate your beer-drinking experience with our Square Coaster. Featuring our brewery logo, it's not only a practical accessory but also a stylish addition to your home bar or kitchen.",
+            "sized_item": "False",
+            "price": 1.99,
+            "image": "/merch/square-coaster.webp"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "inventory.merchitem",
+        "fields": {
+            "sku": "TSWH006",
+            "name": "T Shirt",
+            "category": "Apparel & Accessories",
+            "description": "Show off your love for craft beer with our brewery-themed T-Shirt. Made with premium fabric for comfort and durability, it's the perfect attire for beer festivals, brewery tours, or just hanging out with friends.",
+            "sized_item": "True",
+            "price": 21.99,
+            "image": "/merch/t-shirt.webp"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "inventory.merchitem",
+        "fields": {
+            "sku": "BAWH007",
+            "name": "Tote Bag",
+            "category": "Apparel & Accessories",
+            "description": "Carry your essentials in style with our brewery-branded Tote Bag. Whether you're heading to the brewery for a refill or shopping at the farmers' market, it's the perfect accessory for any beer enthusiast.",
+            "sized_item": "False",
+            "price": 16.50,
+            "image": "/merch/tote-bag.webp"
         }
     }
 ]
