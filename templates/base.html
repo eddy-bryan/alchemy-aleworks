@@ -166,13 +166,13 @@
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black text-uppercase nav-link" href="#">
-              <span class="{% if request.path == '/beer/' %}active{% endif %}">Beer</span>
+            <a class="text-black text-uppercase nav-link" href="{% url 'beers' %}">
+              <span class="{% if request.path == '/inventory/beers/' %}active{% endif %}">Beer</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
             <a class="text-black text-uppercase nav-link" href="#">
-              <span class="{% if request.path == '/merch/' %}active{% endif %}">Merch</span>
+              <span class="{% if request.path == '/inventory/merch/' %}active{% endif %}">Merch</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
