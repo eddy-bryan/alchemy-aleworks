@@ -1,5 +1,5 @@
 """
-ASGI config for alchemist_aleworks project.
+ASGI config for alchemy_aleworks project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alchemist_aleworks.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alchemy_aleworks.settings')
 
 application = get_asgi_application()
