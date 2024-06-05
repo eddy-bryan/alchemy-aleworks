@@ -182,6 +182,31 @@ hr {
     height: fit-content;
 }
 
+/* Reduced Font Sizes For Mobile */
+@media (max-width: 500px) {
+    p {
+        font-size: 0.7rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.44rem;
+    }
+    h3 {
+        font-size: 1.26rem;
+    }
+    h4 {
+        font-size: 1.08rem;
+    }
+    h5 {
+        font-size: 0.9rem;
+    }
+    h6 {
+        font-size: 0.7rem;
+    }
+}
+
 /* XXL Screen Size */
 @media (min-width: 1440px) {
     #footer-menus, #site-info {

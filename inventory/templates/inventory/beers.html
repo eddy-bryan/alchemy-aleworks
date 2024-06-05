@@ -8,8 +8,7 @@
     <hr class="bg-black my-0">
     <div class="d-flex justify-content-center my-3">
       <div class="card border-0 align-items-center mr-2 mx-sm-4">
-        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
-        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black my-2" alt="{{ core_range_beer.name }}">
         <div class="card-body py-0">
           <h5 class="card-title my-0">Core Range</h5>
           <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
@@ -17,8 +16,7 @@
         </div>
       </div>
       <div class="card border-0 align-items-center ml-2 mx-sm-4">
-        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
-        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black my-2" alt="{{ limited_edition_beer.name }}">
         <div class="card-body py-0">
           <h5 class="card-title my-0">Limited Edition</h5>
           <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These exclusive releases are available for a limited time only.</p>
@@ -33,31 +31,15 @@
   <div class="text-center text-uppercase col-12" id="beers-content">
     <hr class="bg-black my-0">
     <div class="d-flex justify-content-center my-3">
+      {% for beer in beers %}
       <div class="card border-0 align-items-center mr-2 mx-sm-4">
-        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
-        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2" alt="{{ beer.name }}">
         <div class="card-body py-0">
-          <h5 class="card-title my-0">Beer Name</h5>
-          <p class="card-text">Type of Beer / ?.?%</p>
+          <h5 class="card-title my-0">{{ beer.name }}</h5>
+          <p class="card-text">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
         </div>
       </div>
-      <div class="card border-0 align-items-center ml-2 mx-sm-4">
-        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
-        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
-        <div class="card-body py-0">
-          <h5 class="card-title my-0">Beer Name</h5>
-          <p class="card-text">Type of Beer / ?.?%</p>
-        </div>
-      </div>
-      <div class="d-none d-lg-block card border-0 align-items-center mx-sm-4">
-        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
-        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
-        <div class="card-body py-0">
-          <h5 class="card-title my-0">Beer Name</h5>
-          <p class="card-text">Type of Beer / ?.?%</p>
-        </div>
-      </div>
-      {{ beers }}
+      {% endfor %}
     </div>
   </div>
 </div>
