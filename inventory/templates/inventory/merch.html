@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="overflow-hidden position-relative py-4" id="our-merch-section">
+  <div class="text-center text-uppercase col-12" id="our-merch-content">
+    <h3 class="mb-3">Our merch</h3>
+    <hr class="bg-black my-0">
+    <div class="d-flex justify-content-center my-3">
+      <div class="card border-0 align-items-center mr-2 mx-sm-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Apparel & Accesories</h5>
+          <p class="card-text">Show off your love for Alchemy Aleworks with our stylish and practical gear. Perfect for any fan, our apparel and accessories combine comfort and functionality, allowing you to represent your favourite brewery wherever you go.</p>
+          <a class="btn-gray" href="#">Shop Now</a>
+        </div>
+      </div>
+      <div class="card border-0 align-items-center ml-2 mx-sm-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Drinkware</h5>
+          <p class="card-text">Enhance your drinking experience with our specially designed items. Crafted to complement our brews, these pieces are perfect additions to any home bar, ensuring every sip is enjoyed to the fullest</p>
+          <a class="btn-gray" href="#">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overflow-hidden position-relative py-4" id="merch-section">
+  <div class="text-center text-uppercase col-12" id="merch-content">
+    <hr class="bg-black my-0">
+    <div class="d-flex justify-content-center my-3">
+      <div class="card border-0 align-items-center mr-2 mx-sm-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Merch Name</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card border-0 align-items-center ml-2 mx-sm-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Merch Name</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="d-none d-lg-block card border-0 align-items-center mx-sm-4">
+        <div class="card-img-top border-black bg-white my-2" style="width: 100%; height: 200px;"></div>
+        <!-- <img src="..." class="card-img-top border-black my-2" alt="..."> -->
+        <div class="card-body py-0">
+          <h5 class="card-title my-0">Merch Name</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      {{ merch }}
+    </div>
+  </div>
+</div>
+{% endblock %}

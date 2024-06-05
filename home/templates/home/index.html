@@ -8,7 +8,7 @@
   <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6" id="hero-content">
     <h1 class="mb-4">Alchemy in every sip, elixir for every soul</h1>
     <a class="btn-gray" href="{% url 'beers' %}">Shop Beers</a>
-    <a class="btn-gray" href="#">Shop Merch</a>
+    <a class="btn-gray" href="{% url 'merch' %}">Shop Merch</a>
   </div>
 </div>
 
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <a class="btn-gray" href="#">Shop Now</a>
+    <a class="btn-gray" href="{% url 'beers' %}">Shop Now</a>
   </div>
 </div>
 
@@ -100,7 +100,7 @@
         </div>
       </div>
     </div>
-    <a class="btn-gray" href="#">Shop Now</a>
+    <a class="btn-gray" href="{% url 'merch' %}">Shop Now</a>
   </div>
 </div>
 {% endblock %}
