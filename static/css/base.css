@@ -101,6 +101,20 @@ hr {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.product-image {
+    max-width: 265px;
+    height: auto;
+}
+
+.large-product-image {
+    max-width: 500px;
+    height: auto;
+}
+
+.large-product-container {
+    max-width: 500px;
+}
+
 #hero-content, #taproom-content {
     top: 50%;
     left: 50%;

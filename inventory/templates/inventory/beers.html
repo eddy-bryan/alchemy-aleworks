@@ -2,24 +2,28 @@
 {% load static %}
 
 {% block content %}
-<div class="overflow-hidden position-relative py-4" id="our-beers-section">
+<div class="overflow-hidden position-relative py-4 bg-gray" id="our-beers-section">
   <div class="text-center text-uppercase col-12" id="our-beers-content">
     <h3 class="mb-3">Our Beers</h3>
     <hr class="bg-black my-0">
-    <div class="d-flex justify-content-center my-3">
-      <div class="card border-0 align-items-center mr-2 mx-sm-4">
-        <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black my-2" alt="{{ core_range_beer.name }}">
-        <div class="card-body py-0">
-          <h5 class="card-title my-0">Core Range</h5>
-          <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
+    <div class="d-flex flex-wrap justify-content-center my-3">
+      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+        <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
+          <div class="card-body p-0 my-3">
+            <h5 class="card-title my-0">Core Range</h5>
+            <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
+          </div>
           <a class="btn-gray" href="#">Shop Now</a>
         </div>
       </div>
-      <div class="card border-0 align-items-center ml-2 mx-sm-4">
-        <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black my-2" alt="{{ limited_edition_beer.name }}">
-        <div class="card-body py-0">
-          <h5 class="card-title my-0">Limited Edition</h5>
-          <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These exclusive releases are available for a limited time only.</p>
+      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+        <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
+          <div class="card-body p-0 my-3">
+            <h5 class="card-title my-0">Limited Edition</h5>
+            <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These exclusive releases are available for a limited time only.</p>
+          </div>
           <a class="btn-gray" href="#">Shop Now</a>
         </div>
       </div>
@@ -33,7 +37,7 @@
     <div class="d-flex justify-content-center my-3">
       {% for beer in beers %}
       <div class="card border-0 align-items-center mr-2 mx-sm-4">
-        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2" alt="{{ beer.name }}">
+        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
         <div class="card-body py-0">
           <h5 class="card-title my-0">{{ beer.name }}</h5>
           <p class="card-text">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
