@@ -102,8 +102,13 @@ hr {
 }
 
 .product-image {
-    max-width: 265px;
+    max-width: 300px;
+    min-width: 230px;
     height: auto;
+}
+
+.product-container {
+    max-width: 300px;
 }
 
 .large-product-image {
