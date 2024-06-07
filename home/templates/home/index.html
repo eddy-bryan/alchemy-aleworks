@@ -65,15 +65,16 @@
     <h3 class="mb-3">Our Merchandise</h3>
     <hr class="bg-black my-0">
     <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center my-3 mx-auto">
+      {% for merch_item in random_merch_items %}
       <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
-        <div class="card border-0 align-items-center">
-          <div class="card-img-top border-black my-2 product-image" style="max-height: 300px; min-height: 235px;"></div>
-          <!-- <img src="{{ merch.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch.name }}"> -->
+        <div class="card border-0 align-items-center bg-gray">
+          <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
           <div class="card-body p-0">
-            <h5 class="card-title my-0">Merch Item Name</h5>
+            <h5 class="card-title my-0">{{ merch_item.name }}</h5>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
     <a class="btn-gray" href="{% url 'merch' %}">Shop Now</a>
   </div>
