@@ -89,10 +89,10 @@
         <a class="text-black text-uppercase nav-link" href="{% url 'merch' %}">
           Merch
         </a>
-        <a class="text-black text-uppercase nav-link" href="#">
+        <a class="text-black text-uppercase nav-link" href="{% url 'taproom' %}">
           Taproom
         </a>
-        <a class="text-black text-uppercase nav-link" href="#">
+        <a class="text-black text-uppercase nav-link" href="{% url 'about' %}">
           About
         </a>
       </div>
@@ -176,13 +176,13 @@
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black text-uppercase nav-link" href="#">
-              <span class="{% if request.path == '/taproom/' %}active{% endif %}">Taproom</span>
+            <a class="text-black text-uppercase nav-link" href="{% url 'taproom' %}">
+              <span class="{% if request.path == '/pages/taproom/' %}active{% endif %}">Taproom</span>
             </a>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black text-uppercase nav-link" href="#">
-              <span class="{% if request.path == '/about/' %}active{% endif %}">About</span>
+            <a class="text-black text-uppercase nav-link" href="{% url 'about' %}">
+              <span class="{% if request.path == '/pages/about/' %}active{% endif %}">About</span>
             </a>
           </li>
         </ul>
@@ -255,12 +255,12 @@
               </a>
             </li>
             <li class="p-0 m-0">
-              <a class="text-uppercase text-white" href="#">
+              <a class="text-uppercase text-white" href="{% url 'taproom' %}">
                 Taproom
               </a>
             </li>
             <li class="p-0 m-0">
-              <a class="text-uppercase text-white" href="#">
+              <a class="text-uppercase text-white" href="{% url 'about' %}">
                 About
               </a>
             </li>

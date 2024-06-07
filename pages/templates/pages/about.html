@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="overflow-hidden position-relative hero-section">
+  <img src="/static/images/about/about-hero.jpg" alt="About Hero Image" class="h-100 w-100 hero-image">
+  <div class="position-absolute h-100 w-100"></div>
+</div>
+
+<div class="overflow-hidden position-relative py-4 bg-gray info-section">
+    <div class="text-center col-12 col-lg-8 col-xl-6 offset-lg-2 offset-xl-3 info-content">
+      <h3 class="mb-3 text-uppercase">Our Story</h3>
+      <hr class="bg-black my-0">
+      <div class="mt-3">
+        <p class="mt-0">
+          Embark on the journey of Alchemy Aleworks, where the magic of brewing began in the humble confines of our founder's garage. From these modest beginnings, our story unfolds with passion and perseverance. Driven by a deep love for the art of brewing, our founder transformed a simple garage into a bustling hub of creativity and innovation. Surrounded by the aroma of malt and hops, and armed with a few basic tools and a dream, the first batches of what would become our signature brews were crafted.
+        </p>
+        <p class="my-0">
+          In those early days, every brew was a new experiment, a blend of ancient alchemical wisdom and modern brewing techniques. The garage became a sanctuary for trial and error, where each batch brought us closer to the perfect pint. Friends and family became the first to taste our creations, providing invaluable feedback and encouragement. Word of mouth spread, and soon, the small garage couldn't contain the growing demand for our unique elixirs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden position-relative hero-section">
+    <img src="/static/images/about/about1.jpg" alt="About Image 1" class="h-100 w-100 hero-image">
+    <div class="position-absolute h-100 w-100"></div>
+  </div>
+  
+  <div class="overflow-hidden position-relative py-4 bg-gray info-section">
+      <div class="text-center col-12 col-lg-8 col-xl-6 offset-lg-2 offset-xl-3 info-content">
+        <h3 class="mb-3 text-uppercase">From Garage to Greatness</h3>
+        <hr class="bg-black my-0">
+        <div class="mt-3">
+          <p class="mt-0">
+            As we expanded from the garage to a fully equipped brewery, our dedication to quality and creativity never wavered. We honed our craft, meticulously selecting the finest ingredients and perfecting our recipes. Each beer we create is a testament to our journey, a blend of tradition and innovation that captures the essence of alchemy in every sip.
+          </p>
+          <p class="my-0">
+            At Alchemy Aleworks, we believe that brewing is more than just a science; it's an art form. Our beers are crafted to enchant the senses, offering a magical experience with every pour. Whether you're a seasoned beer enthusiast or a curious newcomer, our diverse range of brews promises something special for everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+<div class="d-flex justify-content-center overflow-hidden position-relative height-fit-content gallery-section">
+  <img src="/static/images/about/about2.jpg" alt="About Image 2"
+    class="h-100 d-inline-block col-6 mx-0 px-0 gallery-image">
+  <img src="/static/images/about/about3.jpg" alt="About Image 3"
+    class="h-100 d-inline-block col-6 mx-0 px-0 gallery-image">
+</div>
+
+<!-- <div class="overflow-hidden position-relative py-4" id="limited-edition-section">
+  <div class="text-center text-uppercase col-12" id="limited-edition-content">
+    <h3 class="mb-3">Limited Edition Brews</h3>
+    <hr class="bg-black my-0">
+    <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center my-3 mx-auto">
+      {% for beer in limited_edition_beers %}
+      <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
+        <div class="card border-0 align-items-center">
+          <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+          <div class="card-body p-0">
+            <h5 class="card-title my-0">{{ beer.name }}</h5>
+            <p class="card-text">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="btn-gray" href="{% url 'beers' %}">Shop Now</a>
+  </div>
+</div> -->
+{% endblock %}

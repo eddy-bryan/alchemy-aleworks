@@ -91,7 +91,7 @@ hr {
     height: calc(100vh - 151px);
 }
 
-.hero-image, .taproom-image {
+.hero-image, .gallery-image {
     object-fit: cover;
 }
 
@@ -120,14 +120,14 @@ hr {
     max-width: 500px;
 }
 
-.hero-content-content {
+.hero-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
-#limited-content {
+.gallery-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
