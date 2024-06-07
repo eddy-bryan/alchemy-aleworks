@@ -13,27 +13,30 @@ class Beer(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     @classmethod
-    def get_random_beers(cls, limited_edition=False, quantity=1):
+    def get_random_beers(cls, limited_edition=None, quantity=1):
         """
         Retrieve a random sample of beers from the database.
 
         This method returns a specified number of random Beer objects from the
-        database, filtered by whether they are limited edition or not.
+        database, optionally filtered by whether they are limited edition or not.
 
-        :param limited_edition: Boolean value to filter beers. 
+        :param limited_edition: Optional boolean value to filter beers.
                                 If True, only limited edition beers are returned.
                                 If False, only core range beers are returned.
-                                Defaults to False.
-        :param quantity: The number of random Beer objects to retrieve. 
-                         Defaults to 1. If the quantity requested exceeds the 
+                                If None, no filtering by limited edition status is applied.
+                                Defaults to None.
+        :param quantity: The number of random Beer objects to retrieve.
+                         Defaults to 1. If the quantity requested exceeds the
                          available number of beers, all available beers are returned.
-        :return: A list of randomly selected Beer objects. If no beers match the filter, 
-                 None is returned.
+        :return: A list of randomly selected Beer objects. If no beers match the filter,
+                 an empty list is returned.
         """
-        queryset = cls.objects.filter(limited_edition=limited_edition)
+        queryset = cls.objects.all()
+        if limited_edition is not None:
+            queryset = queryset.filter(limited_edition=limited_edition)
         if queryset.exists():
             return random.sample(list(queryset), min(quantity, queryset.count()))
-        return None
+        return []
 
     def __str__(self):
         return self.name
