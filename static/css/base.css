@@ -133,6 +133,10 @@ hr {
     transform: translate(-50%, -50%);
 }
 
+#taproom-address, #map-content {
+    height: 500px;
+}
+
 /* Utility */
 .hover-gray:hover {
     color: #545454 !important;
