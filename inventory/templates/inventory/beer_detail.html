@@ -2,23 +2,36 @@
 {% load static %}
 
 {% block content %}
-<div class="overflow-hidden position-relative py-4 bg-gray" id="our-beers-section">
+<div class="overflow-hidden position-relative py-5 bg-gray" id="our-beers-section">
   <div class="text-center text-uppercase col-12" id="our-beers-content">
-    <h3 class="mb-3">Our Beers</h3>
-    <hr class="bg-black my-0">
-    <div class="d-flex flex-wrap justify-content-center my-3">
-      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+    <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
+      <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column px-5 px-lg-0 mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ beer.name }}">
+          <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
         </div>
       </div>
-      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+      <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <div class="card-body p-0 my-3">
-            <h5 class="card-title mb-2">{{ beer.name }}</h5>
-            <p class="card-text">{{ beer.description }}</p>
+          <div class="card-body p-0 mt-3">
+            <h3 class="card-title mb-3">{{ beer.name }}</h3>
+            <hr class="bg-black my-0">
+            <p class="card-text mt-3">{{ beer.description }}</p>
           </div>
-          <a class="btn-gray" href="#">Add to Cart</a>
+          <div class="card-body p-0 my-3">
+            <p class="card-text text-uppercase">TASTE POINT | TASTE POINT | TASTE POINT</p>
+          </div>
+          <div class="card-body p-0 mb-3">
+            <p class="card-text text-uppercase">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
+            <p class="card-text">£{{ beer.price }}</p>
+          </div>
+          <div class="card-body p-0 mb-3 d-flex align-items-center">
+            <form action="#" method="post" class="d-flex align-items-center flex-wrap">
+              {% csrf_token %}
+              <p class="card-text text-uppercase my-0">Quantity:</p>
+              <input class="form-control rounded-0 border-black mx-3" type="number" name="quantity" value="1" min="1" style="width: 60px;">
+              <button type="submit" class="btn-gray form-control-button mx-0">Add to Cart</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
