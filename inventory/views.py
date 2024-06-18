@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Beer, MerchItem
 
 def beers(request):
@@ -14,7 +14,7 @@ def beers(request):
     return render(request, 'inventory/beers.html', context)
 
 def merch(request):
-    """ A view to show, filter, and sort all merch items. """
+    """ A view to show a detailed page for an individual beer. """
     merch = MerchItem.objects.all()
     random_apparel = MerchItem.get_random_merch_items(category="Apparel & Accessories", quantity=1)
     random_drinkware = MerchItem.get_random_merch_items(category="Drinkware", quantity=1)
@@ -25,3 +25,12 @@ def merch(request):
     }
     return render(request, 'inventory/merch.html', context)
 
+def beer_detail(request, beer_id):
+    """ A view to show, filter and sort all beers. """
+    beer = get_object_or_404(Beer, pk=beer_id)
+    random_beers = Beer.get_random_beers(quantity=3, exclude_id=beer_id)
+    context = {
+        'beer': beer,
+        'random_beers': random_beers,
+    }
+    return render(request, 'inventory/beer_detail.html', context)

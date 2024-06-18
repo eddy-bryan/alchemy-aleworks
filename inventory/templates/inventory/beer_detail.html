@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="overflow-hidden position-relative py-4 bg-gray" id="our-beers-section">
+  <div class="text-center text-uppercase col-12" id="our-beers-content">
+    <h3 class="mb-3">Our Beers</h3>
+    <hr class="bg-black my-0">
+    <div class="d-flex flex-wrap justify-content-center my-3">
+      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+        <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ beer.name }}">
+        </div>
+      </div>
+      <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
+        <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          <div class="card-body p-0 my-3">
+            <h5 class="card-title mb-2">{{ beer.name }}</h5>
+            <p class="card-text">{{ beer.description }}</p>
+          </div>
+          <a class="btn-gray" href="#">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overflow-hidden position-relative py-4 product-section">
+  <div class="text-center text-uppercase col-12 product-content">
+    <h3 class="mb-3">You Might Also Like</h3>
+    <hr class="bg-black my-0">
+    <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center my-3 mx-auto">
+      {% for beer in random_beers %}
+      <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
+        <a href="{% url 'beer_detail' beer.id %}">
+          <div class="card border-0 align-items-center">
+            <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <div class="card-body p-0 text-black">
+              <h5 class="card-title my-0">{{ beer.name }}</h5>
+              <p class="card-text">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="btn-gray" href="{% url 'beers' %}">Shop Now</a>
+  </div>
+</div>
+{% endblock %}

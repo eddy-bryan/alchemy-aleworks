@@ -37,15 +37,17 @@
     <div class="col-12 col-lg-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
       {% for beer in beers %}
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mx-4 mb-4">
-        <div class="card border-0 align-items-center">
-          <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
-          <div class="card-body p-0">
-            <h5 class="card-title my-0">{{ beer.name }}</h5>
-            <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
-            <hr class="bg-black my-0">
-            <p class="card-text mt-2">£{{ beer.price }}</p>
-          </div>
-        </div>
+        <a href="{% url 'beer_detail' beer.id %}">
+          <div class="card border-0 align-items-center">
+            <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <div class="card-body p-0 text-black">
+              <h5 class="card-title my-0">{{ beer.name }}</h5>
+              <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
+              <hr class="bg-black my-0">
+              <p class="card-text mt-2k">£{{ beer.price }}</p>
+            </div>
+        </a>
+      </div>
       </div>
       {% endfor %}
     </div>
