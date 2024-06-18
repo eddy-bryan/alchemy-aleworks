@@ -37,14 +37,16 @@
     <div class="col-12 col-lg-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
       {% for merch_item in merch %}
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mx-4 mb-4">
-        <div class="card border-0 align-items-center">
-          <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
-          <div class="card-body p-0">
-            <h5 class="card-title mb-2">{{ merch_item.name }}</h5>
-            <hr class="bg-black my-0">
-            <p class="card-text mt-2">£{{ merch_item.price }}</p>
+        <a href="{% url 'merch_detail' merch_item.id %}">
+          <div class="card border-0 align-items-center">
+            <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+            <div class="card-body p-0">
+              <h5 class="card-title mb-2">{{ merch_item.name }}</h5>
+              <hr class="bg-black my-0">
+              <p class="card-text mt-2">£{{ merch_item.price }}</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
       {% endfor %}
     </div>

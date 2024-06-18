@@ -7,22 +7,18 @@
     <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column px-5 px-lg-0 mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
+          <img src="{{ merch.image.url }}" class="card-img-top border-black large-product-image" alt="{{ merch.name }}">
         </div>
       </div>
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           <div class="card-body p-0 mt-3">
-            <h3 class="card-title mb-3">{{ beer.name }}</h3>
+            <h3 class="card-title mb-3">{{ merch.name }}</h3>
             <hr class="bg-black my-0">
-            <p class="card-text mt-3">{{ beer.description }}</p>
-          </div>
-          <div class="card-body p-0 my-3">
-            <p class="card-text text-uppercase">TASTE POINT | TASTE POINT | TASTE POINT</p>
+            <p class="card-text mt-3">{{ merch.description }}</p>
           </div>
           <div class="card-body p-0 mb-3">
-            <p class="card-text text-uppercase">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
-            <p class="card-text">£{{ beer.price }}</p>
+            <p class="card-text">£{{ merch.price }}</p>
           </div>
           <div class="card-body p-0 mb-3 d-flex align-items-center">
             <form action="#" method="post" class="d-flex align-items-center flex-wrap">
@@ -43,23 +39,22 @@
     <h3 class="mb-3">You Might Also Like</h3>
     <hr class="bg-black my-0">
     <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center mt-3 mx-auto">
-      {% for beer in random_beers %}
+      {% for merch in random_merch %}
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mx-4 mb-4">
-        <a href="{% url 'beer_detail' beer.id %}">
+        <a href="{% url 'merch_detail' merch.id %}">
           <div class="card border-0 align-items-center">
-            <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <img src="{{ merch.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch.name }}">
             <div class="card-body p-0 text-black">
-              <h5 class="card-title my-0">{{ beer.name }}</h5>
-              <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
+              <h5 class="card-title mb-2">{{ merch.name }}</h5>
               <hr class="bg-black my-0">
-              <p class="card-text mt-2">£{{ beer.price }}</p>
+              <p class="card-text mt-2">£{{ merch.price }}</p>
             </div>
           </div>
         </a>
       </div>
       {% endfor %}
     </div>
-    <a class="btn-gray" href="{% url 'beers' %}">Back to Beers</a>
+    <a class="btn-gray" href="{% url 'merch' %}">Back to Merch</a>
   </div>
 </div>
 {% endblock %}

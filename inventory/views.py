@@ -26,7 +26,7 @@ def merch(request):
     return render(request, 'inventory/merch.html', context)
 
 def beer_detail(request, beer_id):
-    """ A view to show, filter and sort all beers. """
+    """ A detailed view to show a specific beer. """
     beer = get_object_or_404(Beer, pk=beer_id)
     random_beers = Beer.get_random_beers(quantity=3, exclude_id=beer_id)
     context = {
@@ -34,3 +34,13 @@ def beer_detail(request, beer_id):
         'random_beers': random_beers,
     }
     return render(request, 'inventory/beer_detail.html', context)
+
+def merch_detail(request, merch_id):
+    """ A detailed view to show a specific merch item. """
+    merch = get_object_or_404(MerchItem, pk=merch_id)
+    random_merch = MerchItem.get_random_merch_items(quantity=3, exclude_id=merch_id)
+    context = {
+        'merch': merch,
+        'random_merch': random_merch,
+    }
+    return render(request, 'inventory/merch_detail.html', context)
