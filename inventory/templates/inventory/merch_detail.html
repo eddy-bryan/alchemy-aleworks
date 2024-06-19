@@ -40,11 +40,11 @@
     <hr class="bg-black my-0">
     <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center mt-3 mx-auto">
       {% for merch in random_merch %}
-      <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mx-4 mb-4">
-        <a href="{% url 'merch_detail' merch.id %}">
+      <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
+        <a href="{% url 'merch_detail' merch.id %}" class="text-black hover-gray">
           <div class="card border-0 align-items-center">
             <img src="{{ merch.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch.name }}">
-            <div class="card-body p-0 text-black">
+            <div class="card-body p-0">
               <h5 class="card-title mb-2">{{ merch.name }}</h5>
               <hr class="bg-black my-0">
               <p class="card-text mt-2">£{{ merch.price }}</p>

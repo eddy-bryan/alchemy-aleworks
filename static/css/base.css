@@ -215,7 +215,7 @@ hr {
 
 /* Reduced Font Sizes For Mobile */
 @media (max-width: 500px) {
-    p {
+    p, li {
         font-size: 0.7rem;
     }
     h1 {
