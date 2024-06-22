@@ -4,8 +4,9 @@ body {
 }
 
 header {
+    padding: 0 15px !important;
     background-color: #fff;
-    z-index: 999999 !important;
+    z-index: 99 !important;
 }
 
 main {
@@ -183,18 +184,18 @@ hr {
     box-sizing: border-box;
 }
 
+.btn-gray:hover {
+    background-color: #545454;
+    color: #fff;
+    text-decoration: none;
+}
+
 .form-control-button {
     padding: .375rem .75rem !important;
     display: block !important;
     height: calc(1.5em + .75rem + 2px) !important;
     font-size: 1rem !important;
     line-height: 1.5 !important;
-}
-
-.btn-gray:hover {
-    background-color: #545454;
-    color: #fff;
-    text-decoration: none;
 }
 
 .bg-black {
@@ -243,4 +244,9 @@ hr {
     #footer-menus, #site-info {
         width: 80%;
     }
+}
+
+/* Override Bootstrap modal behavior to prevent unnecessary added padding */
+.modal-open {
+    padding-right: 0 !important;
 }

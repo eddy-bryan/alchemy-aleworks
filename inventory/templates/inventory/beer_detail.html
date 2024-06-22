@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extended_title %}| {{ beer.name }}{% endblock %}
+
 {% block content %}
 <div class="overflow-hidden position-relative py-5 bg-gray">
   <div class="text-center text-uppercase col-12">

@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-h#csszmaic-w2=985g4!z7orm1gww3_dc$j@=##c+z9gk3kj!!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-eddybryan-alchemyalewor-o317fwva5q8.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-eddybryan-alchemyalewor-o317fwva5q8.ws-eu114.gitpod.io',
+    'https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
 ]
 
 

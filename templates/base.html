@@ -51,6 +51,9 @@
   <script src="https://kit.fontawesome.com/20d4ac6c68.js" crossorigin="anonymous"></script>
   {% endblock %}
 
+  <!-- Age Verification Modal JS -->
+  <script src="/static/js/age_verification_modal.js"></script>
+
   <!-- Additional JS -->
   {% block additional_js %}
   {% endblock %}
@@ -147,9 +150,7 @@
             </div>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black nav-link nav-action" href="#">
-              <i class="fa-solid fa-cart-shopping fa-lg"></i>
-            </a>
+            <a class="text-black nav-link nav-action" href="#"></a><i class="fa-solid fa-cart-shopping fa-lg"></i>
           </li>
         </ul>
       </div>
@@ -199,6 +200,25 @@
     <!-- Content Block -->
     {% block content %}
     {% endblock %}
+
+    <!-- Age Verification Modal (from digital.ink/blog/age-verification-modal/) -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0 text-center text-uppercase bg-gray">
+          <div class="modal-header border-0">
+            <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Age Verification</h5>
+          </div>
+          <hr class="bg-black my-0">
+          <div class="modal-body">
+            <p>By pressing enter, you confirm that you meet the legal drinking age requirement in your country.</p>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" id="age-verify-button" class="btn-gray mx-0" data-dismiss="modal">Enter</button>
+            <a class="btn-gray ml-2 mr-0" href="https://www.google.com/">Leave</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Full-width footer -->

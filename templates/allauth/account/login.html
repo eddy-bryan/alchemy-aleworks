@@ -3,6 +3,8 @@
 {% load allauth i18n %}
 {% load account socialaccount %}
 
+{% block extended_title %}| Sign In{% endblock %}
+
 {% block content %}
 <div class="overflow-hidden position-relative py-4 bg-gray">
     <div class="text-uppercase col-12">
@@ -19,7 +21,7 @@
         </div>
         <div class="row">
             <div class="col-lg-5 mx-auto text-center">
-                <form class="signup" id="signup_form" method="post" action="{% url 'account_login' %}">
+                <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
                     {% if redirect_field_value %}
