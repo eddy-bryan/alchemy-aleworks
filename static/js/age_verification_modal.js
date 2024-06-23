@@ -1,3 +1,4 @@
+// Age Verification Modal cookie logic is a modified version of a code snippet taken from 'https://www.digital.ink/blog/age-verification-modal/'.
 $(document).ready(function () {
     // Function to create a cookie
     function createCookie(name, value, days) {

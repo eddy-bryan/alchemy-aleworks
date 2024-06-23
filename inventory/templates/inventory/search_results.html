@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Search Results for "{{ query }}"</h2>
+
+    {% if beers %}
+        <h3>Beers</h3>
+        <ul class="list-group mb-4">
+        {% for beer in beers %}
+            <li class="list-group-item">
+                <a href="{% url 'beer_detail' beer.id %}">{{ beer.name }}</a>
+                <p>{{ beer.description|truncatewords:30 }}</p>
+                <p><strong>Type:</strong> {{ beer.type }}</p>
+                <p><strong>Price:</strong> {{ beer.price }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No beers found.</p>
+    {% endif %}
+
+    {% if merch_items %}
+        <h3>Merchandise</h3>
+        <ul class="list-group mb-4">
+        {% for item in merch_items %}
+            <li class="list-group-item">
+                <a href="{% url 'merch_detail' item.id %}">{{ item.name }}</a>
+                <p>{{ item.description|truncatewords:30 }}</p>
+                <p><strong>Category:</strong> {{ item.category }}</p>
+                <p><strong>Price:</strong> {{ item.price }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No merchandise found.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.db.models import Q
 from .models import Beer, MerchItem
 
 def beers(request):
@@ -24,6 +25,41 @@ def merch(request):
         'random_drinkware': random_drinkware[0] if random_drinkware else None,
     }
     return render(request, 'inventory/merch.html', context)
+
+def search_view(request):
+    query = request.GET.get('q', '').strip()
+
+    # Create empty querysets to hold results
+    beers = Beer.objects.none()
+    merch_items = MerchItem.objects.none()
+
+    if query:
+        # Filter beers
+        beers = Beer.objects.filter(
+            Q(name__icontains=query) |
+            Q(sku__icontains=query) |
+            Q(type__icontains=query) |
+            Q(description__icontains=query) |
+            Q(alcohol_content__icontains=query) |
+            Q(price__icontains=query)
+        )
+
+        # Filter merch items
+        merch_items = MerchItem.objects.filter(
+            Q(name__icontains=query) |
+            Q(sku__icontains=query) |
+            Q(category__icontains=query) |
+            Q(description__icontains=query) |
+            Q(price__icontains=query)
+        )
+
+    context = {
+        'query': query,
+        'beers': beers,
+        'merch_items': merch_items,
+    }
+
+    return render(request, 'inventory/search_results.html', context)
 
 def beer_detail(request, beer_id):
     """ A detailed view to show a specific beer. """
