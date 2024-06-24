@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
+from django.contrib import messages
 from .models import Beer, MerchItem
 
 def beers(request):
@@ -27,31 +28,19 @@ def merch(request):
     return render(request, 'inventory/merch.html', context)
 
 def search_view(request):
-    query = request.GET.get('q', '').strip()
+    query = request.GET.get('q', '').strip()  # Get the search query
 
-    # Create empty querysets to hold results
-    beers = Beer.objects.none()
-    merch_items = MerchItem.objects.none()
+    if not query:
+        messages.error(request, "Please enter a search term to find products.")
+        return redirect(request.META.get('HTTP_REFERER', 'home'))  # Redirect to the referring page or 'home' if no referrer.
 
-    if query:
-        # Filter beers
-        beers = Beer.objects.filter(
-            Q(name__icontains=query) |
-            Q(sku__icontains=query) |
-            Q(type__icontains=query) |
-            Q(description__icontains=query) |
-            Q(alcohol_content__icontains=query) |
-            Q(price__icontains=query)
-        )
+    # Construct queries to filter beers and merch items based on the search term
+    beer_queries = Q(name__icontains=query) | Q(sku__icontains=query) | Q(type__icontains=query) | Q(description__icontains=query) | Q(alcohol_content__icontains=query)
+    merch_queries = Q(name__icontains=query) | Q(sku__icontains=query) | Q(category__icontains=query) | Q(description__icontains=query)
 
-        # Filter merch items
-        merch_items = MerchItem.objects.filter(
-            Q(name__icontains=query) |
-            Q(sku__icontains=query) |
-            Q(category__icontains=query) |
-            Q(description__icontains=query) |
-            Q(price__icontains=query)
-        )
+    # Query the database
+    beers = Beer.objects.filter(beer_queries)
+    merch_items = MerchItem.objects.filter(merch_queries)
 
     context = {
         'query': query,

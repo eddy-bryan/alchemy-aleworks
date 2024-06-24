@@ -138,6 +138,10 @@ hr {
     height: 500px;
 }
 
+#messages-container {
+    z-index: 99999;
+}
+
 /* Utility */
 .hover-gray:hover {
     color: #545454 !important;
