@@ -28,14 +28,26 @@ def beers(request):
     return render(request, 'inventory/beers.html', context)
 
 def merch(request):
-    """ A view to show a detailed page for an individual beer. """
+    """ A view to show, filter and sort all merch items. """
+    category = request.GET.get('category', '').lower()
     merch = MerchItem.objects.all()
+    
+    if category == 'drinkware':
+        merch = merch.filter(category__iexact='Drinkware')
+        title = "Drinkware"
+    elif category == 'apparel & accessories':
+        merch = merch.filter(category__iexact='Apparel & Accessories')
+        title = "Apparel & Accessories"
+    else:
+        title = "All Merch"
+
     random_apparel = MerchItem.get_random_merch_items(category="Apparel & Accessories", quantity=1)
     random_drinkware = MerchItem.get_random_merch_items(category="Drinkware", quantity=1)
     context = {
         'merch': merch,
         'random_apparel': random_apparel[0] if random_apparel else None,
         'random_drinkware': random_drinkware[0] if random_drinkware else None,
+        'title': title,  # Pass the title to the template
     }
     return render(request, 'inventory/merch.html', context)
 
