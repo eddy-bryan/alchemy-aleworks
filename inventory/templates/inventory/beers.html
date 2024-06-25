@@ -16,7 +16,7 @@
             <h5 class="card-title mb-2">Core Range</h5>
             <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
           </div>
-          <a class="btn-gray" href="#">Shop Now</a>
+          <a class="btn-gray" href="{% url 'beers' %}?limited_edition=False">Shop Now</a>
         </div>
       </div>
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
@@ -26,7 +26,7 @@
             <h5 class="card-title mb-2">Limited Edition</h5>
             <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These exclusive releases are available for a limited time only.</p>
           </div>
-          <a class="btn-gray" href="#">Shop Now</a>
+          <a class="btn-gray" href="{% url 'beers' %}?limited_edition=True">Shop Now</a>
         </div>
       </div>
     </div>
@@ -35,6 +35,7 @@
 
 <div class="overflow-hidden position-relative py-4" id="beers-section">
   <div class="text-center text-uppercase col-12" id="beers-content">
+    <h3 class="mb-3">{{ title }}</h3>
     <hr class="bg-black my-0">
     <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
       {% for beer in beers %}
