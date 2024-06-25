@@ -36,7 +36,28 @@
 <div class="overflow-hidden position-relative py-4" id="merch-section">
   <div class="text-center text-uppercase col-12" id="merch-content">
     <h3 class="mb-3">{{ title }}</h3>
+
+    <div class="row d-flex justify-content-between align-items-center mb-3">
+      <!-- Search and sort dropdown -->
+      <form action="{% url 'merch' %}" method="GET" class="ml-4 text-small">
+        <label for="sort_by" class="form-label visually-hidden my-0">Sort by:</label>
+        <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0" onchange="this.form.submit()">
+          <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Name Ascending</option>
+          <option value="name_desc" {% if request.GET.sort_by == 'name_desc' %}selected{% endif %}>Name Descending</option>
+          <option value="price_asc" {% if request.GET.sort_by == 'price_asc' %}selected{% endif %}>Price Ascending</option>
+          <option value="price_desc" {% if request.GET.sort_by == 'price_desc' %}selected{% endif %}>Price Descending</option>
+        </select>
+      </form>
+
+      <!-- Item count -->
+      <div class="d-flex align-items-center text-lowercase text-muted font-weight-normal text-right font-italic mr-4">
+        <span class="text-small">{{ merch.count }} Items</span>
+      </div>
+    </div>
+
     <hr class="bg-black my-0">
+
+    <!-- Merch Cards -->
     <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
       {% for merch_item in merch %}
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
