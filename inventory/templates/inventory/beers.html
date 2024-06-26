@@ -40,6 +40,8 @@
     <div class="row d-flex justify-content-between align-items-center mb-3">
       <!-- Search and sort dropdown -->
       <form action="{% url 'beers' %}" method="GET" class="ml-4 text-small">
+        <!-- Preserve limited_edition parameter -->
+        <input type="hidden" name="limited_edition" value="{{ request.GET.limited_edition }}">
         <label for="sort_by" class="form-label visually-hidden my-0">Sort by:</label>
         <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0" onchange="this.form.submit()">
           <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Name Ascending</option>

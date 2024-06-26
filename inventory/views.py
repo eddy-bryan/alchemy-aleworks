@@ -41,6 +41,7 @@ def beers(request):
         'limited_edition_beer': limited_edition_beer[0] if limited_edition_beer else None,
         'core_range_beer': core_range_beer[0] if core_range_beer else None,
         'title': title,
+        'limited_edition': request.GET.get('limited_edition', ''),
     }
     return render(request, 'inventory/beers.html', context)
 
@@ -78,6 +79,7 @@ def merch(request):
         'random_apparel': random_apparel[0] if random_apparel else None,
         'random_drinkware': random_drinkware[0] if random_drinkware else None,
         'title': title,
+        'category': request.GET.get('category', ''),
     }
     return render(request, 'inventory/merch.html', context)
 
