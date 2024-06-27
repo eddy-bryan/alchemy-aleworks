@@ -3,7 +3,7 @@ from inventory.models import Beer, MerchItem
 
 def index(request):
     """ Render the home page. """
-    limited_edition_beers = Beer.objects.filter(limited_edition=True)[:3]
+    limited_edition_beers = Beer.get_random_beers(limited_edition=True, quantity=3)
     random_merch_items = MerchItem.get_random_merch_items(quantity=3)
     context = {
         'limited_edition_beers': limited_edition_beers,
