@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from inventory.models import Beer, MerchItem
 
 def view_bag(request):
@@ -10,3 +10,19 @@ def view_bag(request):
         'random_merch': random_merch[0] if random_merch else None,
     }
     return render(request, 'bag/bag.html', context)
+
+def add_to_bag(request, item_id):
+    """Adds a number of items to the bag depending on the selected quantity"""
+
+    quantity = int(request.POST.get('quantity'))
+    redirect_url = request.POST.get('redirect_url')
+    bag = request.session.get('bag', {})
+
+    if item_id in list (bag.keys()):
+        bag[item_id] += quantity
+    else:
+        bag[item_id] = quantity
+
+    request.session['bag'] = bag
+    print(request.session['bag'])
+    return redirect(redirect_url)
