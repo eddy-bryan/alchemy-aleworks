@@ -150,7 +150,14 @@
             </div>
           </li>
           <li class="list-inline-item p-0 m-0">
-            <a class="text-black nav-link nav-action" href="{% url 'view_bag' %}"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            <a class="text-black nav-link nav-action hover-gray" href="{% url 'view_bag' %}">
+              <i class="fa-solid fa-cart-shopping fa-lg"></i>
+              <span>
+                {% if product_count %}
+                  {{ product_count }}
+                {% endif %}
+              </span>
+            </a>
           </li>
         </ul>
       </div>

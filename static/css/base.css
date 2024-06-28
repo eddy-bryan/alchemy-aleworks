@@ -146,6 +146,7 @@ hr {
 .hover-gray:hover {
     color: #545454 !important;
     text-decoration: none;
+    border: none !important;
 }
 
 .text-black {
