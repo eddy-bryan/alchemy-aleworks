@@ -1,6 +1,6 @@
 [
     {
-        "pk": 1,
+        "pk": 1001,
         "model": "inventory.beer",
         "fields": {
             "sku": "AA52001",
@@ -14,7 +14,7 @@
         }
     },
     {
-        "pk": 2,
+        "pk": 1002,
         "model": "inventory.beer",
         "fields": {
             "sku": "IP41002",
@@ -28,7 +28,7 @@
         }
     },
     {
-        "pk": 3,
+        "pk": 1003,
         "model": "inventory.beer",
         "fields": {
             "sku": "MS64003",
@@ -42,7 +42,7 @@
         }
     },
     {
-        "pk": 4,
+        "pk": 1004,
         "model": "inventory.beer",
         "fields": {
             "sku": "AM42004",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "pk": 5,
+        "pk": 1005,
         "model": "inventory.beer",
         "fields": {
             "sku": "NE58005",
@@ -70,7 +70,7 @@
         }
     },
     {
-        "pk": 6,
+        "pk": 1006,
         "model": "inventory.beer",
         "fields": {
             "sku": "MB45006",
@@ -84,7 +84,7 @@
         }
     },
     {
-        "pk": 7,
+        "pk": 1007,
         "model": "inventory.beer",
         "fields": {
             "sku": "PO55007",
@@ -98,7 +98,7 @@
         }
     },
     {
-        "pk": 8,
+        "pk": 1008,
         "model": "inventory.beer",
         "fields": {
             "sku": "EP44008",
@@ -112,7 +112,7 @@
         }
     },
     {
-        "pk": 9,
+        "pk": 1009,
         "model": "inventory.beer",
         "fields": {
             "sku": "SP37009",
@@ -126,7 +126,7 @@
         }
     },
     {
-        "pk": 10,
+        "pk": 1010,
         "model": "inventory.beer",
         "fields": {
             "sku": "IS62010",
@@ -140,7 +140,7 @@
         }
     },
     {
-        "pk": 11,
+        "pk": 1011,
         "model": "inventory.beer",
         "fields": {
             "sku": "CS68011",
@@ -154,7 +154,7 @@
         }
     },
     {
-        "pk": 12,
+        "pk": 1012,
         "model": "inventory.beer",
         "fields": {
             "sku": "SI39012",

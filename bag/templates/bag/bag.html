@@ -6,18 +6,30 @@
 {% block content %}
 
 <div class="overflow-hidden position-relative pt-4 bg-gray">
-    <div class="text-center text-uppercase col-12">
-        <h3 class="mb-3">Shoping Bag</h3>
-        <hr class="bg-black my-0">
-        <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
-            {% if bag_items %}
-                <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
-                </div>
-            {% else %}
-                <p>Your bag is empty.</p>
-            {% endif %}
+  <div class="text-center text-uppercase col-12">
+    <h3 class="mb-3">Shoping Bag</h3>
+    <hr class="bg-black my-0">
+    <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
+      {% if bag_items %}
+        {% for item in bag_items %}
+        <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
+          <div class="card border-0 align-items-center bg-gray">
+            <img src="{{ item.product.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ item.product.name }}">
+            <div class="card-body p-0">
+              <h5 class="card-title my-0">{{ item.product.name }}</h5>
+              <p class="card-text mb-2">Type: {{ item.type }}</p>
+              <p class="card-text mb-2">Quantity: {{ item.quantity }}</p>
+              <p class="card-text">Price: £{{ item.product.price }}</p>
+            </div>
+          </div>
         </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p>Your bag is empty.</p>
+      {% endif %}
     </div>
+  </div>
 </div>
 
 <div class="overflow-hidden position-relative py-4">
@@ -27,7 +39,8 @@
     <div class="d-flex flex-wrap justify-content-center my-3">
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4">
-          <img src="{{ random_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_beer.name }}">
+          <img src="{{ random_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
+            alt="{{ random_beer.name }}">
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Beers</h5>
           </div>
@@ -36,7 +49,8 @@
       </div>
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4">
-          <img src="{{ random_merch.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_merch.name }}">
+          <img src="{{ random_merch.image.url }}" class="card-img-top border-black large-product-image mt-2"
+            alt="{{ random_merch.name }}">
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Merch</h5>
           </div>

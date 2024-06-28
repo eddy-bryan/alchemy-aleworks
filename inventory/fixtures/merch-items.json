@@ -1,6 +1,6 @@
 [
     {
-        "pk": 1,
+        "pk": 2001,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "COWH001",
@@ -13,7 +13,7 @@
         }
     },
     {
-        "pk": 2,
+        "pk": 2002,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "HOWH002",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "pk": 3,
+        "pk": 2003,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "MAWH003",
@@ -39,7 +39,7 @@
         }
     },
     {
-        "pk": 4,
+        "pk": 2004,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "GLCL004",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "pk": 5,
+        "pk": 2005,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "COWH005",
@@ -65,7 +65,7 @@
         }
     },
     {
-        "pk": 6,
+        "pk": 2006,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "TSWH006",
@@ -78,7 +78,7 @@
         }
     },
     {
-        "pk": 7,
+        "pk": 2007,
         "model": "inventory.merchitem",
         "fields": {
             "sku": "BAWH007",

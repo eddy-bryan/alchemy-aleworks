@@ -11,18 +11,18 @@ def view_bag(request):
     }
     return render(request, 'bag/bag.html', context)
 
-def add_to_bag(request, item_id):
+def add_to_bag(request, item_id, item_type):
     """Adds a number of items to the bag depending on the selected quantity"""
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if item_id in list (bag.keys()):
-        bag[item_id] += quantity
+    key = f"{item_type}_{item_id}"
+    if key in bag:
+        bag[key]['quantity'] += quantity
     else:
-        bag[item_id] = quantity
+        bag[key] = {'quantity': quantity}
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
