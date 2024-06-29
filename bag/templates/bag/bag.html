@@ -9,26 +9,64 @@
   <div class="text-center text-uppercase col-12">
     <h3 class="mb-3">Shoping Bag</h3>
     <hr class="bg-black my-0">
-    <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
+    <!-- <div class="col-12 justify-content-center my-3 mx-auto"> -->
       {% if bag_items %}
-        {% for item in bag_items %}
-        <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
-          <div class="card border-0 align-items-center bg-gray">
-            <img src="{{ item.product.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ item.product.name }}">
-            <div class="card-body p-0">
-              <h5 class="card-title my-0">{{ item.product.name }}</h5>
-              <p class="card-text mb-2">Type: {{ item.type }}</p>
-              <p class="card-text mb-2">Quantity: {{ item.quantity }}</p>
-              <p class="card-text">Price: £{{ item.product.price }}</p>
-            </div>
+          <div class="table-responsive rounded col-12 offset-xl-2 col-xl-8 p-0">
+              <table class="table table-sm table-borderless">
+                  <thead class="text-black">
+                      <tr class="text-small">
+                          <th scope="col">Product Info</th>
+                          <th scope="col"></th>
+                          <th scope="col">Qty</th>
+                          <th scope="col text-right">Subtotal</th>
+                      </tr>
+                  </thead>
+
+                  {% for item in bag_items %}
+                      <tr>
+                          <td class="p-3 col-4 col-md-3">
+                              <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                          </td>
+                          <td class="py-3 text-left col-md-7">
+                              <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                              <p class="my-0 text-small font-weight-normal text-muted">SKU: {{ item.product.sku|upper }}</p>
+                          </td>
+                          <td class="py-3 col-md-1">
+                              <p class="my-0">{{ item.quantity }}</p>
+                          </td>
+                          <td class="py-3 text-right col-md-1">
+                              <!-- Price -->
+                              <p class="my-0">£{{ item.product.price }}</p>
+                              <!-- Subtotal -->
+                              <p class="my-0">£{{ item.product.price }}</p>
+                          </td>
+                      </tr>
+                  {% endfor %}
+                  <tr>
+                      <td colspan="5" class="pt-5 text-right">
+                          <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                          <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                          <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                          {% if free_delivery_delta > 0 %}
+                              <p class="mb-1 text-danger">
+                                  You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                              </p>
+                          {% endif %}
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="5" class="text-right">
+                          <a href="#" class="btn-gray m-0">
+                              <span>Secure Checkout <i class="fas fa-lock"></i></span>
+                          </a>
+                      </td>
+                  </tr>
+              </table>
           </div>
-        </div>
-        {% endfor %}
-      </div>
       {% else %}
-      <p>Your bag is empty.</p>
+          <p class="lead mb-5">Your bag is empty.</p>
       {% endif %}
-    </div>
+    <!-- </div> -->
   </div>
 </div>
 
