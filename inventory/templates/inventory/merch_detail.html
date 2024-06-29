@@ -19,14 +19,29 @@
             <hr class="bg-black my-0">
             <p class="card-text mt-3">{{ merch.description }}</p>
           </div>
+          {% with merch.sized_item as s %}
+          {% if s %}
+            <div class="card-body p-0 my-3">
+              <p class="card-text text-uppercase d-inline mr-2">Size:</p>
+              <select name="product_size" id="id_product_size" class="font-weight-normal text-right form-select rounded-0 border-black text-small">
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m" selected>M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+            </div>
+          {% endif %}
+          {% endwith %}
           <div class="card-body p-0 mb-3">
             <p class="card-text">£{{ merch.price }}</p>
           </div>
+
           <div class="card-body p-0 mb-3 d-flex align-items-center">
             <form action="{% url 'add_to_bag' 'merch' merch.id %}" method="POST" class="d-flex align-items-center flex-wrap">
               {% csrf_token %}
               <p class="card-text text-uppercase my-0">Quantity:</p>
-              <input class="form-control rounded-0 border-black mx-3" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ merch.id }}" id="id_qty_{{ merch.id }}" style="width: 60px;">
+              <input class="form-control rounded-0 border-black mx-3 text-small" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ merch.id }}" id="id_qty_{{ merch.id }}" style="width: 60px;">
               <input type="submit" class="btn-gray form-control-button mx-0" value="Add to Cart">
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
