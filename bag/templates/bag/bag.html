@@ -38,8 +38,8 @@
                   <input type="hidden" name="item_id" value="{{ item.product.pk }}">
                   <input type="hidden" name="item_type" value="{{ item.item_type }}">
                   <input type="hidden" name="size" value="{{ item.size }}">
-                  <input type="number" name="quantity" value="{{ item.quantity }}" min="0">
-                  <button type="submit">Update</button>
+                  <input class="form-control rounded-0 border-black text-small" type="number" name="quantity" value="{{ item.quantity }}" min="0">
+                  <button class="bg-transparent border-0 text-primary text-small" type="submit">Update</button>
               </form>
             </td>
             <td class="py-3 text-right col-md-1">
