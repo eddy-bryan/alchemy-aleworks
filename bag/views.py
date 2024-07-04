@@ -38,3 +38,28 @@ def add_to_bag(request, item_id, item_type):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
+def update_bag(request, item_type, item_id):
+    """Update the quantity of an item in the bag."""
+    quantity = int(request.POST.get('quantity'))
+    size = request.POST.get('size', None)
+    bag = request.session.get('bag', {})
+    key = f"{item_type}_{item_id}"
+
+    if size:
+        if key in bag and 'items_by_size' in bag[key]:
+            if quantity > 0:
+                bag[key]['items_by_size'][size] = quantity
+            else:
+                del bag[key]['items_by_size'][size]
+                if not bag[key]['items_by_size']:
+                    del bag[key]
+    else:
+        if key in bag:
+            if quantity > 0:
+                bag[key]['quantity'] = quantity
+            else:
+                del bag[key]
+
+    request.session['bag'] = bag
+    return redirect('view_bag')

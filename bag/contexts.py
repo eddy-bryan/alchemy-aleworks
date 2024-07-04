@@ -12,8 +12,10 @@ def bag_contents(request):
     for item_id, item_data in bag.items():
         prefix, raw_item_id = item_id.split('_', 1)
         if prefix == 'beer':
+            item_type = 'beer'
             product = get_object_or_404(Beer, pk=raw_item_id)
         elif prefix == 'merch':
+            item_type = 'merch'
             product = get_object_or_404(MerchItem, pk=raw_item_id)
 
         if 'items_by_size' in item_data:
@@ -23,6 +25,7 @@ def bag_contents(request):
                 product_count += quantity
                 bag_items.append({
                     'item_id': item_id,
+                    'item_type': item_type,
                     'quantity': quantity,
                     'product': product,
                     'size': size,
@@ -35,6 +38,7 @@ def bag_contents(request):
             product_count += quantity
             bag_items.append({
                 'item_id': item_id,
+                'item_type': item_type,
                 'quantity': quantity,
                 'product': product,
                 'item_total': item_total,
