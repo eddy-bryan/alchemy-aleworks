@@ -204,17 +204,17 @@
   {% if messages %}
   <div id="messages-container" class="fixed-top bg-transparent w-100">
     {% for message in messages %}
-      {% if message.tags %}
-        {% if 'error' in message.tags %}
+      {% with message.level as level %}
+        {% if level == 40 %}
           {% include 'includes/toasts/toast_error.html' %}
-        {% elif 'info' in message.tags %}
-          {% include 'includes/toasts/toast_info.html' %}
-        {% elif 'success' in message.tags %}
-          {% include 'includes/toasts/toast_success.html' %}
-        {% elif 'warning' in message.tags %}
+        {% elif level == 30 %}
           {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+          {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+          {% include 'includes/toasts/toast_info.html' %}
         {% endif %}
-      {% endif %}
+      {% endwith %}
     {% endfor %}
   </div>
   {% endif %}
