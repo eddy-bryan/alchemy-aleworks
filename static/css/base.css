@@ -140,6 +140,7 @@ hr {
 
 #messages-container {
     z-index: 99999;
+    margin-top: 151px;
 }
 
 /* Utility */

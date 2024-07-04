@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from inventory.models import Beer, MerchItem
 
 def view_bag(request):
@@ -13,6 +14,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id, item_type):
     """Adds a number of items to the bag depending on the selected quantity"""
+    product = get_object_or_404(Beer if item_type == 'beer' else MerchItem, pk=item_id)
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -30,17 +32,21 @@ def add_to_bag(request, item_id, item_type):
                 bag[key]['items_by_size'][size] = quantity
         else:
             bag[key] = {'items_by_size': {size: quantity}}
+        messages.success(request, f'{quantity} × {product.name} ({size.upper()}) added to bag.')
     else:
         if key in bag:
             bag[key]['quantity'] += quantity
         else:
             bag[key] = {'quantity': quantity}
+        messages.success(request, f'{quantity} × {product.name} added to bag.')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
 
 def update_bag(request, item_type, item_id):
     """Update the quantity of an item in the bag."""
+    product = get_object_or_404(Beer if item_type == 'beer' else MerchItem, pk=item_id)
+
     quantity = int(request.POST.get('quantity'))
     size = request.POST.get('size', None)
     bag = request.session.get('bag', {})
@@ -50,16 +56,20 @@ def update_bag(request, item_type, item_id):
         if key in bag and 'items_by_size' in bag[key]:
             if quantity > 0:
                 bag[key]['items_by_size'][size] = quantity
+                messages.success(request, f'{quantity} × {product.name} ({size.upper()}) updated in your bag.')
             else:
                 del bag[key]['items_by_size'][size]
                 if not bag[key]['items_by_size']:
                     del bag[key]
+                    messages.success(request, f'{product.name} ({size.upper()}) removed from your bag.')
     else:
         if key in bag:
             if quantity > 0:
                 bag[key]['quantity'] = quantity
+                messages.success(request, f'{quantity} × {product.name} updated in your bag.')
             else:
                 del bag[key]
+                messages.success(request, f'{product.name} removed from your bag.')
 
     request.session['bag'] = bag
     return redirect('view_bag')

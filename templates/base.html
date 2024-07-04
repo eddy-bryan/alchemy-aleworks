@@ -68,7 +68,8 @@
     <!-- Promo Banner -->
     <div id="promo-banner" class="row text-center">
       <div class="col text-white align-items-center justify-content-center">
-        <p class="text-uppercase font-weight-normal p-0 m-0">Free delivery when you spend £{{ free_delivery_threshold }} or more!</p>
+        <p class="text-uppercase font-weight-normal p-0 m-0">Free delivery when you spend £{{ free_delivery_threshold }}
+          or more!</p>
       </div>
     </div>
 
@@ -154,7 +155,7 @@
               <i class="fa-solid fa-cart-shopping fa-lg"></i>
               <span class="align-middle font-weight-normal">
                 {% if product_count %}
-                  {{ product_count }}
+                {{ product_count }}
                 {% endif %}
               </span>
             </a>
@@ -196,25 +197,16 @@
         </ul>
       </div>
     </nav>
-
-    <!-- Messages -->
-    {% if messages %}
-    <div id="messages-container" class="row w-100 position-fixed bg-gray">
-      <div class="mx-auto col-12 col-lg-6">
-        {% for message in messages %}
-        <div class="d-flex justify-content-between alert alert-dismissible fade show {{ message.tags }} py-2 px-0 m-0" role="alert">
-          <p class="my-0">
-            {{ message | safe }}
-          </p>
-          <button type="button" class="btn-close border-0" data-bs-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">X</span>
-          </button>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
   </header>
+
+  <!-- Messages -->
+  {% if messages %}
+  <div id="messages-container" class="fixed-top bg-transparent w-100">
+    {% for message in messages %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% endfor %}
+  </div>
+  {% endif %}
 
   <main>
     <!-- Content Block -->
@@ -222,7 +214,8 @@
     {% endblock %}
 
     <!-- Age Verification Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded-0 text-center text-uppercase bg-gray">
           <div class="modal-header border-0">
@@ -444,6 +437,26 @@
 
   <!-- Additional JavaScript loaded after page content -->
   {% block end_js %}
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // Show the toast initially
+      $('.toast').toast('show');
+
+      // Close toast on click outside
+      $(document).on('click', function (e) {
+      // Check if the click target is not within the toast area
+      if (!$(e.target).closest('.toast').length) {
+      // Close the toast
+      $('.toast').toast('hide');
+      }
+      });
+
+      // Prevent propagation of click events inside the toast
+      $('.toast').on('click', function(e) {
+      e.stopPropagation();
+      });
+      });
+  </script>
   {% endblock %}
 </body>
 
