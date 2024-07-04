@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extended_title %}| Bag{% endblock %}
 
@@ -46,7 +47,7 @@
               <!-- Price -->
               <p class="my-0">£{{ item.product.price }}</p>
               <!-- Subtotal -->
-              <p class="my-0">£{{ item.item_total|floatformat:2 }}</p>
+              <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
             </td>
           </tr>
           {% endfor %}
