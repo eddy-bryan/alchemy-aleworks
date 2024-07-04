@@ -62,6 +62,8 @@ def update_bag(request, item_type, item_id):
                 if not bag[key]['items_by_size']:
                     del bag[key]
                     messages.success(request, f'{product.name} ({size.upper()}) removed from your bag.')
+        else:
+            messages.warning(request, f'The item you are trying to update is not in your bag.')
     else:
         if key in bag:
             if quantity > 0:
@@ -70,6 +72,8 @@ def update_bag(request, item_type, item_id):
             else:
                 del bag[key]
                 messages.success(request, f'{product.name} removed from your bag.')
+        else:
+            messages.warning(request, f'The item you are trying to update is not in your bag.')
 
     request.session['bag'] = bag
     return redirect('view_bag')

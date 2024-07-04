@@ -11,20 +11,24 @@
     <div class="d-flex flex-wrap justify-content-center my-3">
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
+          <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
+            alt="{{ core_range_beer.name }}">
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Core Range</h5>
-            <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
+            <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase
+              our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
           </div>
           <a class="btn-gray" href="{% url 'beers' %}?limited_edition=False">Shop Now</a>
         </div>
       </div>
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
+          <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
+            alt="{{ limited_edition_beer.name }}">
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Limited Edition</h5>
-            <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These exclusive releases are available for a limited time only.</p>
+            <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These
+              exclusive releases are available for a limited time only.</p>
           </div>
           <a class="btn-gray" href="{% url 'beers' %}?limited_edition=True">Shop Now</a>
         </div>
@@ -43,13 +47,18 @@
         <!-- Preserve limited_edition parameter -->
         <input type="hidden" name="limited_edition" value="{{ request.GET.limited_edition }}">
         <label for="sort_by" class="form-label visually-hidden my-0">Sort by:</label>
-        <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0" onchange="this.form.submit()">
+        <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0">
           <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Name Ascending</option>
-          <option value="name_desc" {% if request.GET.sort_by == 'name_desc' %}selected{% endif %}>Name Descending</option>
-          <option value="price_asc" {% if request.GET.sort_by == 'price_asc' %}selected{% endif %}>Price Ascending</option>
-          <option value="price_desc" {% if request.GET.sort_by == 'price_desc' %}selected{% endif %}>Price Descending</option>
-          <option value="alcohol_asc" {% if request.GET.sort_by == 'alcohol_asc' %}selected{% endif %}>Alcohol Content Ascending</option>
-          <option value="alcohol_desc" {% if request.GET.sort_by == 'alcohol_desc' %}selected{% endif %}>Alcohol Content Descending</option>
+          <option value="name_desc" {% if request.GET.sort_by == 'name_desc' %}selected{% endif %}>Name Descending
+          </option>
+          <option value="price_asc" {% if request.GET.sort_by == 'price_asc' %}selected{% endif %}>Price Ascending
+          </option>
+          <option value="price_desc" {% if request.GET.sort_by == 'price_desc' %}selected{% endif %}>Price Descending
+          </option>
+          <option value="alcohol_asc" {% if request.GET.sort_by == 'alcohol_asc' %}selected{% endif %}>Alcohol Content
+            Ascending</option>
+          <option value="alcohol_desc" {% if request.GET.sort_by == 'alcohol_desc' %}selected{% endif %}>Alcohol Content
+            Descending</option>
         </select>
       </form>
 
@@ -81,4 +90,33 @@
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block end_js %}
+<script type="text/javascript">
+  // Function to save scroll position
+  function saveScrollPosition() {
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+  }
+
+  // Function to restore scroll position
+  function restoreScrollPosition() {
+    let scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition !== null) {
+      $(window).scrollTop(parseInt(scrollPosition));
+      sessionStorage.removeItem('scrollPosition');
+    }
+  }
+
+  // Restore scroll position when the page loads
+  $(document).ready(function () {
+    restoreScrollPosition();
+  });
+
+  // Save scroll position before form submission
+  $(document).on('change', '#sort_by', function () {
+    saveScrollPosition();
+    $(this).closest('form').submit();
+  });
+</script>
 {% endblock %}
