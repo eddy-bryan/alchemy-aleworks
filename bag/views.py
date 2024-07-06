@@ -59,8 +59,6 @@ def update_bag(request, item_type, item_id):
 
     try:
         quantity = int(request.POST.get('quantity'))
-        if quantity <= 0:
-            raise ValidationError("Quantity must be greater than zero.")
 
         size = request.POST.get('size', None)
         bag = request.session.get('bag', {})
