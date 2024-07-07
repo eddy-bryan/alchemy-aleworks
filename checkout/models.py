@@ -1,5 +1,7 @@
 import uuid
 
+from decimal import Decimal
+
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
@@ -30,12 +32,13 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = sum(item.lineitem_total for item in self.beer_line_items.all()) + sum(item.lineitem_total for item in self.merch_line_items.all())
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_fee = settings.STANDARD_DELIVERY_COST
+        self.order_total = sum(Decimal(item.lineitem_total) for item in self.beer_line_items.all()) + \
+                           sum(Decimal(item.lineitem_total) for item in self.merch_line_items.all()) or 0
+        if self.order_total < Decimal(settings.FREE_DELIVERY_THRESHOLD):
+            self.delivery_fee = Decimal(settings.STANDARD_DELIVERY)
         else:
-            self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+            self.delivery_fee = Decimal(0)
+        self.grand_total = self.order_total + self.delivery_fee
         self.save()
 
 
