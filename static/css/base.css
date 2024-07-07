@@ -35,6 +35,10 @@ hr {
     height: 2px;
 }
 
+th {
+    font-weight: 900;
+}
+
 #promo-banner {
     font-size: 14px;
     background-color: #545454;
