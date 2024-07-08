@@ -48,7 +48,7 @@ def webhook(request):
         return HttpResponse(status=400)
     except Exception as e:
         # Return a 400 error for any other exceptions
-        return HttpResponse(content=str(e), status=400)
+        return HttpResponse(content=e, status=400)
 
     # Initialize the webhook handler
     handler = StripeWH_Handler(request)
