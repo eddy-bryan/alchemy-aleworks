@@ -9,10 +9,13 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from inventory.models import Beer, MerchItem
+from profiles.models import CustomerProfile
 
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    customer_profile = models.ForeignKey(CustomerProfile, on_delete=models.SET_NULL,
+                                         null=True, blank=True, related_name='orders')
     customer_name = models.CharField(max_length=50, null=False, blank=False)
     customer_address1 = models.CharField(max_length=80, null=False, blank=False)
     customer_address2 = models.CharField(max_length=80, null=True, blank=True)

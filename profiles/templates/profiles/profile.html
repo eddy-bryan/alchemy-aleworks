@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block extended_title %}| Profile{% endblock %}
+
+{% block content %}
+<div class="overflow-hidden position-relative text-black py-4 bg-gray">
+    <div class="row">
+        <div class="text-center text-uppercase col-12">
+            <h3 class="mb-3">My Profile</h3>
+            <hr class="bg-black my-0">
+        </div>
+    </div>
+</div>
+{% endblock %}
