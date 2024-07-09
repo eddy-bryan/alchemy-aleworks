@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="overflow-hidden position-relative text-black py-4 bg-gray">
+        <div class="row">
+            <div class="text-center text-uppercase col-12">
+                <h3 class="mb-3">{% block allauth_page_title %}{% endblock %}</h3>
+                <hr class="bg-black my-0">
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6 offset-lg-3 mt-3 allauth-form-inner-content">
+            {% block inner_content %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

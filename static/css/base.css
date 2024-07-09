@@ -147,6 +147,66 @@ th {
     margin-top: 151px;
 }
 
+/* Modified version of 'Allauth form formatting' from Boutique Ado project walkthrough */
+
+.allauth-form-inner-content p {
+    font-size: 1rem;
+}
+
+.allauth-form-inner-content input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    margin-bottom: .5rem;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    width: 100%;
+}
+
+.allauth-form-inner-content .checkboxinput {
+    margin: .3rem 0 0 .5rem;
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+	/* btn */
+    background-color: #202020;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 900 !important;
+    padding: 13px 15px;
+    margin: 0 15px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+    background-color: #545454;
+    color: #fff;
+    text-decoration: none;
+}
+
+.allauth-form-inner-content a {
+	color: #17a2b8; /* text-info */
+}
+
 /* Utility */
 .hover-gray:hover {
     color: #545454 !important;
