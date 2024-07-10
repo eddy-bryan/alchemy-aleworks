@@ -286,7 +286,10 @@ th {
 
 /* Reduced Font Sizes For Mobile */
 @media (max-width: 500px) {
-    p, li, .text-small {
+    .small {
+        font-size: .6125rem;
+    }
+    p, li, .text-small, a, button, label, legend {
         font-size: 0.7rem;
     }
     h1 {

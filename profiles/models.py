@@ -17,7 +17,7 @@ class CustomerProfile(models.Model):
     default_customer_city = models.CharField(max_length=40, null=True, blank=True)
     default_customer_county = models.CharField(max_length=80, null=True, blank=True)
     default_customer_postcode = models.CharField(max_length=20, null=True, blank=True)
-    default_customer_country = CountryField(blank_label='Country *', null=True, blank=True)
+    default_customer_country = CountryField(blank_label='Country', null=True, blank=True)
     default_customer_phone = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):

@@ -72,12 +72,12 @@
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-3">
-                    <legend class="fieldset-label px-2 w-auto">Details</legend>
+                    <legend class="fieldset-label text-uppercase px-2 w-auto">Details</legend>
                     {{ order_form.customer_name | as_crispy_field }}
                     {{ order_form.customer_email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-3">
-                    <legend class="fieldset-label px-2 w-auto">Delivery</legend>
+                    <legend class="fieldset-label text-uppercase px-2 w-auto">Delivery</legend>
                     {{ order_form.customer_address1 | as_crispy_field }}
                     {{ order_form.customer_address2 | as_crispy_field }}
                     {{ order_form.customer_city | as_crispy_field }}
@@ -89,7 +89,7 @@
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
                             profile</label>
-                        <input class="form-check-input ml-2 mr-0 position-relative" type="checkbox" id="id-save-info" name="save-info"
+                        <input class="form-check-input ml-2 mr-0 mt-0 position-relative align-middle" type="checkbox" id="id-save-info" name="save-info"
                             checked>
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
@@ -100,7 +100,7 @@
                     </div>
                 </fieldset>
                 <fieldset class="px-3">
-                    <legend class="fieldset-label px-2 w-auto">Payment</legend>
+                    <legend class="fieldset-label text-uppercase px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-3" id="card-element"></div>
 
@@ -109,14 +109,14 @@
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
-                <div class="submit-button text-right my-3">
-                    <a href="{% url 'view_bag' %}" class="btn-gray rounded-0 mr-0">
+                <div class="submit-button text-right mt-3">
+                    <a href="{% url 'view_bag' %}" class="btn-gray mr-0">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn-gray rounded-0">
+                    <button id="submit-button" class="btn-gray">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
