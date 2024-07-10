@@ -193,6 +193,17 @@
             </div>
         </div>
     </div>
+
+    {% if from_profile %}
+        <div class="text-right mt-3">
+            <a href="{% url 'profile' %}" class="btn-gray mr-0">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="font-weight-bold">Back to Profile</span>
+            </a>
+        </div>
+    {% endif %}
 </div>
 </div>
 {% endblock %}

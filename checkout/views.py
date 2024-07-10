@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import OrderForm
 from .models import Order, BeerLineItem, MerchLineItem
 from inventory.models import Beer, MerchItem
+from profiles.forms import CustomerProfileForm
+from profiles.models import CustomerProfile
 from bag.contexts import bag_contents
 
 import stripe
@@ -116,7 +118,25 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        # Attempt to prefill the form with any info the user maintains in their profile
+        if request.user.is_authenticated:
+            try:
+                profile = CustomerProfile.objects.get(customer=request.user)
+                order_form = OrderForm(initial={
+                    'customer_name': profile.customer.get_full_name(),
+                    'customer_email': profile.customer.email,
+                    'customer_phone': profile.default_customer_phone,
+                    'customer_country': profile.default_customer_country,
+                    'customer_postcode': profile.default_customer_postcode,
+                    'customer_city': profile.default_customer_city,
+                    'customer_address1': profile.default_customer_address1,
+                    'customer_address2': profile.default_customer_address2,
+                    'customer_county': profile.default_customer_county,
+                })
+            except CustomerProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         message.warning(request, 'Stripe public key is missing. Ensure it is correctly set in your environment.')
@@ -134,6 +154,28 @@ def checkout(request):
 def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        profile = CustomerProfile.objects.get(customer=request.user)
+        # Attach the user's profile to the order
+        order.customer_profile = profile
+        order.save()
+
+        # Save the user's info
+        if save_info:
+            profile_data = {
+                'default_customer_phone': order.customer_phone,
+                'default_customer_country': order.customer_country,
+                'default_customer_postcode': order.customer_postcode,
+                'default_customer_city': order.customer_city,
+                'default_customer_address1': order.customer_address1,
+                'default_customer_address2': order.customer_address2,
+                'default_customer_county': order.customer_county,
+            }
+            customer_profile_form = CustomerProfileForm(profile_data, instance=profile)
+            if customer_profile_form.is_valid():
+                customer_profile_form.save()
+
     messages.success(request, f'Your order has been successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.customer_email}.')
 
     if 'bag' in request.session:
