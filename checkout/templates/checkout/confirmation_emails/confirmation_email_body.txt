@@ -1,0 +1,30 @@
+Hi {{ order.full_name }},
+
+Thank you for choosing Alchemy Aleworks!
+
+We're delighted to confirm that your order ({{ order.order_number }}) has been received. Below you'll find all the details:
+
+ORDER DETAILS:
+Order Number: {{ order.order_number }}
+Date: {{ order.order_date|date:"d/m/Y" }}
+Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_fee }}
+Grand Total: £{{ order.grand_total }}
+
+DELIVERY INFORMATION:
+Your order will be shipped to:
+{{ order.customer_address1 }}
+{% if order.customer_address2 %}{{ order.customer_address2 }}{% endif %}
+{% if order.customer_address2 %}{{ order.customer_county }}{% endif %}
+{% if order.customer_address2 %}{{ order.customer_postcode }}{% endif %}
+{{ order.customer_city }}
+{{ customer_country }}
+
+CONTACT NUMBER:
+{{ order.customer_phone }}
+
+If you have any questions or need assistance, please don't hesitate to contact us at {{ contact_email }}.
+
+Cheers,
+
+The Alchemy Aleworks Team

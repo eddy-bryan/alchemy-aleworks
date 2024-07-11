@@ -1,0 +1,1 @@
+Your Alchemy Aleworks order {{ order.order_number }} has been received!
