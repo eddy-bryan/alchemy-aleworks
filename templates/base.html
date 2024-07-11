@@ -143,11 +143,14 @@
             </a>
             <div class="dropdown-menu border-black rounded-0" aria-labelledby="account-menu">
               {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-              <a href="" class="text-black text-uppercase nav-link">Product Management</a>
-              {% endif %}
               <a href="{% url 'profile' %}" class="text-black text-uppercase nav-link">My Profile</a>
               <a href="{% url 'account_logout' %}" class="text-black text-uppercase nav-link">Logout</a>
+              <div class="dropdown-divider"></div> <!-- Divider before Product Management -->
+              {% if request.user.is_superuser %}
+              <span class="dropdown-item-text text-black text-uppercase">Product Management</span>
+              <a href="{% url 'add_beer' %}" class="text-black text-uppercase dropdown-item">Add Beer</a>
+              <a href="{% url 'add_merch' %}" class="text-black text-uppercase dropdown-item">Add Merch</a>
+              {% endif %}
               {% else %}
               <a href="{% url 'account_signup' %}" class="text-black text-uppercase nav-link">Register</a>
               <a href="{% url 'account_login' %}" class="text-black text-uppercase nav-link">Login</a>

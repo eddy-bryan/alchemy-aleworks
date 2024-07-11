@@ -17,10 +17,10 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 col-lg-6 order-lg-last px-4 mb-3 pl-lg-0">
-            <p class="text-uppercase">Order History</p>
-            <div class="order-history table-responsive">
-                <table class="table table-sm table-borderless">
-                    <thead>
+            <p class="text-uppercase px-4">Order History</p>
+            <div class="order-history table-responsive px-3">
+                <table class="table table-sm table-borderless border-black bg-white">
+                    <thead class="title-border">
                         <tr>
                             <th>Order</th>
                             <th>Date</th>
@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         {% for order in orders %}
-                            <tr class="small">
+                            <tr class="small border-black">
                                 <td class="col-2 small">
                                     <a class="small" href="{% url 'order_history' order.order_number %}"
                                     title="{{ order.order_number }}">

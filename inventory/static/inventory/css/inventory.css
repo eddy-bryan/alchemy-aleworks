@@ -1,0 +1,36 @@
+#add-beer-form .form-control,
+#add-merch-item-form .form-control {
+    color: #000000;
+}
+
+#add-beer-form input[type="text"],
+#add-beer-form input[type="number"],
+#add-beer-form input[type="file"],
+#add-beer-form textarea,
+#add-merch-item-form input[type="text"],
+#add-merch-item-form input[type="number"],
+#add-merch-item-form input[type="file"],
+#add-merch-item-form textarea {
+    box-sizing: border-box;
+    padding: 10px 12px;
+    margin-bottom: .5rem;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    width: 100%;
+}
+
+#add-beer-form input[type="text"],
+#add-beer-form input[type="number"],
+#add-merch-item-form input[type="text"],
+#add-merch-item-form input[type="number"] {
+    height: 40px;
+}
+
+#add-beer-form input::placeholder,
+#add-merch-item-form input::placeholder {
+    color: #aab7c4;
+}

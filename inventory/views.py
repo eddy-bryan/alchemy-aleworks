@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
+
 from .models import Beer, MerchItem
+from .forms import BeerForm, MerchItemForm
 
 def beers(request):
     """ A view to show, filter and sort all beers. """
@@ -125,3 +127,27 @@ def merch_detail(request, merch_id):
         'random_merch': random_merch,
     }
     return render(request, 'inventory/merch_detail.html', context)
+
+def add_beer(request):
+    """
+    A view for admins to be able to add beers to the store without needing to use the admin interface.
+    """
+    form = BeerForm()
+    template = 'inventory/add_beer.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+def add_merch(request):
+    """
+    A view for admins to be able to add merch items to the store without needing to use the admin interface.
+    """
+    form = MerchItemForm()
+    template = 'inventory/add_merch.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

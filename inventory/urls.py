@@ -5,6 +5,8 @@ urlpatterns = [
     path('beers/', views.beers, name='beers'),
     path('merch/', views.merch, name='merch'),
     path('search/', views.search_view, name='search'),
-    path('beers/<beer_id>/', views.beer_detail, name='beer_detail'),
-    path('merch/<merch_id>/', views.merch_detail, name='merch_detail'),
+    path('beers/<int:beer_id>/', views.beer_detail, name='beer_detail'),
+    path('merch/<int:merch_id>/', views.merch_detail, name='merch_detail'),
+    path('add_beer/', views.add_beer, name='add_beer'),
+    path('add_merch/', views.add_merch, name='add_merch'),
 ]
