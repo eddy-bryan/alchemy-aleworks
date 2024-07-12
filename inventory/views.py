@@ -173,3 +173,56 @@ def add_merch(request):
     }
 
     return render(request, template, context)
+
+def edit_beer(request, beer_id):
+    """
+    A view for admins to be able to edit beers in the store without needing to use the admin interface.
+    """
+    beer = get_object_or_404(Beer, pk=beer_id)
+    if request.method == 'POST':
+        form = BeerForm(request.POST, request.FILES, instance=beer)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Beer successfully updated!')
+            return redirect(reverse('beer_detail', args=[beer.id]))
+        else:
+            messages.error(request, 'Failed to update beer. Please ensure the form is valid.')
+    else:
+        form = BeerForm(instance=beer)
+        messages.info(request, f'You are editing {beer.name}')
+
+    template = 'inventory/edit_beer.html'
+    context = {
+        'form': form,
+        'beer': beer,
+    }
+
+    return render(request, template, context)
+
+def edit_merch(request, beer_id):
+    """
+    A view for admins to be able to edit merch items in the store without needing to use the admin interface.
+    """
+    merch = get_object_or_404(MerchItem, pk=merch_id)
+    if request.method == 'POST':
+        form = MerchItemForm(request.POST, request.FILES, instance=merch)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Merch item successfully updated!')
+            return redirect(reverse('merch_detail', args=[merch.id]))
+        else:
+            messages.error(request, 'Failed to update merch item. Please ensure the form is valid.')
+    else:
+        form = MerchItemForm(instance=merch)
+        messages.info(request, f'You are editing {merch.name}')
+
+    form = MerchItemForm(instance=merch)
+    messages.info(request, f'You are editing {merch.name}')
+
+    template = 'inventory/edit_merch.html'
+    context = {
+        'form': form,
+        'merch': merch,
+    }
+
+    return render(request, template, context)
