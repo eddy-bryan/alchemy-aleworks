@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import Beer, MerchItem
 from .forms import BeerForm, MerchItemForm
@@ -128,10 +129,15 @@ def merch_detail(request, merch_id):
     }
     return render(request, 'inventory/merch_detail.html', context)
 
+@login_required
 def add_beer(request):
     """
     A view for admins to be able to add beers to the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = BeerForm(request.POST, request.FILES)
         if form.is_valid():
@@ -151,10 +157,15 @@ def add_beer(request):
 
     return render(request, template, context)
 
+@login_required
 def add_merch(request):
     """
     A view for admins to be able to add merch items to the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = MerchItemForm(request.POST, request.FILES)
         if form.is_valid():
@@ -174,10 +185,15 @@ def add_merch(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_beer(request, beer_id):
     """
     A view for admins to be able to edit beers in the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     beer = get_object_or_404(Beer, pk=beer_id)
     if request.method == 'POST':
         form = BeerForm(request.POST, request.FILES, instance=beer)
@@ -199,10 +215,15 @@ def edit_beer(request, beer_id):
 
     return render(request, template, context)
 
+@login_required
 def edit_merch(request, merch_id):
     """
     A view for admins to be able to edit merch items in the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     merch = get_object_or_404(MerchItem, pk=merch_id)
     if request.method == 'POST':
         form = MerchItemForm(request.POST, request.FILES, instance=merch)
@@ -227,19 +248,29 @@ def edit_merch(request, merch_id):
 
     return render(request, template, context)
 
+@login_required
 def delete_beer(request, beer_id):
     """
     A view for admins to be able to delete beers from the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     beer = get_object_or_404(Beer, pk=beer_id)
     beer.delete()
     messages.success(request, 'Beer deleted successfully!')
     return redirect(reverse('beers'))
 
+@login_required
 def delete_merch(request, merch_id):
     """
     A view for admins to be able to delete merch items from the store without needing to use the admin interface.
     """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     merch = get_object_or_404(MerchItem, pk=merch_id)
     merch.delete()
     messages.success(request, 'Merch item deleted successfully!')

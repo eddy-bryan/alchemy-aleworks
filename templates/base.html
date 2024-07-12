@@ -145,8 +145,8 @@
               {% if request.user.is_authenticated %}
               <a href="{% url 'profile' %}" class="text-black text-uppercase nav-link">My Profile</a>
               <a href="{% url 'account_logout' %}" class="text-black text-uppercase nav-link">Logout</a>
-              <div class="dropdown-divider"></div> <!-- Divider before Product Management -->
               {% if request.user.is_superuser %}
+              <div class="dropdown-divider"></div> <!-- Divider before Product Management -->
               <span class="dropdown-item-text text-black text-uppercase">Product Management</span>
               <a href="{% url 'add_beer' %}" class="text-black text-uppercase dropdown-item">Add Beer</a>
               <a href="{% url 'add_merch' %}" class="text-black text-uppercase dropdown-item">Add Merch</a>
