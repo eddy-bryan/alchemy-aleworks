@@ -9,7 +9,11 @@
     <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column px-5 px-lg-0 mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          {% if merch.image %}
           <img src="{{ merch.image.url }}" class="card-img-top border-black large-product-image" alt="{{ merch.name }}">
+          {% else %}
+          <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black large-product-image" alt="{{ merch.name }}">
+          {% endif %}
         </div>
       </div>
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">

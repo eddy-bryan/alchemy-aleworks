@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 
@@ -132,6 +132,17 @@ def add_beer(request):
     """
     A view for admins to be able to add beers to the store without needing to use the admin interface.
     """
+    if request.method == 'POST':
+        form = BeerForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Beer successfully added!')
+            return redirect(reverse('add_beer'))
+        else:
+            messages.error(request, 'Failed to add beer. Please ensure the form is valid.')
+    else:
+        form = BeerForm()
+        
     form = BeerForm()
     template = 'inventory/add_beer.html'
     context = {
@@ -144,6 +155,17 @@ def add_merch(request):
     """
     A view for admins to be able to add merch items to the store without needing to use the admin interface.
     """
+    if request.method == 'POST':
+        form = MerchItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Merch item successfully added!')
+            return redirect(reverse('add_merch'))
+        else:
+            messages.error(request, 'Failed to add merch item. Please ensure the form is valid.')
+    else:
+        form = MerchItemForm()
+
     form = MerchItemForm()
     template = 'inventory/add_merch.html'
     context = {

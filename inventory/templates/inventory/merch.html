@@ -11,7 +11,11 @@
     <div class="d-flex flex-wrap justify-content-center my-3">
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          {% if random_apparel.image %}
           <img src="{{ random_apparel.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_apparel.name }}">
+          {% else %}
+          <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_apparel.name }}">
+          {% endif %}
           <div class="card-body py-0 my-3">
             <h5 class="card-title mb-2">Apparel & Accessories</h5>
             <p class="card-text">Show off your love for Alchemy Aleworks with our stylish and practical gear. Perfect for any fan, our apparel and accessories combine comfort and functionality, allowing you to represent your favourite brewery wherever you go.</p>
@@ -21,7 +25,11 @@
       </div>
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
+          {% if random_drinkware.image %}
           <img src="{{ random_drinkware.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_drinkware.name }}">
+          {% else %}
+          <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_drinkware.name }}">
+          {% endif %}
           <div class="card-body py-0 my-3">
             <h5 class="card-title mb-2">Drinkware</h5>
             <p class="card-text">Enhance your drinking experience with our specially designed items. Crafted to complement our brews, these pieces are perfect additions to any home bar, ensuring every sip is enjoyed to the fullest</p>
@@ -65,7 +73,11 @@
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
         <a href="{% url 'merch_detail' merch_item.id %}" class="text-black hover-gray mx-4">
           <div class="card border-0 align-items-center">
+            {% if merch_item.image %}
             <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+            {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title mb-2">{{ merch_item.name }}</h5>
               <hr class="bg-black my-0">

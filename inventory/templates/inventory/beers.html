@@ -11,8 +11,11 @@
     <div class="d-flex flex-wrap justify-content-center my-3">
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
-            alt="{{ core_range_beer.name }}">
+          {% if core_range_beer.image %}
+          <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
+          {% else %}
+          <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
+          {% endif %}
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Core Range</h5>
             <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase
@@ -23,8 +26,11 @@
       </div>
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
-          <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
-            alt="{{ limited_edition_beer.name }}">
+          {% if limited_edition_beer.image %}
+          <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
+          {% else %}
+          <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
+          {% endif %}
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Limited Edition</h5>
             <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These
@@ -76,7 +82,11 @@
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray mx-4">
           <div class="card border-0 align-items-center">
+            {% if beer.image %}
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title my-0">{{ beer.name }}</h5>
               <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>

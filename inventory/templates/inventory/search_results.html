@@ -17,8 +17,11 @@
             <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
                 <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray mx-4">
                     <div class="card border-0 align-items-center">
-                        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image"
-                            alt="{{ beer.name }}">
+                        {% if beer.image %}
+                        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+                        {% endif %}
                         <div class="card-body p-0">
                             <h5 class="card-title my-0">{{ beer.name }}</h5>
                             <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
@@ -47,8 +50,11 @@
             <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
                 <a href="{% url 'merch_detail' merch_item.id %}" class="text-black hover-gray mx-4">
                     <div class="card border-0 align-items-center">
-                        <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image"
-                            alt="{{ merch_item.name }}">
+                        {% if merch_item.image %}
+                        <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+                        {% endif %}
                         <div class="card-body p-0">
                             <h5 class="card-title mb-2">{{ merch_item.name }}</h5>
                             <hr class="bg-black my-0">
