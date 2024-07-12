@@ -48,6 +48,15 @@
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
           </div>
+          {% if request.user.is_superuser %}
+          <div>
+            <small class="font-weight-bold">
+              <a href="{% url 'edit_merch' merch.id %}" class="text-info">Edit</a>
+              <span>|</span>
+              <a href="{% url 'delete_merch' merch.id %}" class="text-danger font-weight-bold">Delete</a>
+            </small>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -63,7 +72,11 @@
       <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
         <a href="{% url 'merch_detail' merch.id %}" class="text-black hover-gray">
           <div class="card border-0 align-items-center">
+            {% if merch.image %}
             <img src="{{ merch.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch.name }}">
+            {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title mb-2">{{ merch.name }}</h5>
               <hr class="bg-black my-0">

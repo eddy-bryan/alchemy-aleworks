@@ -39,6 +39,15 @@
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
           </div>
+          {% if request.user.is_superuser %}
+          <div>
+            <small class="font-weight-bold">
+              <a href="{% url 'edit_beer' beer.id %}" class="text-info">Edit</a>
+              <span>|</span>
+              <a href="{% url 'delete_beer' beer.id %}" class="text-danger font-weight-bold">Delete</a>
+            </small>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -54,7 +63,11 @@
       <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray">
           <div class="card border-0 align-items-center">
+            {% if beer.image %}
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            {% else %}
+            <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title my-0">{{ beer.name }}</h5>
               <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>

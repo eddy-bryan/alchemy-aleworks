@@ -11,4 +11,6 @@ urlpatterns = [
     path('add_merch/', views.add_merch, name='add_merch'),
     path('edit_beer/<int:beer_id>/', views.edit_beer, name='edit_beer'),
     path('edit_merch/<int:merch_id>/', views.edit_merch, name='edit_merch'),
+    path('delete_beer/<int:beer_id>/', views.delete_beer, name='delete_beer'),
+    path('delete_merch/<int:merch_id>/', views.delete_merch, name='delete_merch'),
 ]

@@ -135,9 +135,9 @@ def add_beer(request):
     if request.method == 'POST':
         form = BeerForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            beer = form.save()
             messages.success(request, 'Beer successfully added!')
-            return redirect(reverse('add_beer'))
+            return redirect(reverse('beer_detail', args=[beer.id]))
         else:
             messages.error(request, 'Failed to add beer. Please ensure the form is valid.')
     else:
@@ -158,9 +158,9 @@ def add_merch(request):
     if request.method == 'POST':
         form = MerchItemForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            merch = form.save()
             messages.success(request, 'Merch item successfully added!')
-            return redirect(reverse('add_merch'))
+            return redirect(reverse('merch_detail', args=[merch.id]))
         else:
             messages.error(request, 'Failed to add merch item. Please ensure the form is valid.')
     else:
@@ -199,7 +199,7 @@ def edit_beer(request, beer_id):
 
     return render(request, template, context)
 
-def edit_merch(request, beer_id):
+def edit_merch(request, merch_id):
     """
     A view for admins to be able to edit merch items in the store without needing to use the admin interface.
     """
@@ -226,3 +226,21 @@ def edit_merch(request, beer_id):
     }
 
     return render(request, template, context)
+
+def delete_beer(request, beer_id):
+    """
+    A view for admins to be able to delete beers from the store without needing to use the admin interface.
+    """
+    beer = get_object_or_404(Beer, pk=beer_id)
+    beer.delete()
+    messages.success(request, 'Beer deleted successfully!')
+    return redirect(reverse('beers'))
+
+def delete_merch(request, merch_id):
+    """
+    A view for admins to be able to delete merch items from the store without needing to use the admin interface.
+    """
+    merch = get_object_or_404(MerchItem, pk=merch_id)
+    merch.delete()
+    messages.success(request, 'Merch item deleted successfully!')
+    return redirect(reverse('merch'))
