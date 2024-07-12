@@ -12,3 +12,7 @@ def about(request):
         'random_beers': random_beers,
     }
     return render(request, 'pages/about.html', context)
+
+def privacy_policy(request):
+    """ Render the privacy policy page. """
+    return render(request, 'pages/privacy_policy.html')
