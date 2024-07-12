@@ -5,11 +5,9 @@
 
 #add-beer-form input[type="text"],
 #add-beer-form input[type="number"],
-#add-beer-form input[type="file"],
 #add-beer-form textarea,
 #add-merch-item-form input[type="text"],
 #add-merch-item-form input[type="number"],
-#add-merch-item-form input[type="file"],
 #add-merch-item-form textarea {
     box-sizing: border-box;
     padding: 10px 12px;
