@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extended_title %}| Orders and Returns{% endblock %}
+
+{% block content %}
+<div class="overflow-hidden position-relative py-4 bg-gray">
+    <div class="text-center text-uppercase col-12">
+        <h3 class="mb-3">Orders and Returns</h2>
+            <hr class="bg-black my-0">
+            <p class="mt-3 mb-0">Last Updated: 12/07/2024</p>
+    </div>
+</div>
+
+<div class="col-12 col-lg-6 offset-lg-3 p-3">
+    <div class="order-confirmation-wrapper p-2 border-black text-black">
+        <h4>Order Policy:</h4>
+        <ol>
+            <li>
+                <h5>Order Placement:</h5>
+                <ul>
+                    <li>Orders can be placed through our website alchemyaleworks.com or by contacting customer support at support@alchemyaleworks.com.</li>
+                    <li>By placing an order, you agree to our Terms and Conditions and acknowledge that you are legally capable of entering into a binding contract.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Order Confirmation:</h5>
+                <ul>
+                    <li>Upon placing an order, you will receive an email confirmation with details of your order.</li>
+                    <li>Please review the confirmation and notify us immediately of any discrepancies.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Payment:</h5>
+                <ul>
+                    <li>Payment must be made in full at the time of placing your order.</li>
+                    <li>We accept Visa, MasterCard, American Express (Amex), Discover, Diners Club, JCB, and UnionPay.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Order Cancellation:</h5>
+                <ul>
+                    <li>You may cancel your order within 24 hours of placing it, provided it has not yet been shipped or processed.</li>
+                    <li>To cancel, please contact us immediately at suppport@alchemyaleworks.com.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Out of Stock Items:</h5>
+                <ul>
+                    <li>In the event that an item you ordered is out of stock, we will notify you promptly and provide options for a replacement or refund.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h4>Returns and Refunds Policy:</h4>
+        <ol>
+            <li>
+                <h5>Returns Eligibility:</h5>
+                <ul>
+                    <li>We accept returns on merchendise items within 7 days of delivery, provided the items are unused, in their original packaging, and accompanied by proof of purchase.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Return Process:</h5>
+                <ul>
+                    <li>To initiate a return, please contact us at support@alchemyaleworks.com to obtain a Return Merchandise Authorization (RMA) number.</li>
+                    <li>Pack the item securely and include the RMA number on the package.</li>
+                    <li>Return shipping costs are the responsibility of the customer, except in cases of damaged or faulty items.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Refunds:</h5>
+                <ul>
+                    <li>Refunds will be processed within 5 days of receiving the returned item.</li>
+                    <li>Refunds will be issued to the original method of payment used during the purchase.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Damaged or Faulty Items:</h5>
+                <ul>
+                    <li>If you receive a damaged or faulty item, please contact us immediately with details and photographic evidence.</li>
+                    <li>We will arrange for a replacement or refund as soon as possible.</li>
+                </ul>
+            </li>
+            <li>
+                <h5>Exclusions:</h5>
+                <ul>
+                    <li>Certain items may not be eligible for returns due to hygiene reasons or if they have been personalised or customised.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

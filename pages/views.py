@@ -13,6 +13,14 @@ def about(request):
     }
     return render(request, 'pages/about.html', context)
 
+def orders_and_returns(request):
+    """ Render the orders and returns policy page. """
+    return render(request, 'pages/orders_and_returns.html')
+
 def privacy_policy(request):
     """ Render the privacy policy page. """
     return render(request, 'pages/privacy_policy.html')
+
+def terms_and_conditions(request):
+    """ Render the terms and conditions page. """
+    return render(request, 'pages/terms_and_conditions.html')
