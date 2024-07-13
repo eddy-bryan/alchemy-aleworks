@@ -21,58 +21,67 @@
         <div class="col-12 col-lg-6 order-lg-last px-4 pl-lg-0">
             <p class="text-uppercase px-4">Order Summary ({{ product_count }})</p>
             <div class="table-responsive rounded col-12 p-0">
-              <table class="table table-sm table-borderless text-black">
-                <thead>
-                  <tr class="text-small text-center">
-                    <th scope="col">Product Info</th>
-                    <th scope="col"></th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for item in bag_items %}
-                  <tr>
-                    <td class="p-3 col-4 col-md-3">
-                      {% if item.product.image %}
-                      <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                      {% else %}
-                        {% if item.item_type == 'beer' %}
-                        <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="img-fluid rounded">
-                        {% elif item.item_type == 'merch' %}
-                        <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="img-fluid rounded">
-                        {% endif %}
-                      {% endif %}
-                    </td>
-                    <td class="py-3 text-left d-flex justify-content-between">
-                      <div>
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                        {% if item.size %}
-                        <p class="my-0"><strong>Size: </strong>{{ item.size|upper }}</p>
-                        {% endif %}
-                        <p class="my-0 text-small font-weight-normal text-muted">SKU: {{ item.product.sku|upper }}</p>
-                      </div>
-                    </td>
-                    <td class="py-3 col-1 text-center">
-                        <p class="my-0">{{ item.quantity }}</p>
-                    </td>
-                    <td class="py-3 text-right col-1">
-                      <!-- Price -->
-                      <p class="my-0">£{{ item.product.price }}</p>
-                      <!-- Subtotal -->
-                      <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                    </td>
-                  </tr>
-                  {% endfor %}
-                  <tr>
-                    <td colspan="5" class="pt-5 text-right">
-                      <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
-                      <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                      <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                <table class="table table-sm table-borderless text-black">
+                    <thead>
+                        <tr class="text-small text-center">
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in bag_items %}
+                        <tr>
+                            <td class="p-3 col-4 col-md-3">
+                                {% if item.product.image %}
+                                <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                                {% else %}
+                                {% if item.item_type == 'beer' %}
+                                <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="img-fluid rounded">
+                                {% elif item.item_type == 'merch' %}
+                                <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="img-fluid rounded">
+                                {% endif %}
+                                {% endif %}
+                            </td>
+                            <td class="py-3 text-left d-flex justify-content-between">
+                                <div>
+                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                    {% if item.size %}
+                                    <p class="my-0"><strong>Size: </strong>{{ item.size|upper }}</p>
+                                    {% endif %}
+                                    <p class="my-0 text-small font-weight-normal text-muted">SKU:
+                                        {{ item.product.sku|upper }}</p>
+                                </div>
+                            </td>
+                            <td class="py-3 col-1 text-center">
+                                <p class="my-0">{{ item.quantity }}</p>
+                            </td>
+                            <td class="py-3 text-right col-1">
+                                <!-- Price -->
+                                <p class="my-0">£{{ item.product.price }}</p>
+                                <!-- Subtotal -->
+                                <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="5" class="pt-5 text-right">
+                                <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
+                                <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-0 mb-3 mx-4 small text-danger text-center">
+                    <span class="icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </span>
+                    <span><strong>Please note:</strong> Any products containing alcohol will require age verification
+                        upon delivery. Please ensure you have a valid form of identification available when receiving
+                        your order.</span>
+                </p>
             </div>
         </div>
         <div class="col-12 col-lg-6 px-4 pr-lg-0">

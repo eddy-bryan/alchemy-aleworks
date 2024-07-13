@@ -13,15 +13,13 @@ Grand Total: £{{ order.grand_total }}
 
 DELIVERY INFORMATION:
 Your order will be shipped to:
-{{ order.customer_address1 }}
-{% if order.customer_address2 %}{{ order.customer_address2 }}{% endif %}
-{% if order.customer_address2 %}{{ order.customer_county }}{% endif %}
-{% if order.customer_address2 %}{{ order.customer_postcode }}{% endif %}
+{{ order.customer_address1 }},
 {{ order.customer_city }}
-{{ customer_country }}
 
 CONTACT NUMBER:
 {{ order.customer_phone }}
+
+Please note: Any products containing alcohol will require age verification upon delivery. Please ensure you have a valid form of identification available when receiving your order.
 
 If you have any questions or need assistance, please don't hesitate to contact us at {{ contact_email }}.
 

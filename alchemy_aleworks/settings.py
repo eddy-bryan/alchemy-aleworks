@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 import os
 import dj_database_url
 
@@ -22,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h#csszmaic-w2=985g4!z7orm1gww3_dc$j@=##c+z9gk3kj!!'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -139,7 +141,7 @@ DATABASES = {
 }
      
 # DATABASES = {
-#     'default': dj_database_url.parse('postgres://ugpdih0l44h:vJ8YNfn7wOpK@ep-gentle-mountain-a23bxz6h.eu-central-1.aws.neon.tech/foam_deck_slick_272510')
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 # }
 
 
@@ -195,4 +197,5 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY', '')
 DEFAULT_FROM_EMAIL = 'alchemyaleworks@example.com'
