@@ -1,5 +1,7 @@
+/* CSS code derived from Boutique Ado */
+
 .order-history {
-    max-height: 386px; /* height of profile form and submit button */
+    max-height: 386px;
     overflow-y: auto;
 }
 
