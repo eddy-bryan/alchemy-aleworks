@@ -6,14 +6,19 @@
 {% block content %}
 <div class="overflow-hidden position-relative py-4 bg-gray" id="our-beers-section">
   <div class="text-center text-uppercase col-12" id="our-beers-content">
+    <!-- Our Beers Section -->
     <h3 class="mb-3">Our Beers</h3>
     <hr class="bg-black my-0">
+    <!-- Displaying Core Range and Limited Edition beers -->
     <div class="d-flex flex-wrap justify-content-center my-3">
+      <!-- Core Range Beer Card -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if core_range_beer.image %}
+          <!-- Display core range beer image if available -->
           <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
           {% else %}
+          <!-- Display placeholder image if core range beer image is not available -->
           <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
           {% endif %}
           <div class="card-body p-0 my-3">
@@ -21,14 +26,18 @@
             <p class="card-text">A collection of finely crafted ales that are always available. These staples showcase
               our dedication to quality and innovation with consistent flavours and exceptional taste.</p>
           </div>
+          <!-- Link to shop core range beers -->
           <a class="btn-gray" href="{% url 'beers' %}?limited_edition=False">Shop Now</a>
         </div>
       </div>
+      <!-- Limited Edition Beer Card -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if limited_edition_beer.image %}
+          <!-- Display limited edition beer image if available -->
           <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
           {% else %}
+          <!-- Display placeholder image if limited edition beer image is not available -->
           <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
           {% endif %}
           <div class="card-body p-0 my-3">
@@ -36,6 +45,7 @@
             <p class="card-text">Unique, small-batch brews that push the boundaries of flavour and creativity. These
               exclusive releases are available for a limited time only.</p>
           </div>
+          <!-- Link to shop limited edition beers -->
           <a class="btn-gray" href="{% url 'beers' %}?limited_edition=True">Shop Now</a>
         </div>
       </div>
@@ -44,6 +54,7 @@
 </div>
 
 <div class="overflow-hidden position-relative py-4" id="beers-section">
+  <!-- Beers Section -->
   <div class="text-center text-uppercase col-12" id="beers-content">
     <h3 class="mb-3">{{ title }}</h3>
 
@@ -53,6 +64,7 @@
         <!-- Preserve limited_edition parameter -->
         <input type="hidden" name="limited_edition" value="{{ request.GET.limited_edition }}">
         <label for="sort_by" class="form-label visually-hidden my-0">Sort by:</label>
+        <!-- Dropdown for sorting beers -->
         <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0">
           <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Name Ascending</option>
           <option value="name_desc" {% if request.GET.sort_by == 'name_desc' %}selected{% endif %}>Name Descending
@@ -80,14 +92,18 @@
     <div class="col-12 col-xl-8 d-flex flex-wrap justify-content-center my-3 mx-auto">
       {% for beer in beers %}
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
+        <!-- Link to each beer's detail page -->
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray mx-4">
           <div class="card border-0 align-items-center">
             {% if beer.image %}
+            <!-- Display beer image if available -->
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
+            <!-- Display placeholder image if beer image is not available -->
             <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% endif %}
             <div class="card-body p-0">
+              <!-- Display beer name, type, alcohol content, and price -->
               <h5 class="card-title my-0">{{ beer.name }}</h5>
               <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
               <hr class="bg-black my-0">

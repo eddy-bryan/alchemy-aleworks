@@ -7,7 +7,17 @@ from .models import Beer, MerchItem
 from .forms import BeerForm, MerchItemForm
 
 def beers(request):
-    """ A view to show, filter and sort all beers. """
+    """
+    View to display, filter, and sort all beers.
+
+    Filters beers based on query parameters 'limited_edition' and 'sort_by'.
+    Renders 'inventory/beers.html' template with context:
+        - 'beers': queryset of filtered and sorted beers.
+        - 'limited_edition_beer': randomly selected limited edition beer.
+        - 'core_range_beer': randomly selected core range beer.
+        - 'title': title indicating the current filter or default 'All Beers'.
+        - 'limited_edition': original query parameter value for limited edition filter.
+    """
     limited_edition = request.GET.get('limited_edition', '').lower() == 'true'
     beers = Beer.objects.all()
 
@@ -49,7 +59,17 @@ def beers(request):
     return render(request, 'inventory/beers.html', context)
 
 def merch(request):
-    """ A view to show, filter and sort all merch items. """
+    """
+    View to display, filter, and sort all merch items.
+
+    Filters merch items based on query parameter 'category' and sorts based on 'sort_by'.
+    Renders 'inventory/merch.html' template with context:
+        - 'merch': queryset of filtered and sorted merch items.
+        - 'random_apparel': randomly selected apparel item.
+        - 'random_drinkware': randomly selected drinkware item.
+        - 'title': title indicating the current filter or default 'All Merch'.
+        - 'category': original query parameter value for category filter.
+    """
     category = request.GET.get('category', '').lower()
     merch = MerchItem.objects.all()
 
@@ -87,6 +107,16 @@ def merch(request):
     return render(request, 'inventory/merch.html', context)
 
 def search_view(request):
+    """
+    View to handle search functionality for both beers and merch items.
+
+    Retrieves search query from GET parameter 'q' and performs search in 'name', 'sku', 'type',
+    'description', and 'alcohol_content' fields for beers and 'name', 'sku', 'category', and 'description'
+    fields for merch items. Renders 'inventory/search_results.html' with context:
+        - 'query': search query.
+        - 'beers': queryset of beers matching search query.
+        - 'merch_items': queryset of merch items matching search query.
+    """
     query = request.GET.get('q', '').strip()  # Get the search query
 
     if not query:
@@ -110,7 +140,13 @@ def search_view(request):
     return render(request, 'inventory/search_results.html', context)
 
 def beer_detail(request, beer_id):
-    """ A detailed view to show a specific beer. """
+    """
+    View to display details of a specific beer.
+
+    Retrieves beer object with 'beer_id' and renders 'inventory/beer_detail.html' with context:
+        - 'beer': beer object.
+        - 'random_beers': queryset of 3 random beers excluding the current beer.
+    """
     beer = get_object_or_404(Beer, pk=beer_id)
     random_beers = Beer.get_random_beers(quantity=3, exclude_id=beer_id)
     context = {
@@ -120,7 +156,13 @@ def beer_detail(request, beer_id):
     return render(request, 'inventory/beer_detail.html', context)
 
 def merch_detail(request, merch_id):
-    """ A detailed view to show a specific merch item. """
+    """
+    View to display details of a specific merch item.
+
+    Retrieves merch item object with 'merch_id' and renders 'inventory/merch_detail.html' with context:
+        - 'merch': merch item object.
+        - 'random_merch': queryset of 3 random merch items excluding the current merch item.
+    """
     merch = get_object_or_404(MerchItem, pk=merch_id)
     random_merch = MerchItem.get_random_merch_items(quantity=3, exclude_id=merch_id)
     context = {
@@ -132,7 +174,10 @@ def merch_detail(request, merch_id):
 @login_required
 def add_beer(request):
     """
-    A view for admins to be able to add beers to the store without needing to use the admin interface.
+    View for admins to add a new beer to the store.
+
+    Renders 'inventory/add_beer.html' with context:
+        - 'form': instance of BeerForm for adding new beer.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -160,7 +205,10 @@ def add_beer(request):
 @login_required
 def add_merch(request):
     """
-    A view for admins to be able to add merch items to the store without needing to use the admin interface.
+    View for admins to add a new merch item to the store.
+
+    Renders 'inventory/add_merch.html' with context:
+        - 'form': instance of MerchItemForm for adding new merch item.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -188,7 +236,11 @@ def add_merch(request):
 @login_required
 def edit_beer(request, beer_id):
     """
-    A view for admins to be able to edit beers in the store without needing to use the admin interface.
+    View for admins to edit an existing beer in the store.
+
+    Retrieves beer object with 'beer_id', allows editing via BeerForm, and renders 'inventory/edit_beer.html' with context:
+        - 'form': instance of BeerForm for editing the beer.
+        - 'beer': beer object being edited.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -218,7 +270,11 @@ def edit_beer(request, beer_id):
 @login_required
 def edit_merch(request, merch_id):
     """
-    A view for admins to be able to edit merch items in the store without needing to use the admin interface.
+    View for admins to edit an existing merch item in the store.
+
+    Retrieves merch item object with 'merch_id', allows editing via MerchItemForm, and renders 'inventory/edit_merch.html' with context:
+        - 'form': instance of MerchItemForm for editing the merch item.
+        - 'merch': merch item object being edited.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -251,7 +307,9 @@ def edit_merch(request, merch_id):
 @login_required
 def delete_beer(request, beer_id):
     """
-    A view for admins to be able to delete beers from the store without needing to use the admin interface.
+    View for admins to delete an existing beer from the store.
+
+    Retrieves beer object with 'beer_id' and deletes it, then redirects to 'beers' view.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -265,7 +323,9 @@ def delete_beer(request, beer_id):
 @login_required
 def delete_merch(request, merch_id):
     """
-    A view for admins to be able to delete merch items from the store without needing to use the admin interface.
+    View for admins to delete an existing merch item from the store.
+
+    Retrieves merch item object with 'merch_id' and deletes it, then redirects to 'merch' view.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')

@@ -9,6 +9,7 @@
     <h3 class="mb-3">Our merch</h3>
     <hr class="bg-black my-0">
     <div class="d-flex flex-wrap justify-content-center my-3">
+      <!-- Apparel & Accessories Section -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if random_apparel.image %}
@@ -23,6 +24,7 @@
           </div>
         </div>
       </div>
+      <!-- Drinkware Section -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if random_drinkware.image %}
@@ -52,6 +54,7 @@
         <input type="hidden" name="category" value="{{ request.GET.category }}">
         <label for="sort_by" class="form-label visually-hidden my-0">Sort by:</label>
         <select name="sort_by" id="sort_by" class="text-muted font-weight-normal text-right form-select border-0">
+          <!-- Sorting options -->
           <option value="name_asc" {% if request.GET.sort_by == 'name_asc' %}selected{% endif %}>Name Ascending</option>
           <option value="name_desc" {% if request.GET.sort_by == 'name_desc' %}selected{% endif %}>Name Descending</option>
           <option value="price_asc" {% if request.GET.sort_by == 'price_asc' %}selected{% endif %}>Price Ascending</option>
@@ -59,7 +62,7 @@
         </select>
       </form>
 
-      <!-- Item count -->
+      <!-- Item count display -->
       <div class="d-flex align-items-center text-lowercase text-muted font-weight-normal text-right font-italic mr-4">
         <span class="text-small">{{ merch.count }} Items</span>
       </div>
@@ -73,6 +76,7 @@
       <div class="col-12 col-sm-6 col-md-4 d-flex d-flex-column h-100 product-container p-0 mb-4">
         <a href="{% url 'merch_detail' merch_item.id %}" class="text-black hover-gray mx-4">
           <div class="card border-0 align-items-center">
+            <!-- Display merch item image or default image -->
             {% if merch_item.image %}
             <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
             {% else %}

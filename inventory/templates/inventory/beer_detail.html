@@ -5,28 +5,36 @@
 
 {% block content %}
 <div class="overflow-hidden position-relative py-5 bg-gray">
+  <!-- Main Beer Section -->
   <div class="text-center text-uppercase col-12">
     <div class="d-flex flex-wrap justify-content-center align-items-center my-3">
+      <!-- Left Column: Beer Image -->
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column px-5 px-lg-0 mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if beer.image %}
+          <!-- Display beer image if available -->
           <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
           {% else %}
+          <!-- Display placeholder image if beer image is not available -->
           <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
           {% endif %}
         </div>
       </div>
+      <!-- Right Column: Beer Details -->
       <div class="col-12 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           <div class="card-body p-0 mt-3">
+            <!-- Beer Name and Description -->
             <h3 class="card-title mb-3">{{ beer.name }}</h3>
             <hr class="bg-black my-0">
             <p class="card-text mt-3">{{ beer.description }}</p>
           </div>
           <div class="card-body p-0 my-3">
+            <!-- Beer Type, Alcohol Content, and Price -->
             <p class="card-text text-uppercase">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
             <p class="card-text">£{{ beer.price }}</p>
           </div>
+          <!-- Add to Cart Form -->
           <div class="card-body p-0 mb-3 d-flex align-items-center">
             <form action="{% url 'add_to_bag' 'beer' beer.id %}" method="POST" class="d-flex align-items-center flex-wrap">
               {% csrf_token %}
@@ -36,6 +44,7 @@
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
           </div>
+          <!-- Edit/Delete Links for Superusers -->
           {% if request.user.is_superuser %}
           <div>
             <small class="font-weight-bold">
@@ -52,20 +61,25 @@
 </div>
 
 <div class="overflow-hidden position-relative py-4 product-section">
+  <!-- You Might Also Like Section -->
   <div class="text-center text-uppercase col-12 product-content">
     <h3 class="mb-3">You Might Also Like</h3>
     <hr class="bg-black my-0">
     <div class="col-12 col-lg-8 d-flex flex-wrap flex-lg-nowrap justify-content-center mt-3 mx-auto">
       {% for beer in random_beers %}
+      <!-- Displaying Random Beers -->
       <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray">
           <div class="card border-0 align-items-center">
             {% if beer.image %}
+            <!-- Display beer image if available -->
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
+            <!-- Display placeholder image if beer image is not available -->
             <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% endif %}
             <div class="card-body p-0">
+              <!-- Beer Name, Type, Alcohol Content, and Price -->
               <h5 class="card-title my-0">{{ beer.name }}</h5>
               <p class="card-text mb-2">{{ beer.type }} / {{ beer.alcohol_content }}%</p>
               <hr class="bg-black my-0">
@@ -76,6 +90,7 @@
       </div>
       {% endfor %}
     </div>
+    <!-- Link to Return to Beers -->
     <a class="btn-gray" href="{% url 'beers' %}">Back to Beers</a>
   </div>
 </div>
