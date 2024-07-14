@@ -43,7 +43,7 @@
                 <p class="my-0 text-small font-weight-normal text-muted">SKU: {{ item.product.sku|upper }}</p>
               </div>
               <div class="mx-md-2">
-              <!-- Delete button -->
+                <!-- Delete form -->
                 <form action="{% url 'update_bag' item.item_type item.product.pk %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="item_id" value="{{ item.product.pk }}">
@@ -55,6 +55,7 @@
               </div>
             </td>
             <td class="py-3 col-1">
+              <!-- Quantity form -->
               <form action="{% url 'update_bag' item.item_type item.product.pk %}" method="POST">
                   {% csrf_token %}
                   <input type="hidden" name="item_id" value="{{ item.product.pk }}">
@@ -65,9 +66,8 @@
               </form>
             </td>
             <td class="py-3 text-right col-1">
-              <!-- Price -->
+              <!-- Price and subtotal -->
               <p class="my-0">£{{ item.product.price }}</p>
-              <!-- Subtotal -->
               <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
             </td>
           </tr>
@@ -93,6 +93,7 @@
           </tr>
         </tbody>
       </table>
+      <!-- Age verification notice -->
       <p class="mt-0 mb-3 mx-4 small text-danger">
           <span class="icon">
               <i class="fas fa-exclamation-circle"></i>
@@ -112,6 +113,7 @@
     <h3 class="mb-3">Continue Shopping</h3>
     <hr class="bg-black my-0">
     <div class="d-flex flex-wrap justify-content-center my-3">
+      <!-- Back to Beers -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4">
           <img src="{{ random_beer.image.url }}" class="card-img-top border-black large-product-image mt-2"
@@ -122,6 +124,7 @@
           <a class="btn-gray" href="{% url 'beers' %}">Shop Now</a>
         </div>
       </div>
+      <!-- Back to Merch -->
       <div class="col-8 col-lg-5 col-xl-4 d-flex d-flex-column mx-sm-4 h-100 large-product-container">
         <div class="card border-0 align-items-center w-100 mb-4">
           <img src="{{ random_merch.image.url }}" class="card-img-top border-black large-product-image mt-2"

@@ -1,3 +1,7 @@
+/* Base Stripe styling taken from Stripe documentation, 
+derived by Boutique Ado project and further adjusted
+for this project */
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -37,6 +41,7 @@ select option[value=""] {
   color: #aab7c4 !important;
 }
 
+/* Loading overlay styling */
 #loading-overlay {
   display: none;
   position: fixed;

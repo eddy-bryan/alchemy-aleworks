@@ -13,7 +13,9 @@ import stripe
 
 
 class StripeWH_Handler:
-    """Handles Stripe webhook events"""
+    """
+    Handles Stripe webhook events, adapted for this project from the Boutique Ado walkthrough.
+    """
 
     def __init__(self, request):
         """
@@ -27,6 +29,9 @@ class StripeWH_Handler:
     def _send_confirmation_email(self, order):
         """
         Send a confirmation email to the customer after completing an order.
+
+        Args:
+            order (Order): The Order object for which to send the confirmation email.
         """
         customer_email = order.customer_email
         subject = render_to_string(

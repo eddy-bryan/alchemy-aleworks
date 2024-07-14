@@ -1,9 +1,26 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+
 from inventory.models import Beer, MerchItem
 
 def bag_contents(request):
+    """
+    Calculate and return the contents of the shopping bag.
+
+    This function retrieves the items in the shopping bag from the session,
+    calculates the total cost, the number of products, and determines the delivery
+    cost based on the total value of the bag contents.
+
+    Returns a context dictionary containing:
+    - bag_items: List of items in the bag with their details.
+    - total: Total cost of the items in the bag.
+    - product_count: Total number of items in the bag.
+    - delivery: Delivery cost based on the total value.
+    - free_delivery_delta: Amount needed to qualify for free delivery.
+    - free_delivery_threshold: Threshold value for free delivery.
+    - grand_total: Total cost including delivery.
+    """
     bag_items = []
     total = 0
     product_count = 0

@@ -3,6 +3,7 @@
 {% load bag_tools %}
 
 {% block additional_css %}
+    <!-- Link to custom CSS for checkout -->
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -17,6 +18,7 @@
         </div>
     </div>
 
+    <!-- Order Summary Section -->
     <div class="row mt-3">
         <div class="col-12 col-lg-6 order-lg-last px-4 pl-lg-0">
             <p class="text-uppercase px-4">Order Summary ({{ product_count }})</p>
@@ -35,26 +37,33 @@
                         <tr>
                             <td class="p-3 col-4 col-md-3">
                                 {% if item.product.image %}
+                                <!-- Display product image if available -->
                                 <img class="img-fluid rounded" src="{{ item.product.image.url }}">
                                 {% else %}
                                 {% if item.item_type == 'beer' %}
+                                <!-- Display default beer image if no image available -->
                                 <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="img-fluid rounded">
                                 {% elif item.item_type == 'merch' %}
+                                <!-- Display default merchandise image if no image available -->
                                 <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="img-fluid rounded">
                                 {% endif %}
                                 {% endif %}
                             </td>
                             <td class="py-3 text-left d-flex justify-content-between">
                                 <div>
+                                    <!-- Product Name -->
                                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                                     {% if item.size %}
+                                    <!-- Display product size if available -->
                                     <p class="my-0"><strong>Size: </strong>{{ item.size|upper }}</p>
                                     {% endif %}
+                                    <!-- Product SKU -->
                                     <p class="my-0 text-small font-weight-normal text-muted">SKU:
                                         {{ item.product.sku|upper }}</p>
                                 </div>
                             </td>
                             <td class="py-3 col-1 text-center">
+                                <!-- Quantity -->
                                 <p class="my-0">{{ item.quantity }}</p>
                             </td>
                             <td class="py-3 text-right col-1">
@@ -65,6 +74,7 @@
                             </td>
                         </tr>
                         {% endfor %}
+                        <!-- Order Total Row -->
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
                                 <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -74,6 +84,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <!-- Age Verification Notice -->
                 <p class="mt-0 mb-3 mx-4 small text-danger text-center">
                     <span class="icon">
                         <i class="fas fa-exclamation-circle"></i>
@@ -84,15 +95,18 @@
                 </p>
             </div>
         </div>
+        <!-- Order Form Section -->
         <div class="col-12 col-lg-6 px-4 pr-lg-0">
             <p class="px-4">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
+                <!-- Customer Details Section -->
                 <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label text-uppercase px-2 w-auto">Details</legend>
                     {{ order_form.customer_name | as_crispy_field }}
                     {{ order_form.customer_email | as_crispy_field }}
                 </fieldset>
+                <!-- Delivery Details Section -->
                 <fieldset class="rounded px-3 mb-3">
                     <legend class="fieldset-label text-uppercase px-2 w-auto">Delivery</legend>
                     {{ order_form.customer_address1 | as_crispy_field }}
@@ -104,11 +118,13 @@
                     {{ order_form.customer_phone | as_crispy_field }}
                     <div class="float-right mr-0">
                         {% if user.is_authenticated %}
+                        <!-- Option to save delivery information to profile -->
                         <label class="form-check-label" for="id-save-info">Save this delivery information to my
                             profile</label>
                         <input class="form-check-input ml-2 mr-0 mt-0 position-relative align-middle" type="checkbox" id="id-save-info" name="save-info"
                             checked>
                         {% else %}
+                        <!-- Prompt to create account or login to save information -->
                         <label class="form-check-label" for="id-save-info">
                             <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
                             <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
@@ -116,29 +132,35 @@
                         {% endif %}
                     </div>
                 </fieldset>
+                <!-- Payment Details Section -->
                 <fieldset class="px-3">
                     <legend class="fieldset-label text-uppercase px-2 w-auto">Payment</legend>
-                    <!-- A Stripe card element will go here -->
+                    <!-- Stripe card element placeholder -->
                     <div class="mb-3" id="card-element"></div>
 
-                    <!-- Used to display form errors -->
+                    <!-- Error message display area -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Hidden input to store client secret -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
+                <!-- Submit Buttons -->
                 <div class="submit-button text-right mt-3">
+                    <!-- Button to adjust bag -->
                     <a href="{% url 'view_bag' %}" class="btn-gray mr-0">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
+                    <!-- Button to complete order -->
                     <button id="submit-button" class="btn-gray">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
                     </button>
+                    <!-- Payment notice -->
                     <p class="small text-danger mt-2 mb-0 mr-3">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
@@ -150,6 +172,7 @@
         </div>
     </div>
 </div>
+<!-- Loading overlay for asynchronous operations -->
 <div id="loading-overlay">
     <h1 class="text-light loading-spinner">
         <span class="icon">
@@ -160,8 +183,11 @@
 {% endblock %}
 
 {% block additional_js %}
+    <!-- Include base template's additional_js block -->
     {{ block.super }}
+    <!-- Provide Stripe public key and client secret as JSON scripts -->
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
+    <!-- Include JavaScript for Stripe elements -->
     <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

@@ -13,10 +13,13 @@ def webhook(request):
     """
     Listen for and handle Stripe webhooks.
 
-    This function sets up Stripe's webhook listener to handle different types 
-    of events sent by Stripe to the webhook endpoint. It validates the payload 
-    and signature of the incoming webhook request, and dispatches the event 
-    to the appropriate handler.
+    This webhook function follows the implementation from the Boutique Ado
+    walkthrough project.
+    
+    It sets up Stripe's webhook listener to handle different types of events
+    sent by Stripe to the webhook endpoint. It validates the payload and
+    signature of the incoming webhook request, and dispatches the event to
+    the appropriate handler.
 
     Args:
         request (HttpRequest): The incoming HTTP request containing the 

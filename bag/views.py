@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.exceptions import ValidationError
+
 from inventory.models import Beer, MerchItem
 
 def view_bag(request):
-    """ Render the contents of the shopping bag. """
+    """
+    Render the contents of the shopping bag.
+    """
     random_beer = Beer.get_random_beers(quantity=1)
     random_merch = MerchItem.get_random_merch_items(quantity=1)
     context = {
@@ -14,7 +17,18 @@ def view_bag(request):
     return render(request, 'bag/bag.html', context)
 
 def add_to_bag(request, item_id, item_type):
-    """Adds a number of items to the bag depending on the selected quantity"""
+    """
+    Adds a specified quantity of a beer or merchandise item to the bag.
+    
+    If the item has a size, it is added to the bag with size-specific quantities.
+    If no size is specified, the item is added with a general quantity.
+    
+    Parameters:
+    - item_id: ID of the item to add (Beer or MerchItem)
+    - item_type: Type of the item ('beer' or 'merch')
+    
+    Redirects back to the URL specified in the POST request.
+    """
     product = get_object_or_404(Beer if item_type == 'beer' else MerchItem, pk=item_id)
 
     redirect_url = request.POST.get('redirect_url')
@@ -54,7 +68,18 @@ def add_to_bag(request, item_id, item_type):
     return redirect(redirect_url)
 
 def update_bag(request, item_type, item_id):
-    """Update the quantity of an item in the bag."""
+    """
+    Update the quantity of a specified item in the bag.
+    
+    If the item has a size, the quantity for the specific size is updated.
+    If no size is specified, the general quantity of the item is updated.
+    
+    Parameters:
+    - item_type: Type of the item ('beer' or 'merch')
+    - item_id: ID of the item to update (Beer or MerchItem)
+    
+    Redirects back to the bag view.
+    """
     product = get_object_or_404(Beer if item_type == 'beer' else MerchItem, pk=item_id)
 
     try:
