@@ -148,7 +148,6 @@ th {
 }
 
 /* Modified version of 'Allauth form formatting' from Boutique Ado project walkthrough */
-
 .allauth-form-inner-content p {
     font-size: 1rem;
 }
@@ -260,8 +259,27 @@ th {
     text-decoration: none;
 }
 
-/* Product Form (From Boutique Ado walkthrough */
+.bg-black {
+    background-color: #000;
+}
 
+.bg-gray {
+    background-color: #eee;
+}
+
+.title-border {
+    border-bottom: 3px solid #000000;
+}
+
+.width-fit-content {
+    width: fit-content;
+}
+
+.height-fit-content {
+    height: fit-content;
+}
+
+/* Product Form (From Boutique Ado walkthrough */
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -294,26 +312,6 @@ th {
     height: calc(1.5em + .75rem + 2px) !important;
     font-size: 1rem !important;
     line-height: 1.5 !important;
-}
-
-.bg-black {
-    background-color: #000;
-}
-
-.bg-gray {
-    background-color: #eee;
-}
-
-.title-border {
-    border-bottom: 3px solid #000000;
-}
-
-.width-fit-content {
-    width: fit-content;
-}
-
-.height-fit-content {
-    height: fit-content;
 }
 
 /* Reduced Font Sizes For Mobile */
