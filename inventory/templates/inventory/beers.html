@@ -19,7 +19,7 @@
           <img src="{{ core_range_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
           {% else %}
           <!-- Display placeholder image if core range beer image is not available -->
-          <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
+          <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ core_range_beer.name }}">
           {% endif %}
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Core Range</h5>
@@ -38,7 +38,7 @@
           <img src="{{ limited_edition_beer.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
           {% else %}
           <!-- Display placeholder image if limited edition beer image is not available -->
-          <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
+          <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ limited_edition_beer.name }}">
           {% endif %}
           <div class="card-body p-0 my-3">
             <h5 class="card-title mb-2">Limited Edition</h5>
@@ -100,7 +100,7 @@
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
             <!-- Display placeholder image if beer image is not available -->
-            <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% endif %}
             <div class="card-body p-0">
               <!-- Display beer name, type, alcohol content, and price -->

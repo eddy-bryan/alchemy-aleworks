@@ -15,7 +15,7 @@
           {% if random_apparel.image %}
           <img src="{{ random_apparel.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_apparel.name }}">
           {% else %}
-          <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_apparel.name }}">
+          <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_apparel.name }}">
           {% endif %}
           <div class="card-body py-0 my-3">
             <h5 class="card-title mb-2">Apparel & Accessories</h5>
@@ -30,7 +30,7 @@
           {% if random_drinkware.image %}
           <img src="{{ random_drinkware.image.url }}" class="card-img-top border-black large-product-image mt-2" alt="{{ random_drinkware.name }}">
           {% else %}
-          <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_drinkware.name }}">
+          <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black large-product-image mt-2" alt="{{ random_drinkware.name }}">
           {% endif %}
           <div class="card-body py-0 my-3">
             <h5 class="card-title mb-2">Drinkware</h5>
@@ -80,7 +80,7 @@
             {% if merch_item.image %}
             <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
             {% else %}
-            <img src="{{ MEDIA_URL }}merch/no_merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+            <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
             {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title mb-2">{{ merch_item.name }}</h5>

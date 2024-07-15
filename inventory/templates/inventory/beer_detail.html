@@ -16,7 +16,7 @@
           <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
           {% else %}
           <!-- Display placeholder image if beer image is not available -->
-          <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
+          <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
           {% endif %}
         </div>
       </div>
@@ -76,7 +76,7 @@
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
             <!-- Display placeholder image if beer image is not available -->
-            <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% endif %}
             <div class="card-body p-0">
               <!-- Beer Name, Type, Alcohol Content, and Price -->

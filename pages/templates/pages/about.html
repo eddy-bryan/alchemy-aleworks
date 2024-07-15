@@ -69,7 +69,7 @@
             {% if beer.image %}
             <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
-            <img src="{{ MEDIA_URL }}beers/no_beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% endif %}
             <div class="card-body p-0">
               <h5 class="card-title my-0">{{ beer.name }}</h5>
