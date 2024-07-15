@@ -78,7 +78,7 @@
           <div class="card border-0 align-items-center">
             <!-- Display merch item image or default image -->
             {% if merch_item.image %}
-            <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+            <img src="{{ merch_item.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
             {% else %}
             <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
             {% endif %}

@@ -12,7 +12,7 @@
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           <!-- Display merch item image or default image -->
           {% if merch.image %}
-          <img src="{{ merch.image.url }}" class="card-img-top border-black large-product-image" alt="{{ merch.name }}">
+          <img src="{{ merch.image_url }}" class="card-img-top border-black large-product-image" alt="{{ merch.name }}">
           {% else %}
           <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black large-product-image"
             alt="{{ merch.name }}">
@@ -92,7 +92,7 @@
           <div class="card border-0 align-items-center">
             <!-- Display merch item image or default image -->
             {% if merch.image %}
-            <img src="{{ merch.image.url }}" class="card-img-top border-black my-2 product-image"
+            <img src="{{ merch.image_url }}" class="card-img-top border-black my-2 product-image"
               alt="{{ merch.name }}">
             {% else %}
             <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black my-2 product-image"

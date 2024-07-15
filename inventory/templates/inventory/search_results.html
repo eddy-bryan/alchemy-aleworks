@@ -22,7 +22,7 @@
                     <div class="card border-0 align-items-center">
                         <!-- Display beer image or default image -->
                         {% if beer.image %}
-                        <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+                        <img src="{{ beer.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
                         {% else %}
                         <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
                         {% endif %}
@@ -58,7 +58,7 @@
                     <div class="card border-0 align-items-center">
                         <!-- Display merchandise image or default image -->
                         {% if merch_item.image %}
-                        <img src="{{ merch_item.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
+                        <img src="{{ merch_item.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
                         {% else %}
                         <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
                         {% endif %}

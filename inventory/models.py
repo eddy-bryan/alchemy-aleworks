@@ -10,6 +10,7 @@ class Beer(models.Model):
     description = models.TextField()
     alcohol_content = models.DecimalField(max_digits=2, decimal_places=1)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     @classmethod
@@ -53,6 +54,7 @@ class MerchItem(models.Model):
     description = models.TextField()
     sized_item = models.BooleanField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
     @classmethod

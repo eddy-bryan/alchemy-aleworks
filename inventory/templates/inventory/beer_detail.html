@@ -13,7 +13,7 @@
         <div class="card border-0 align-items-center w-100 mb-4 bg-gray">
           {% if beer.image %}
           <!-- Display beer image if available -->
-          <img src="{{ beer.image.url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
+          <img src="{{ beer.image_url }}" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
           {% else %}
           <!-- Display placeholder image if beer image is not available -->
           <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black large-product-image" alt="{{ beer.name }}">
@@ -73,7 +73,7 @@
           <div class="card border-0 align-items-center">
             {% if beer.image %}
             <!-- Display beer image if available -->
-            <img src="{{ beer.image.url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
+            <img src="{{ beer.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
             <!-- Display placeholder image if beer image is not available -->
             <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">

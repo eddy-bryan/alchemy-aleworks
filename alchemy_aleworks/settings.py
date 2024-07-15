@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 import os
 import dj_database_url
+
+if os.path.exists("env.py"):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,9 +39,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'alchemy-aleworks-5bd2925999c2.herokuapp.com',
-    'localhost',
-    '8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
+    'https://alchemy-aleworks-5bd2925999c2.herokuapp.com/',
+    'https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
 ]
 
 
@@ -216,8 +218,8 @@ if 'USE_AWS' in os.environ:
     MEDIAFILES_LOCATION = 'media'
 
     # Override static and media URLs in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
