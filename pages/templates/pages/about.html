@@ -6,7 +6,7 @@
 {% block content %}
 <div class="overflow-hidden position-relative hero-section">
   <!-- Hero section with background image -->
-  <img src="/static/images/about/about-hero.jpg" alt="About Hero Image" class="h-100 w-100 hero-image">
+  <img src="{% static 'images/about/about-hero.jpg' %}" alt="About Hero Image" class="h-100 w-100 hero-image">
   <div class="position-absolute h-100 w-100"></div>
 </div>
 
@@ -28,7 +28,7 @@
 
   <div class="overflow-hidden position-relative hero-section">
     <!-- Second hero section with background image -->
-    <img src="/static/images/about/about1.jpg" alt="About Image 1" class="h-100 w-100 hero-image">
+    <img src="{% static 'images/about/about1.jpg' %}" alt="About Image 1" class="h-100 w-100 hero-image">
     <div class="position-absolute h-100 w-100"></div>
   </div>
   
@@ -50,9 +50,9 @@
 
 <div class="d-flex justify-content-center overflow-hidden position-relative height-fit-content gallery-section">
   <!-- Gallery section with images -->
-  <img src="/static/images/about/about2.jpg" alt="About Image 2"
+  <img src="{% static 'images/about/about2.jpg' %}" alt="About Image 2"
     class="h-100 d-inline-block col-6 mx-0 px-0 gallery-image">
-  <img src="/static/images/about/about3.jpg" alt="About Image 3"
+  <img src="{% static 'images/about/about3.jpg' %}" alt="About Image 3"
     class="h-100 d-inline-block col-6 mx-0 px-0 gallery-image">
 </div>
 

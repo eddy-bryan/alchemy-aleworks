@@ -6,7 +6,7 @@
 {% block content %}
 <!-- Hero Section -->
 <div class="overflow-hidden position-relative hero-section">
-  <img src="/static/images/hero.jpg" alt="Hero Image" class="h-100 w-100 hero-image">
+  <img src="{% static 'images/hero.jpg' %}" alt="Hero Image" class="h-100 w-100 hero-image">
   <div class="overlay position-absolute h-100 w-100"></div>
   <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6 hero-content">
     <h1 class="mb-4">Alchemy in every sip, elixir for every soul</h1>
@@ -43,11 +43,11 @@
 
 <!-- Taproom Gallery Section -->
 <div class="d-flex justify-content-center overflow-hidden position-relative height-fit-content gallery-section">
-  <img src="/static/images/taproom/taproom1.jpg" alt="Taproom Image 1"
+  <img src="{% static 'images/taproom/taproom1.jpg' %}" alt="Taproom Image 1"
     class="h-100 d-none d-lg-inline-block col-lg-4 mx-0 px-0 gallery-image">
-  <img src="/static/images/taproom/taproom2.jpg" alt="Taproom Image 2"
+  <img src="{% static 'images/taproom/taproom2.jpg' %}" alt="Taproom Image 2"
     class="h-100 d-inline-block col-6 col-lg-4 mx-0 px-0 gallery-image">
-  <img src="/static/images/taproom/taproom3.jpg" alt="Taproom Image 3"
+  <img src="{% static 'images/taproom/taproom3.jpg' %}" alt="Taproom Image 3"
     class="h-100 d-inline-block col-6 col-lg-4 mx-0 px-0 gallery-image">
   <div class="overlay position-absolute h-100 w-100"></div>
   <div class="position-absolute text-center text-white text-uppercase col-12 col-lg-6 gallery-content">
