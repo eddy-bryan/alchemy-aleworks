@@ -33,10 +33,12 @@ ALLOWED_HOSTS = [
     'alchemy-aleworks-5bd2925999c2.herokuapp.com',
     'localhost',
     '8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
-    ]
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
+    'alchemy-aleworks-5bd2925999c2.herokuapp.com',
+    'localhost',
+    '8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
 ]
 
 
