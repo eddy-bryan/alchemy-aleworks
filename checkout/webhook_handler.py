@@ -19,7 +19,7 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         """
-        Initialize with the incoming HTTP request.
+        Initialise with the incoming HTTP request.
 
         Args:
             request (HttpRequest): The HTTP request object containing the webhook data.
@@ -50,7 +50,7 @@ class StripeWH_Handler:
 
     def handle_event(self, event):
         """
-        Handle any unrecognized or unexpected webhook event from Stripe.
+        Handle any unrecognised or unexpected webhook event from Stripe.
 
         Args:
             event (dict): The event payload received from Stripe.

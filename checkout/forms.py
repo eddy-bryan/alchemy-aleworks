@@ -13,7 +13,7 @@ class OrderForm(forms.ModelForm):
         Meta: Specifies the model (Order) and fields to include in the form.
 
     Methods:
-        __init__: Initializes the form with placeholders, autofocus, and CSS classes for styling.
+        __init__: Initialises the form with placeholders, autofocus, and CSS classes for styling.
     """
     class Meta:
         model = Order
@@ -24,7 +24,7 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Initializes the form with customizations:
+        Initialises the form with customizations:
         - Sets placeholders for input fields.
         - Autofocuses on the customer name field.
         - Adds CSS class for styling uniformity.

@@ -2,7 +2,7 @@
 
 ![Responsive Design](#)
 
-Welcome to Alchemy Aleworks, where craft beer meets alchemical inspiration. This platform celebrates the art of brewing through a diverse selection of finely crafted ales. Whether you're a seasoned beer enthusiast or a curious newcomer, Alchemy Aleworks offers a journey into the world of unique flavors and brewing traditions.
+Welcome to Alchemy Aleworks, where craft beer meets alchemical inspiration. This platform celebrates the art of brewing through a diverse selection of finely crafted ales. Whether you're a seasoned beer enthusiast or a curious newcomer, Alchemy Aleworks offers a journey into the world of unique flavours and brewing traditions.
 
 A link to the live website can be found [here](#). <---- ADD LINK!!!!!!!
 
@@ -42,13 +42,13 @@ For detailed information on our e-commerce business model, please refer to the [
 
 # User Experience
 
-The user experience on Alchemy Aleworks is designed to be immersive and informative. Visitors can easily navigate through our offerings, learn about our brewing process, and find their new favorite brew with ease.
+The user experience on Alchemy Aleworks is designed to be immersive and informative. Visitors can easily navigate through our offerings, learn about our brewing process, and find their new favourite brew with ease.
 
 ## User Stories
 
 ### Target Audience
 
-Alchemy Aleworks caters primarily to craft beer enthusiasts and those curious about unique brewing traditions. Our platform appeals to individuals who appreciate artisanal quality and seek to explore a variety of distinct beer flavors. Craft beer enthusiasts value authenticity, innovation, and the artistry behind brewing, while newcomers are eager to discover new tastes and experiences in the world of beer.
+Alchemy Aleworks caters primarily to craft beer enthusiasts and those curious about unique brewing traditions. Our platform appeals to individuals who appreciate artisanal quality and seek to explore a variety of distinct beer flavours. Craft beer enthusiasts value authenticity, innovation, and the artistry behind brewing, while newcomers are eager to discover new tastes and experiences in the world of beer.
 
 ### Implemented User Stories
 
@@ -103,7 +103,7 @@ This section outlines the implemented user stories that reflect the functionalit
 
 Here, you'll discover user stories slated for future implementation in upcoming project updates. These stories outline prospective enhancements and potential new functionalities planned for the website:
 
-- As a customer, I can receive personalized recommendations based on past purchases or preferences.
+- As a customer, I can receive personalised recommendations based on past purchases or preferences.
 
 ## Structure
 

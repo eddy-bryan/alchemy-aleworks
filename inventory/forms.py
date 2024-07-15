@@ -21,7 +21,7 @@ class BeerForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         """
-        Initialize the form with custom attributes.
+        Initialise the form with custom attributes.
 
         Applies 'add-beer-form-input' CSS class to all form inputs for consistent styling.
         """
@@ -48,7 +48,7 @@ class MerchItemForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         """
-        Initialize the form with custom attributes.
+        Initialise the form with custom attributes.
 
         Applies 'add-merch-form-input' CSS class to all form inputs for consistent styling.
         """
