@@ -1,7 +1,10 @@
 # E-commerce Business Model: Alchemy Aleworks
 
 ## Overview
-Alchemy Aleworks operates as an e-commerce platform specialising in craft beers and merchandise. The business model integrates online sales with a physical taproom experience, offering a seamless journey from exploration to purchase.
+Alchemy Aleworks operates as an e-commerce platform specialising in craft beers and merchandise, offering a seamless integration of online sales and physical taproom experiences.
+
+## Business Focus
+Alchemy Aleworks primarily serves the B2C (Business-to-Consumer) market, catering directly to beer enthusiasts and consumers of craft beverages.
 
 
 ## Key Components

@@ -1,10 +1,10 @@
 # Alchemy Aleworks
 
-![Responsive Design](#)
+![Responsive Design](../alchemy-aleworks/static/images/readme/responsive-design.png)
 
 Welcome to Alchemy Aleworks, where craft beer meets alchemical inspiration. This platform celebrates the art of brewing through a diverse selection of finely crafted ales. Whether you're a seasoned beer enthusiast or a curious newcomer, Alchemy Aleworks offers a journey into the world of unique flavours and brewing traditions.
 
-A link to the live website can be found [here](#). <---- ADD LINK!!!!!!!
+A link to the live website can be found [here](https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net/).
 
 ## Contents
 
@@ -15,6 +15,8 @@ A link to the live website can be found [here](#). <---- ADD LINK!!!!!!!
         - [Implemented User Stories](#implemented-user-stories)
         - [Future User Stories](#future-user-stories)
     - [Structure](#structure)
+        - [Additional Pages](#additional-pages)
+        - [Additional Features](#additional-features)
 - [Agile Development Approach](#agile-development-approach)
 - [Design Overview](#design-overview)
 - [Technology Stack](#technology-stack)
@@ -93,7 +95,7 @@ This section outlines the implemented user stories that reflect the functionalit
 - As an admin, I can update the details of an existing merchandise item.
 - As an admin, I can delete a merchandise item from the website.
 
-#### Additional Features
+#### Extra Features
 
 - As a visitor, I can access the terms and conditions page.
 - As a visitor, I can access the Returns and Delivery procedures page.
@@ -113,15 +115,194 @@ Below, we present a combination of wireframe designs and screenshots showcasing 
 
 #### Wireframe
 
-![Home Page Wireframe](#)
+![Home Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/homepage.png)
 
-Description...
+The wireframe outlines Alchemy Aleworks' homepage design, intended to feature key sections like the hero section with a compelling tagline and call-to-action buttons for shopping beers and merchandise, limited edition brews showcasing, taproom gallery images, a captivating story of the brewery, and a merchandise section.
 
 #### Screenshot
 
-![Home Page Screenshot](#)
+![Home Page Screenshot](../alchemy-aleworks/static/images/readme/homepage.png)
 
-Description...
+The screenshot reflects the actual implementation of Alchemy Aleworks' homepage, closely mirroring the wireframe design. It includes:
+- **Hero Section:** A visually striking image with overlaid text inviting visitors to explore the world of craft beers.
+- **Limited Edition Brews:** Showcases randomoised selection of limited edition beers with descriptions of type and alcohol content, encouraging exploration and purchase.
+- **Taproom Gallery:** Displays images of the taproom, enticing visitors to visit and experience it firsthand.
+- **Our Story:** A narrative that captures the essence of Alchemy Aleworks' journey, blending historical inspiration with modern brewing techniques.
+- **Merchandise Section:** Highlights a randomised selection of branded merchandise items, providing options for enthusiasts to show their support.
+
+### Beers Page
+
+#### Wireframe
+
+![Beers Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/beers.png)
+
+The wireframe illustrates the layout of Alchemy Aleworks' Beers page, designed to feature both the core range and limited edition beers. It includes sections for sorting options, beer cards displaying details such as name, type, alcohol content, and price, and navigation elements for user interaction.
+
+#### Screenshot
+
+![Beers Page Screenshot](../alchemy-aleworks/static/images/readme/beers.png)
+
+The screenshot showcases the implemented Beers page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+- **Core Range and Limited Edition Beers:** Displayed in separate sections with dedicated cards containing beer details and images.
+- **Sorting Dropdown:** Allows users to sort beers by name, price, and alcohol content, enhancing user experience and ease of navigation.
+- **Item Count:** Indicates the total number of beers displayed, providing transparency and helping users manage their browsing experience effectively.
+
+### Beer Detail Page
+
+#### Wireframe
+
+![Beer Detail Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/beer-detail.png)
+
+The wireframe illustrates the layout of Alchemy Aleworks' Beer Detail page, designed to showcase detailed information about a specific beer. It includes sections for displaying the beer's image, name, description, type, alcohol content, price, and an option to add the beer to the cart.
+
+#### Screenshot
+
+![Beer Detail Page Screenshot](../alchemy-aleworks/static/images/readme/beer-detail.png)
+
+The screenshot showcases the implemented Beer Detail page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+- **Beer Image:** Displayed prominently at the top of the page, providing a visual representation of the beer.
+- **Beer Details:** Name, description, type, alcohol content, and price displayed clearly for user information.
+- **Add to Cart Form:** Allows users to select the quantity and add the beer to their shopping cart, enhancing user interaction and facilitating purchases.
+- **Superuser Options:** Links for superusers to edit or delete the beer, providing administrative control over the product catalog.
+- **You Might Also Like Section:** Displays random beers that users might find interesting based on their current selection, encouraging further exploration of the product range.
+- **Navigation:** Includes a link to return to the main Beers page, providing seamless navigation for users.
+
+### Merchandise Page
+
+#### Wireframe
+
+![Merchandise Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/merch.png)
+
+The wireframe illustrates the layout of Alchemy Aleworks' Merch page, designed to showcase various merchandise categories such as apparel & accessories and drinkware. It includes sections for sorting options, merchandise cards displaying details such as name and price, and navigation elements for user interaction.
+
+#### Screenshot
+
+![Merchandise Page Screenshot](../alchemy-aleworks/static/images/readme/merch.png)
+
+The screenshot showcases the implemented Merch page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+
+- **Merchandise Categories:** Displayed in distinct sections for apparel & accessories and drinkware, each featuring multiple merchandise items.
+- **Sorting Options:** Dropdown menu allowing users to sort merchandise items by name ascending/descending or price ascending/descending.
+- **Item Count:** Indicates the total number of merchandise items displayed, providing transparency and helping users manage their browsing experience effectively.
+
+### Merchandise Detail Page
+
+#### Wireframe
+
+![Merchandise Detail Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/merch-detail.png)
+
+The wireframe outlines the layout of Alchemy Aleworks' Merch Detail page, designed to provide comprehensive information about a specific merchandise item. It includes sections for displaying the item's image, name, description, price, size (if applicable), and an option to add the item to the cart.
+
+#### Screenshot
+
+![Merchandise Detail Page Screenshot](../alchemy-aleworks/static/images/readme/merch-detail.png)
+
+The screenshot demonstrates the implemented Merch Detail page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+
+- **Merchandise Image:** Featured prominently at the top of the page, providing a clear visual representation of the item.
+- **Merchandise Details:** Name, description, price, and size (if applicable) displayed prominently for user information.
+- **Add to Cart Form:** Allows users to select the quantity and add the item to their shopping cart, enhancing user interaction and facilitating purchases.
+- **Superuser Options:** Links for superusers to edit or delete the merchandise item, providing administrative control over the product catalog.
+- **You Might Also Like Section:** Displays random merchandise items that users might find appealing, encouraging further exploration of the product range.
+- **Navigation:** Includes a link to return to the main Merch page, ensuring seamless navigation for users.
+
+### Taproom Page
+
+#### Wireframe
+
+![Taproom Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/taproom.png)
+
+The wireframe outlines the layout of Alchemy Aleworks' Taproom page, designed to encourage visitors to experience the brewery's taproom firsthand. It includes sections for taproom introduction, image gallery, opening times, and a map for location and directions.
+
+#### Screenshot
+
+![Taproom Page Screenshot](../alchemy-aleworks/static/images/readme/taproom.png)
+
+The screenshot demonstrates the implemented Taproom page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+
+- **Visit Our Taproom:** Introduction section inviting visitors to explore the brewery's taproom atmosphere and enjoy its craft beers.
+- **Gallery Section:** Displays images that capture the ambiance and highlights of the taproom experience.
+- **Taproom Opening Times:** Provides the weekly opening times schedule for visitors to plan their visit accordingly.
+- **Map Section:** Includes an interactive map with location details and a link to get directions using Google Maps.
+
+### About Page
+
+#### Wireframe
+
+![About Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/about.png)
+
+The wireframe illustrates the layout of Alchemy Aleworks' About page, designed to tell the story of the brewery's journey from its humble beginnings to its current stature. It includes sections for introducing the brewery's history, showcasing images that capture its evolution, and featuring links to explore related content.
+
+#### Screenshot
+
+![About Page Screenshot](../alchemy-aleworks/static/images/readme/about.png)
+
+The screenshot showcases the implemented About page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
+
+- **Our Story:** An introductory section that narrates the brewery's origins in a garage and its growth fueled by passion and experimentation.
+- **From Garage to Greatness:** Continues the narrative, highlighting the transition from a garage setup to a fully equipped brewery, emphasising dedication to quality and creativity.
+- **Gallery Section:** Displays images that visually represent key milestones and aspects of the brewery's journey.
+- **Featured Beers:** Displays a selection of random beers, inviting visitors to explore the brewery's beers for sale.
+
+### Additional Pages
+
+#### Bag Page
+
+- **Purpose:** Allows users to review and manage items added to their shopping bag or cart before proceeding to checkout.
+
+![Bag Page Screenshot](../alchemy-aleworks/static/images/readme/bag.png)
+
+#### Checkout Page
+
+- **Purpose:** Allows users to review the items in their bag enter their delivery information and card details to purchase them. Users also have the option to securely store their delivery details to their profile, facilitating faster future purchases.
+
+![Checkout Page Screenshot](../alchemy-aleworks/static/images/readme/checkout.png)
+
+![Checkout Payment Screenshot](../alchemy-aleworks/static/images/readme/checkout-payment.png)
+
+#### Accounts Pages
+
+- **Purpose:** Enables users to authenticate themselves securely (login), create new accounts (signup), and securely log out from the website.
+
+![Login Screenshot](../alchemy-aleworks/static/images/readme/login.png)
+
+![Logout Screenshot](../alchemy-aleworks/static/images/readme/logout.png)
+
+![Register Screenshot](../alchemy-aleworks/static/images/readme/register.png)
+
+#### Profile Page
+
+- **Purpose:** Stores and displays users' personal details, such as editable delivery information and interactive order history with the ability to view previous order confirmation pages.
+
+![Profile Screenshot](../alchemy-aleworks/static/images/readme/profile.png)
+
+#### Terms and Conditions / Privacy Policy / Delivery and Returns Pages
+
+- **Purpose:** Offers users access to legal agreements and policies governing website usage, user data privacy, and product delivery and return terms.
+
+![Login Screenshot](../alchemy-aleworks/static/images/readme/privacy-policy.png)
+
+### Additional Features
+
+#### Navigation Bar
+
+- **Purpose:** The navigation bar enables seamless browsing across the website with intuitive menu options and dropdowns. It prominently showcases a centralised company logo and features interactive main menu options. On smaller devices, it transforms into a compact burger menu for ease of use. Additionally, it includes a secondary navigation menu with a search bar, account options (login/register/logout), and access for administrators to manage products. This menu also includes a shopping bag link that dynamically updates with a visible indicator, displaying the number of items currently in the user's bag.
+
+![Navbar Large Screenshot](../alchemy-aleworks/static/images/readme/nav-large.png)
+
+![Navbar Small Screenshot](../alchemy-aleworks/static/images/readme/nav-small.png)
+
+#### Footer
+
+- **Purpose:** Provides supplementary links and information such as contact details, social media links, and additional navigation menu items for enhanced user accessibility. Also privdes users with an option to sign up to the newsletter by inputting their email address into a form powered by MailChimp.
+
+![Footer Screenshot](../alchemy-aleworks/static/images/readme/footer.png)
+
+#### Age Verification Modal
+
+- **Purpose:** Utilises cookies to display an age verification prompt upon site entry, ensuring compliance with age-related content restrictions due to sale of alcoholic products.
+
+![Age Verification Modal Screenshot](../alchemy-aleworks/static/images/readme/age-check.png)
 
 # Agile Development Approach
 
@@ -137,7 +318,7 @@ User stories in the Alchemy Aleworks project are categorised using different lab
 
 - **Could-Have**: Nice-to-have features that add supplementary value or convenience. These are considered low priority and may be deferred to future releases based on available time and resources.
 
-- **Would-Have**: Desirable features that are not immediately critical but are beneficial for future enhancements. These features can be considered for implementation if time and resources permit after addressing higher priority tasks.
+- **Won't-Have**: Desirable features that are not immediately critical but are beneficial for future enhancements. These features can be considered for implementation if time and resources permit after addressing higher priority tasks.
 
 ### Must Have
 
@@ -151,9 +332,9 @@ User stories in the Alchemy Aleworks project are categorised using different lab
 
 ![Could Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/could-have.png)
 
-### Would Have
+### Won't Have
 
-![Would Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/would-have.png)
+![Would Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/wont-have.png)
 
 The user stories outlined above represent our planned features categorised by priority. We aim to continuously iterate and enhance our platform based on these priorities, ensuring we deliver value incrementally while maintaining flexibility to adapt to future needs and feedback.
 
@@ -182,6 +363,8 @@ The design of Alchemy Aleworks is a harmonious blend of aesthetic sophistication
 - **Favicon.io**: Custom favicons are generated using Favicon.io, a tool that simplifies the process of creating small, iconic images displayed in web browser tabs. These favicons provide a cohesive branding experience and enhance the website's visual identity.
 
 # Technology Stack
+
+
 
 # Data Models
 
@@ -232,8 +415,6 @@ Similar to the `BeerLineItem`, the `MerchLineItem` model itemises the merchandis
 The `CustomerProfile` model contains information about customers delivery information. This model supports streamlined checkouts and enhanced customer service.
 
 ![CustomerProfile Model ERD](../alchemy-aleworks/static/images/readme/customerprofile-erd.png)
-
-# Features
 
 # Testing
 
