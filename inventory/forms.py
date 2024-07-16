@@ -7,7 +7,7 @@ class BeerForm(forms.ModelForm):
     Form for creating or updating a Beer object.
 
     This form is used to add or edit a Beer object in the system. It inherits from
-    Django's ModelForm and includes customizations for the 'image' field to use
+    Django's ModelForm and includes customisations for the 'image' field to use
     CustomClearableFileInput widget and apply a custom CSS class to form inputs.
 
     Attributes:
@@ -16,8 +16,7 @@ class BeerForm(forms.ModelForm):
     class Meta:
         model = Beer
         fields = '__all__'
-
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+        exclude = ['image']
     
     def __init__(self, *args, **kwargs):
         """
@@ -34,7 +33,7 @@ class MerchItemForm(forms.ModelForm):
     Form for creating or updating a MerchItem object.
 
     This form is used to add or edit a MerchItem object in the system. It inherits from
-    Django's ModelForm and includes customizations for the 'image' field to use
+    Django's ModelForm and includes customisations for the 'image' field to use
     CustomClearableFileInput widget and apply a custom CSS class to form inputs.
 
     Attributes:
@@ -43,8 +42,7 @@ class MerchItemForm(forms.ModelForm):
     class Meta:
         model = MerchItem
         fields = '__all__'
-
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+        exclude = ['image']
     
     def __init__(self, *args, **kwargs):
         """

@@ -51,13 +51,13 @@ def add_to_bag(request, item_id, item_type):
                     bag[key]['items_by_size'][size] = quantity
             else:
                 bag[key] = {'items_by_size': {size: quantity}}
-            messages.success(request, f'{quantity} × {product.name} ({size.upper()}) added to bag.')
+            messages.success(request, f'{quantity} x {product.name} ({size.upper()}) added to bag.')
         else:
             if key in bag:
                 bag[key]['quantity'] += quantity
             else:
                 bag[key] = {'quantity': quantity}
-            messages.success(request, f'{quantity} × {product.name} added to bag.')
+            messages.success(request, f'{quantity} x {product.name} added to bag.')
 
     except ValueError:
         messages.error(request, "Invalid quantity. Please enter a valid number.")
@@ -93,7 +93,7 @@ def update_bag(request, item_type, item_id):
             if key in bag and 'items_by_size' in bag[key]:
                 if quantity > 0:
                     bag[key]['items_by_size'][size] = quantity
-                    messages.success(request, f'{quantity} × {product.name} ({size.upper()}) updated in your bag.')
+                    messages.success(request, f'{quantity} x {product.name} ({size.upper()}) updated in your bag.')
                 else:
                     del bag[key]['items_by_size'][size]
                     if not bag[key]['items_by_size']:
@@ -105,7 +105,7 @@ def update_bag(request, item_type, item_id):
             if key in bag:
                 if quantity > 0:
                     bag[key]['quantity'] = quantity
-                    messages.success(request, f'{quantity} × {product.name} updated in your bag.')
+                    messages.success(request, f'{quantity} x {product.name} updated in your bag.')
                 else:
                     del bag[key]
                     messages.success(request, f'{product.name} removed from your bag.')

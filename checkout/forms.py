@@ -24,7 +24,7 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Initialises the form with customizations:
+        Initialises the form with customisations:
         - Sets placeholders for input fields.
         - Autofocuses on the customer name field.
         - Adds CSS class for styling uniformity.

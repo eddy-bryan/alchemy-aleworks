@@ -21,7 +21,7 @@
                 <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray mx-4">
                     <div class="card border-0 align-items-center">
                         <!-- Display beer image or default image -->
-                        {% if beer.image %}
+                        {% if beer.image_url %}
                         <img src="{{ beer.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
                         {% else %}
                         <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
@@ -57,7 +57,7 @@
                 <a href="{% url 'merch_detail' merch_item.id %}" class="text-black hover-gray mx-4">
                     <div class="card border-0 align-items-center">
                         <!-- Display merchandise image or default image -->
-                        {% if merch_item.image %}
+                        {% if merch_item.image_url %}
                         <img src="{{ merch_item.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">
                         {% else %}
                         <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="card-img-top border-black my-2 product-image" alt="{{ merch_item.name }}">

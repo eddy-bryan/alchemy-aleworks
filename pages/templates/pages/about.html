@@ -66,7 +66,7 @@
       <div class="col-12 col-sm-6 col-md-4 h-100 product-container p-0 mx-4 mb-4 {% if forloop.counter > 2 %}d-none d-lg-flex{% endif %}">
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray">
           <div class="card border-0 align-items-center">
-            {% if beer.image %}
+            {% if beer.image_url %}
             <img src="{{ beer.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
             <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">

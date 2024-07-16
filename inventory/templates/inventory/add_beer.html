@@ -25,13 +25,7 @@
             <form action="{% url 'add_beer' %}" method="POST" class="mt-3 px-3" id="add-beer-form">
                 {% csrf_token %}
                 {% for field in form %}
-                    {% if field.name != 'image' %}
-                        <!-- Render all fields except for the image field using crispy forms -->
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        <!-- Render the image field as it is -->
-                        {{ field }}
-                    {% endif %}
+                    {{ field | as_crispy_field }}
                 {% endfor %}
                 <div class="mt-3">
                     <!-- Back to Beers Link -->

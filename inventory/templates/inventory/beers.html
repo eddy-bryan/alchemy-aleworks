@@ -95,7 +95,7 @@
         <!-- Link to each beer's detail page -->
         <a href="{% url 'beer_detail' beer.id %}" class="text-black hover-gray mx-4">
           <div class="card border-0 align-items-center">
-            {% if beer.image %}
+            {% if beer.image_url %}
             <!-- Display beer image if available -->
             <img src="{{ beer.image_url }}" class="card-img-top border-black my-2 product-image" alt="{{ beer.name }}">
             {% else %}
