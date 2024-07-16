@@ -7,9 +7,11 @@
 
 #add-beer-form input[type="text"],
 #add-beer-form input[type="number"],
+#add-beer-form input[type="url"],
 #add-beer-form textarea,
 #add-merch-item-form input[type="text"],
 #add-merch-item-form input[type="number"],
+#add-merch-item-form input[type="url"],
 #add-merch-item-form textarea {
     box-sizing: border-box;
     padding: 10px 12px;
@@ -25,8 +27,10 @@
 
 #add-beer-form input[type="text"],
 #add-beer-form input[type="number"],
+#add-beer-form input[type="url"],
 #add-merch-item-form input[type="text"],
-#add-merch-item-form input[type="number"] {
+#add-merch-item-form input[type="number"],
+#add-merch-item-form input[type="url"] {
     height: 40px;
 }
 
