@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extended_title %}| Error 404{% endblock %}
+
+{% block content %}
+<div class="overflow-hidden position-relative py-4 bg-gray">
+    <div class="text-center text-uppercase col-12">
+        <h3 class="mb-3">404 - Page Not Found</h2>
+            <hr class="bg-black my-0">
+            <p class="mt-3 mb-0">Uh oh, it seems like this keg is tapped out!</p>
+    </div>
+</div>
+
+<div class="col-12 col-lg-6 offset-lg-3 p-3">
+    <div class="order-confirmation-wrapper p-2 border-black text-black">
+        <p>
+            Looks like you've ventured into uncharted ale-chemy territory! Don't worry, take a sip from your favourite
+            brew and head back to our main menu to keep exploring our magical concoctions.
+        </p>
+    </div>
+</div>
+{% endblock %}
