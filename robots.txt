@@ -4,3 +4,4 @@ Disallow: /accounts/
 Disallow: /bag/
 Disallow: /checkout/
 Disallow: /profile/
+Sitemap: https://alchemy-aleworks-5bd2925999c2.herokuapp.com/sitemap.xml
