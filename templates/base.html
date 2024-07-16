@@ -36,6 +36,13 @@
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   {% endblock %}
 
+  <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
@@ -274,13 +281,26 @@
           latest releases and exclusive offers</p>
       </div>
       <div class="row justify-content-center">
-        <form class="form w-100" id="newsletter-form" method="POST" action="">
-          <div class="input-group w-100 px-2">
-            <input type="email" class="form-control rounded-0 mr-3" name="email" placeholder="Enter email">
+
+        
+        <form
+          action="https://herokuapp.us13.list-manage.com/subscribe/post?u=8480434fb13700e264e2e5069&amp;id=5f778682e5&amp;f_id=00b6d1edf0"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form w-100"
+          target="_blank">
+          <div class="input-group w-100 px-2" id="mc_embed_signup_scroll">
+            <input type="email" name="EMAIL" class="form-control rounded-0 mr-3"
+                id="mce-EMAIL" required="" placeholder="Enter email">
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+              /* real people should not fill this in and expect good things - do not remove this or risk form bot
+              signups */
+              <input type="text" name="b_8480434fb13700e264e2e5069_5f778682e5" tabindex="-1" value="">
+            </div>
             <div class="input-group-apend">
-              <button class="form-control btn-white rounded-0" type="submit">
-                Sign up
-              </button>
+              <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="form-control btn-white rounded-0 m-0" value="Sign Up">
+            </div>
+            <div id="mce-responses" class="clear foot position-absolute w-100 mt-5">
+              <div class="response text-danger float-right mr-3" id="mce-error-response" style="display: none;"></div>
+              <div class="response text-info float-right mr-3" id="mce-success-response" style="display: none;"></div>
             </div>
           </div>
         </form>
@@ -436,21 +456,23 @@
 
         <!-- Social Links -->
         <div class="col-6 col-lg-2 text-right align-content-center py-3">
-          <a class="mr-3 text-white" href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-facebook"></i></a>
-          <a class="mr-3 text-white" href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-          <a class="text-white" href="https://x.com/" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
+          <a class="mr-3 text-white" href="https://www.facebook.com/" target="_blank" rel="noopener nofollow"><i class="fa-brands fa-square-facebook"></i></a>
+          <a class="mr-3 text-white" href="https://www.instagram.com/" target="_blank" rel="noopener nofollow"><i class="fa-brands fa-instagram"></i></a>
+          <a class="text-white" href="https://x.com/" target="_blank" rel="noopener nofollow"><i class="fa-brands fa-twitter"></i></a>
         </div>
       </div>
 
       <!-- Copyright -->
       <div class="row d-flex d-lg-none justify-content-center text-center">
         <p class="text-uppercase">&copy;<span class="copyright-year"></span> Alchemy Aleworks - Designed by <a
-            href="https://github.com/eddy-bryan">Eddy Bryan</a></p>
+            href="https://github.com/eddy-bryan" target="_blank" rel="noopener nofollow">Eddy Bryan</a></p>
       </div>
     </div>
   </footer>
 
-  <script>
+  <!-- Additional JavaScript loaded after page content -->
+  {% block end_js %}
+  <script type="text/javascript">
     // Get the current year
     var currentYear = new Date().getFullYear();
     // Update the elements with class "copyright-year"
@@ -460,9 +482,6 @@
       copyrightYears[i].textContent = currentYear;
     }
   </script>
-
-  <!-- Additional JavaScript loaded after page content -->
-  {% block end_js %}
   <script type="text/javascript">
     $(document).ready(function () {
       // Show the toast initially
@@ -470,19 +489,43 @@
 
       // Close toast on click outside
       $(document).on('click', function (e) {
-      // Check if the click target is not within the toast area
-      if (!$(e.target).closest('.toast').length) {
-      // Close the toast
-      $('.toast').toast('hide');
-      }
+        // Check if the click target is not within the toast area
+        if (!$(e.target).closest('.toast').length) {
+          // Close the toast
+          $('.toast').toast('hide');
+        }
       });
 
       // Prevent propagation of click events inside the toast
-      $('.toast').on('click', function(e) {
-      e.stopPropagation();
+      $('.toast').on('click', function (e) {
+        e.stopPropagation();
       });
-      });
+    });
   </script>
+
+  <!-- MailChimp Scripts -->
+  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script type="text/javascript">
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0] = 'EMAIL';
+      ftypes[0] = 'email';
+      fnames[1] = 'FNAME';
+      ftypes[1] = 'text';
+      fnames[2] = 'LNAME';
+      ftypes[2] = 'text';
+      fnames[3] = 'ADDRESS';
+      ftypes[3] = 'address';
+      fnames[4] = 'PHONE';
+      ftypes[4] = 'phone';
+      fnames[5] = 'BIRTHDAY';
+      ftypes[5] = 'birthday';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
+  <!-- Custom script to validate email addresses on MailChimp sign up form -->
+  <script type="text/javascript" src="{% static 'js/custom_validate_email.js' %}"></script>
   {% endblock %}
 </body>
 

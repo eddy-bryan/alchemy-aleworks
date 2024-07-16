@@ -76,7 +76,8 @@ th {
     max-width: 640px;
 }
 
-#newsletter-form {
+#newsletter-form,
+#mc-embedded-subscribe-form {
     max-width: 540px;
 }
 
