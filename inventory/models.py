@@ -14,25 +14,33 @@ class Beer(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     @classmethod
-    def get_random_beers(cls, limited_edition=None, quantity=1, exclude_id=None):
+    def get_random_beers(
+        cls,
+        limited_edition=None,
+        quantity=1,
+        exclude_id=None
+    ):
         """
         Retrieve a random sample of beers from the database.
 
         This method returns a specified number of random Beer objects from the
-        database, optionally filtered by whether they are limited edition or not.
+        database, optionally filtered by whether they are limited edition or
+        not.
 
         :param limited_edition: Optional boolean value to filter beers.
-                                If True, only limited edition beers are returned.
-                                If False, only core range beers are returned.
-                                If None, no filtering by limited edition status is applied.
-                                Defaults to None.
+                                If True, only limited edition beers are
+                                returned. If False, only core range beers
+                                are returned. If None, no filtering by limited
+                                edition status is applied. Defaults to None.
         :param quantity: The number of random Beer objects to retrieve.
                          Defaults to 1. If the quantity requested exceeds the
-                         available number of beers, all available beers are returned.
-        :param exclude_id: Optional ID to exclude a specific beer from the results.
-                           If None, no beer is excluded. Defaults to None.
-        :return: A list of randomly selected Beer objects. If no beers match the filter,
-                 an empty list is returned.
+                         available number of beers, all available beers are
+                         returned.
+        :param exclude_id: Optional ID to exclude a specific beer from the
+                           results. If None, no beer is excluded. Defaults to
+                           None.
+        :return: A list of randomly selected Beer objects. If no beers match
+                 the filter, an empty list is returned.
         """
         queryset = cls.objects.all()
         if limited_edition is not None:
@@ -40,7 +48,9 @@ class Beer(models.Model):
         if exclude_id is not None:
             queryset = queryset.exclude(id=exclude_id)
         if queryset.exists():
-            return random.sample(list(queryset), min(quantity, queryset.count()))
+            return random.sample(
+                list(queryset), min(quantity, queryset.count())
+            )
         return []
 
     def __str__(self):
@@ -58,22 +68,30 @@ class MerchItem(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     @classmethod
-    def get_random_merch_items(cls, category=None, quantity=1, exclude_id=None):
+    def get_random_merch_items(
+        cls,
+        category=None,
+        quantity=1,
+        exclude_id=None
+    ):
         """
         Retrieve a random sample of merch items from the database.
 
-        This method returns a specified number of random MerchItem objects from the
-        database, optionally filtered by category.
+        This method returns a specified number of random MerchItem objects from
+        the database, optionally filtered by category.
 
-        :param category: Optional string to filter merch items by category. 
-                         Defaults to None, which means no filtering by category.
-        :param quantity: The number of random MerchItem objects to retrieve. 
-                         Defaults to 1. If the quantity requested exceeds the 
-                         available number of merch items, all available items are returned.
-        :param exclude_id: Optional ID to exclude a specific merch item from the results.
-                           If None, no merch item is excluded. Defaults to None.
-        :return: A list of randomly selected MerchItem objects. If no items match the filter, 
-                 None is returned.
+        :param category: Optional string to filter merch items by category.
+                         Defaults to None, which means no filtering by
+                         category.
+        :param quantity: The number of random MerchItem objects to retrieve.
+                         Defaults to 1. If the quantity requested exceeds the
+                         available number of merch items, all available items
+                         are returned.
+        :param exclude_id: Optional ID to exclude a specific merch item from
+                           the results. If None, no merch item is excluded.
+                           Defaults to None.
+        :return: A list of randomly selected MerchItem objects. If no items
+                 match the filter, None is returned.
         """
         queryset = cls.objects.all()
         if category:
@@ -81,7 +99,9 @@ class MerchItem(models.Model):
         if exclude_id is not None:
             queryset = queryset.exclude(id=exclude_id)
         if queryset.exists():
-            return random.sample(list(queryset), min(quantity, queryset.count()))
+            return random.sample(
+                list(queryset), min(quantity, queryset.count())
+            )
         return None
 
     def __str__(self):

@@ -6,11 +6,12 @@ class CustomerProfileForm(forms.ModelForm):
     """
     Form for updating customer profile information.
 
-    This form is based on the CustomerProfile model, excluding the 'customer' field.
-    It provides placeholders and custom attributes for form fields.
+    This form is based on the CustomerProfile model, excluding the 'customer'
+    field. It provides placeholders and custom attributes for form fields.
 
     Attributes:
-        placeholders (dict): Dictionary mapping field names to placeholder text.
+        placeholders (dict): Dictionary mapping field names to placeholder
+                             text.
     """
     class Meta:
         model = CustomerProfile
@@ -20,8 +21,8 @@ class CustomerProfileForm(forms.ModelForm):
         """
         Initialise the CustomerProfileForm instance.
 
-        Sets autofocus on the 'default_customer_phone' field, adds placeholders,
-        and applies custom CSS classes to form inputs.
+        Sets autofocus on the 'default_customer_phone' field, adds
+        placeholders, and applies custom CSS classes to form inputs.
 
         Args:
             *args: Positional arguments passed to the form.

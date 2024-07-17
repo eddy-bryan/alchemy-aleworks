@@ -38,7 +38,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://alchemy-aleworks-5bd2925999c2.herokuapp.com/',
-    'https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net',
+    'https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net'
 ]
 
 
@@ -118,22 +118,21 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 # Authentication Method
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Allow login with either username or email
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 
 # Email Settings
-ACCOUNT_EMAIL_REQUIRED = True                     # Email is required for registration
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'          # Email verification is mandatory
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True           # Require email to be entered twice during signup
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 
 # Username Settings
-ACCOUNT_USERNAME_MIN_LENGTH = 4                   # Minimum length for usernames
+ACCOUNT_USERNAME_MIN_LENGTH = 4
 
 # URL Redirections
-LOGIN_URL = '/accounts/login/'                    # URL to redirect to for login
-LOGIN_REDIRECT_URL = '/'                          # URL to redirect to after login
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'alchemy_aleworks.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -149,9 +148,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-     
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -14,7 +14,8 @@ import stripe
 
 class StripeWH_Handler:
     """
-    Handles Stripe webhook events, adapted for this project from the Boutique Ado walkthrough.
+    Handles Stripe webhook events, adapted for this project from the Boutique
+    Ado walkthrough.
     """
 
     def __init__(self, request):
@@ -22,7 +23,8 @@ class StripeWH_Handler:
         Initialise with the incoming HTTP request.
 
         Args:
-            request (HttpRequest): The HTTP request object containing the webhook data.
+            request (HttpRequest): The HTTP request object containing the
+                                   webhook data.
         """
         self.request = request
 
@@ -31,7 +33,8 @@ class StripeWH_Handler:
         Send a confirmation email to the customer after completing an order.
 
         Args:
-            order (Order): The Order object for which to send the confirmation email.
+            order (Order): The Order object for which to send the confirmation
+            email.
         """
         customer_email = order.customer_email
         subject = render_to_string(
@@ -40,7 +43,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-            
+
         send_mail(
             subject,
             body,
@@ -56,7 +59,8 @@ class StripeWH_Handler:
             event (dict): The event payload received from Stripe.
 
         Returns:
-            HttpResponse: A response indicating the event was received but not handled specifically.
+            HttpResponse: A response indicating the event was received but not
+                          handled specifically.
         """
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
@@ -68,10 +72,12 @@ class StripeWH_Handler:
         Handle the `payment_intent.succeeded` event from Stripe.
 
         Args:
-            event (dict): The event payload received from Stripe, indicating a successful payment.
+            event (dict): The event payload received from Stripe, indicating a
+                          successful payment.
 
         Returns:
-            HttpResponse: A response confirming receipt of the successful payment intent.
+            HttpResponse: A response confirming receipt of the successful
+                          payment intent.
         """
         intent = event.data.object
         pid = intent.id
@@ -98,13 +104,27 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = CustomerProfile.objects.get(customer__username=username)
             if save_info:
-                profile.default_customer_phone = shipping_details.phone
-                profile.default_customer_country = shipping_details.address.country
-                profile.default_customer_postcode = shipping_details.address.postal_code
-                profile.default_customer_city = shipping_details.address.city
-                profile.default_customer_address1 = shipping_details.address.line1
-                profile.default_customer_address2 = shipping_details.address.line2
-                profile.default_customer_county = shipping_details.address.state
+                profile.default_customer_phone = (
+                    shipping_details.phone
+                )
+                profile.default_customer_country = (
+                    shipping_details.address.country
+                )
+                profile.default_customer_postcode = (
+                    shipping_details.address.postal_code
+                )
+                profile.default_customer_city = (
+                    shipping_details.address.city
+                )
+                profile.default_customer_address1 = (
+                    shipping_details.address.line1
+                )
+                profile.default_customer_address2 = (
+                    shipping_details.address.line2
+                )
+                profile.default_customer_county = (
+                    shipping_details.address.state
+                )
                 profile.save()
 
         order_exists = False
@@ -133,8 +153,12 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                status=200)
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    f'SUCCESS: Verified order already in database'
+                ),
+                status=200
+            )
         else:
             order = None
             try:
@@ -157,7 +181,9 @@ class StripeWH_Handler:
                     if item_type == 'beer':
                         product = Beer.objects.get(id=item_id)
                         if 'items_by_size' in item_data:
-                            for size, quantity in item_data['items_by_size'].items():
+                            for size, quantity in (
+                                item_data['items_by_size'].items()
+                            ):
                                 beer_line_item = BeerLineItem(
                                     order=order,
                                     beer=product,
@@ -174,7 +200,9 @@ class StripeWH_Handler:
                     elif item_type == 'merch':
                         product = MerchItem.objects.get(id=item_id)
                         if 'items_by_size' in item_data:
-                            for size, quantity in item_data['items_by_size'].items():
+                            for size, quantity in (
+                                item_data['items_by_size'].items()
+                            ):
                                 merch_line_item = MerchLineItem(
                                     order=order,
                                     merch_item=product,
@@ -197,18 +225,24 @@ class StripeWH_Handler:
                     status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
-            status=200)
+            content=(
+                f'Webhook received: {event["type"]} | '
+                f'SUCCESS: Created order in webhook'
+            ),
+            status=200
+        )
 
     def handle_payment_intent_payment_failed(self, event):
         """
         Handle the `payment_intent.payment_failed` event from Stripe.
 
         Args:
-            event (dict): The event payload received from Stripe, indicating a failed payment.
+            event (dict): The event payload received from Stripe,
+                        indicating a failed payment.
 
         Returns:
-            HttpResponse: A response confirming receipt of the failed payment intent.
+            HttpResponse: A response confirming receipt of the failed payment
+                          intent.
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',

@@ -13,7 +13,8 @@ class OrderForm(forms.ModelForm):
         Meta: Specifies the model (Order) and fields to include in the form.
 
     Methods:
-        __init__: Initialises the form with placeholders, autofocus, and CSS classes for styling.
+        __init__: Initialises the form with placeholders, autofocus, and CSS
+        classes for styling.
     """
     class Meta:
         model = Order
@@ -30,7 +31,7 @@ class OrderForm(forms.ModelForm):
         - Adds CSS class for styling uniformity.
         """
         super().__init__(*args, **kwargs)
-        
+
         # Placeholder texts for each field
         placeholders = {
             'customer_name': 'Customer Name',
@@ -45,7 +46,7 @@ class OrderForm(forms.ModelForm):
 
         # Autofocus on the customer name field
         self.fields['customer_name'].widget.attrs['autofocus'] = True
-        
+
         # Iterate through each form field to set attributes
         for field in self.fields:
             # Exclude 'customer_country' from placeholder customisation
@@ -56,9 +57,9 @@ class OrderForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            
+
             # Add a CSS class for styling consistency
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            
+
             # Disable default labels for fields
             self.fields[field].label = False

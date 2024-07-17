@@ -11,7 +11,8 @@ class BeerAdmin(admin.ModelAdmin):
     list view and their ordering.
 
     Attributes:
-        list_display: Tuple of fields to display as columns in the admin list view.
+        list_display: Tuple of fields to display as columns in the admin list
+                      view.
         ordering: Tuple specifying the default sorting order for Beer objects.
     """
     list_display = (
@@ -23,8 +24,9 @@ class BeerAdmin(admin.ModelAdmin):
         'limited_edition',
         'image',
     )
-    
+
     ordering = ('sku',)
+
 
 class MerchItemAdmin(admin.ModelAdmin):
     """
@@ -35,8 +37,10 @@ class MerchItemAdmin(admin.ModelAdmin):
     list view and their ordering.
 
     Attributes:
-        list_display: Tuple of fields to display as columns in the admin list view.
-        ordering: Tuple specifying the default sorting order for MerchItem objects.
+        list_display: Tuple of fields to display as columns in the admin list
+                      view.
+        ordering: Tuple specifying the default sorting order for MerchItem
+                  objects.
     """
     list_display = (
         'sku',
@@ -46,8 +50,9 @@ class MerchItemAdmin(admin.ModelAdmin):
         'sized_item',
         'image',
     )
-    
+
     ordering = ('sku',)
+
 
 admin.site.register(Beer, BeerAdmin)
 admin.site.register(MerchItem, MerchItemAdmin)

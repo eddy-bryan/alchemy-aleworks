@@ -7,6 +7,7 @@ from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
+
 @require_POST
 @csrf_exempt
 def webhook(request):
@@ -15,19 +16,19 @@ def webhook(request):
 
     This webhook function follows the implementation from the Boutique Ado
     walkthrough project.
-    
+
     It sets up Stripe's webhook listener to handle different types of events
     sent by Stripe to the webhook endpoint. It validates the payload and
     signature of the incoming webhook request, and dispatches the event to
     the appropriate handler.
 
     Args:
-        request (HttpRequest): The incoming HTTP request containing the 
-            webhook payload and headers.
+        request (HttpRequest): The incoming HTTP request containing the
+                               webhook payload and headers.
 
     Returns:
-        HttpResponse: A response with the status code indicating the result 
-            of processing the webhook event.
+        HttpResponse: A response with the status code indicating the result
+                      of processing the webhook event.
     """
     # Setup Stripe API key and webhook secret
     wh_secret = settings.STRIPE_WH_SECRET
@@ -58,8 +59,12 @@ def webhook(request):
 
     # Map specific Stripe event types to their corresponding handler methods
     event_map = {
-        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+        'payment_intent.succeeded': (
+            handler.handle_payment_intent_succeeded
+        ),
+        'payment_intent.payment_failed': (
+            handler.handle_payment_intent_payment_failed
+        ),
     }
 
     # Determine the event type from the Stripe event object

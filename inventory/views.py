@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Beer, MerchItem
 from .forms import BeerForm, MerchItemForm
 
+
 def beers(request):
     """
     View to display, filter, and sort all beers.
@@ -16,7 +17,8 @@ def beers(request):
         - 'limited_edition_beer': randomly selected limited edition beer.
         - 'core_range_beer': randomly selected core range beer.
         - 'title': title indicating the current filter or default 'All Beers'.
-        - 'limited_edition': original query parameter value for limited edition filter.
+        - 'limited_edition': original query parameter value for limited edition
+                             filter.
     """
     limited_edition = request.GET.get('limited_edition', '').lower() == 'true'
     beers = Beer.objects.all()
@@ -47,22 +49,29 @@ def beers(request):
         beers = beers.order_by('-alcohol_content')
 
     # Get random beers
-    limited_edition_beer = Beer.get_random_beers(limited_edition=True, quantity=1)
+    limited_edition_beer = Beer.get_random_beers(
+        limited_edition=True,
+        quantity=1
+    )
     core_range_beer = Beer.get_random_beers(limited_edition=False, quantity=1)
     context = {
         'beers': beers,
-        'limited_edition_beer': limited_edition_beer[0] if limited_edition_beer else None,
+        'limited_edition_beer': (
+            limited_edition_beer[0] if limited_edition_beer else None
+        ),
         'core_range_beer': core_range_beer[0] if core_range_beer else None,
         'title': title,
         'limited_edition': request.GET.get('limited_edition', ''),
     }
     return render(request, 'inventory/beers.html', context)
 
+
 def merch(request):
     """
     View to display, filter, and sort all merch items.
 
-    Filters merch items based on query parameter 'category' and sorts based on 'sort_by'.
+    Filters merch items based on query parameter 'category' and sorts based on
+    'sort_by'.
     Renders 'inventory/merch.html' template with context:
         - 'merch': queryset of filtered and sorted merch items.
         - 'random_apparel': randomly selected apparel item.
@@ -95,8 +104,14 @@ def merch(request):
         merch = merch.order_by('-name')
 
     # Get random merch items
-    random_apparel = MerchItem.get_random_merch_items(category="Apparel & Accessories", quantity=1)
-    random_drinkware = MerchItem.get_random_merch_items(category="Drinkware", quantity=1)
+    random_apparel = MerchItem.get_random_merch_items(
+        category="Apparel & Accessories",
+        quantity=1
+    )
+    random_drinkware = MerchItem.get_random_merch_items(
+        category="Drinkware",
+        quantity=1
+    )
     context = {
         'merch': merch,
         'random_apparel': random_apparel[0] if random_apparel else None,
@@ -106,13 +121,15 @@ def merch(request):
     }
     return render(request, 'inventory/merch.html', context)
 
+
 def search_view(request):
     """
     View to handle search functionality for both beers and merch items.
 
-    Retrieves search query from GET parameter 'q' and performs search in 'name', 'sku', 'type',
-    'description', and 'alcohol_content' fields for beers and 'name', 'sku', 'category', and 'description'
-    fields for merch items. Renders 'inventory/search_results.html' with context:
+    Retrieves search query from GET parameter 'q' and performs search in
+    'name', 'sku', 'type', 'description', and 'alcohol_content' fields
+    for beers and 'name', 'sku', 'category', and 'description' fields for
+    merch items. Renders 'inventory/search_results.html' with context:
         - 'query': search query.
         - 'beers': queryset of beers matching search query.
         - 'merch_items': queryset of merch items matching search query.
@@ -121,11 +138,23 @@ def search_view(request):
 
     if not query:
         messages.error(request, "Please enter a search term to find products.")
-        return redirect(request.META.get('HTTP_REFERER', 'home'))  # Redirect to the referring page or 'home' if no referrer.
+        # Redirect to the referring page or 'home' if no referrer.
+        return redirect(request.META.get('HTTP_REFERER', 'home'))
 
-    # Construct queries to filter beers and merch items based on the search term
-    beer_queries = Q(name__icontains=query) | Q(sku__icontains=query) | Q(type__icontains=query) | Q(description__icontains=query) | Q(alcohol_content__icontains=query)
-    merch_queries = Q(name__icontains=query) | Q(sku__icontains=query) | Q(category__icontains=query) | Q(description__icontains=query)
+    # Construct queries to filter beers and merch items based on search term
+    beer_queries = (
+        Q(name__icontains=query) |
+        Q(sku__icontains=query) |
+        Q(type__icontains=query) |
+        Q(description__icontains=query) |
+        Q(alcohol_content__icontains=query)
+    )
+    merch_queries = (
+        Q(name__icontains=query) |
+        Q(sku__icontains=query) |
+        Q(category__icontains=query) |
+        Q(description__icontains=query)
+    )
 
     # Query the database
     beers = Beer.objects.filter(beer_queries)
@@ -139,13 +168,16 @@ def search_view(request):
 
     return render(request, 'inventory/search_results.html', context)
 
+
 def beer_detail(request, beer_id):
     """
     View to display details of a specific beer.
 
-    Retrieves beer object with 'beer_id' and renders 'inventory/beer_detail.html' with context:
+    Retrieves beer object with 'beer_id' and renders
+    'inventory/beer_detail.html' with context:
         - 'beer': beer object.
-        - 'random_beers': queryset of 3 random beers excluding the current beer.
+        - 'random_beers': queryset of 3 random beers excluding the current
+                          beer.
     """
     beer = get_object_or_404(Beer, pk=beer_id)
     random_beers = Beer.get_random_beers(quantity=3, exclude_id=beer_id)
@@ -155,21 +187,28 @@ def beer_detail(request, beer_id):
     }
     return render(request, 'inventory/beer_detail.html', context)
 
+
 def merch_detail(request, merch_id):
     """
     View to display details of a specific merch item.
 
-    Retrieves merch item object with 'merch_id' and renders 'inventory/merch_detail.html' with context:
+    Retrieves merch item object with 'merch_id' and renders
+    'inventory/merch_detail.html' with context:
         - 'merch': merch item object.
-        - 'random_merch': queryset of 3 random merch items excluding the current merch item.
+        - 'random_merch': queryset of 3 random merch items excluding the
+                          current merch item.
     """
     merch = get_object_or_404(MerchItem, pk=merch_id)
-    random_merch = MerchItem.get_random_merch_items(quantity=3, exclude_id=merch_id)
+    random_merch = MerchItem.get_random_merch_items(
+        quantity=3,
+        exclude_id=merch_id
+    )
     context = {
         'merch': merch,
         'random_merch': random_merch,
     }
     return render(request, 'inventory/merch_detail.html', context)
+
 
 @login_required
 def add_beer(request):
@@ -190,10 +229,13 @@ def add_beer(request):
             messages.success(request, 'Beer successfully added!')
             return redirect(reverse('beer_detail', args=[beer.id]))
         else:
-            messages.error(request, 'Failed to add beer. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add beer. Please ensure the form is valid.'
+            )
     else:
         form = BeerForm()
-        
+
     form = BeerForm()
     template = 'inventory/add_beer.html'
     context = {
@@ -201,6 +243,7 @@ def add_beer(request):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def add_merch(request):
@@ -221,7 +264,10 @@ def add_merch(request):
             messages.success(request, 'Merch item successfully added!')
             return redirect(reverse('merch_detail', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to add merch item. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add merch item. Please ensure the form is valid.'
+            )
     else:
         form = MerchItemForm()
 
@@ -233,19 +279,21 @@ def add_merch(request):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_beer(request, beer_id):
     """
     View for admins to edit an existing beer in the store.
 
-    Retrieves beer object with 'beer_id', allows editing via BeerForm, and renders 'inventory/edit_beer.html' with context:
+    Retrieves beer object with 'beer_id', allows editing via BeerForm,
+    and renders 'inventory/edit_beer.html' with context:
         - 'form': instance of BeerForm for editing the beer.
         - 'beer': beer object being edited.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     beer = get_object_or_404(Beer, pk=beer_id)
     if request.method == 'POST':
         form = BeerForm(request.POST, request.FILES, instance=beer)
@@ -254,7 +302,10 @@ def edit_beer(request, beer_id):
             messages.success(request, 'Beer successfully updated!')
             return redirect(reverse('beer_detail', args=[beer.id]))
         else:
-            messages.error(request, 'Failed to update beer. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update beer. Please ensure the form is valid.'
+            )
     else:
         form = BeerForm(instance=beer)
         messages.info(request, f'You are editing {beer.name}')
@@ -267,19 +318,21 @@ def edit_beer(request, beer_id):
 
     return render(request, template, context)
 
+
 @login_required
 def edit_merch(request, merch_id):
     """
     View for admins to edit an existing merch item in the store.
 
-    Retrieves merch item object with 'merch_id', allows editing via MerchItemForm, and renders 'inventory/edit_merch.html' with context:
+    Retrieves merch item object with 'merch_id', allows editing via
+    MerchItemForm, and renders 'inventory/edit_merch.html' with context:
         - 'form': instance of MerchItemForm for editing the merch item.
         - 'merch': merch item object being edited.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     merch = get_object_or_404(MerchItem, pk=merch_id)
     if request.method == 'POST':
         form = MerchItemForm(request.POST, request.FILES, instance=merch)
@@ -288,7 +341,10 @@ def edit_merch(request, merch_id):
             messages.success(request, 'Merch item successfully updated!')
             return redirect(reverse('merch_detail', args=[merch.id]))
         else:
-            messages.error(request, 'Failed to update merch item. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update merch item. Please ensure the form is valid.'
+            )
     else:
         form = MerchItemForm(instance=merch)
         messages.info(request, f'You are editing {merch.name}')
@@ -304,33 +360,37 @@ def edit_merch(request, merch_id):
 
     return render(request, template, context)
 
+
 @login_required
 def delete_beer(request, beer_id):
     """
     View for admins to delete an existing beer from the store.
 
-    Retrieves beer object with 'beer_id' and deletes it, then redirects to 'beers' view.
+    Retrieves beer object with 'beer_id' and deletes it, then redirects
+    to 'beers' view.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     beer = get_object_or_404(Beer, pk=beer_id)
     beer.delete()
     messages.success(request, 'Beer deleted successfully!')
     return redirect(reverse('beers'))
+
 
 @login_required
 def delete_merch(request, merch_id):
     """
     View for admins to delete an existing merch item from the store.
 
-    Retrieves merch item object with 'merch_id' and deletes it, then redirects to 'merch' view.
+    Retrieves merch item object with 'merch_id' and deletes it, then redirects
+    to 'merch' view.
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
-        
+
     merch = get_object_or_404(MerchItem, pk=merch_id)
     merch.delete()
     messages.success(request, 'Merch item deleted successfully!')

@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -12,6 +18,7 @@ from bag.contexts import bag_contents
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -30,8 +37,12 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, "We're unable to process your payment at the moment. Please try again later.")
+        messages.error(
+            request,
+            "Payment processing failed. Please try again later."
+        )
         return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     """
@@ -69,7 +80,9 @@ def checkout(request):
                     if item_type == 'beer':
                         product = Beer.objects.get(id=item_id)
                         if 'items_by_size' in item_data:
-                            for size, quantity in item_data['items_by_size'].items():
+                            for size, quantity in (
+                                item_data['items_by_size'].items()
+                            ):
                                 beer_line_item = BeerLineItem(
                                     order=order,
                                     beer=product,
@@ -86,7 +99,9 @@ def checkout(request):
                     elif item_type == 'merch':
                         product = MerchItem.objects.get(id=item_id)
                         if 'items_by_size' in item_data:
-                            for size, quantity in item_data['items_by_size'].items():
+                            for size, quantity in (
+                                item_data['items_by_size'].items()
+                            ):
                                 merch_line_item = MerchLineItem(
                                     order=order,
                                     merch_item=product,
@@ -102,16 +117,25 @@ def checkout(request):
                             )
                             merch_line_item.save()
                 except (Beer.DoesNotExist, MerchItem.DoesNotExist):
-                    messages.error(request, (
-                        "One of the products in your cart could not be found in our database. Please contact us for assistance.")
+                    messages.error(
+                        request,
+                        "Product not found. Please contact us for assistance."
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse(
+                    'checkout_success',
+                    args=[order.order_number]
+                )
+            )
         else:
-            messages.error(request, 'There seems to be an error in your form. Please verify your information and try again.')
+            messages.error(
+                request,
+                'Error in form. Verify info and try again.'
+            )
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -128,7 +152,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with user's profile info
         if request.user.is_authenticated:
             try:
                 profile = CustomerProfile.objects.get(customer=request.user)
@@ -149,7 +173,10 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        message.warning(request, 'Stripe public key is missing. Ensure it is correctly set in your environment.')
+        message.warning(
+            request,
+            'Stripe public key is missing. Ensure it is correctly set.'
+        )
 
     template = 'checkout/checkout.html'
     context = {
@@ -187,11 +214,19 @@ def checkout_success(request, order_number):
                 'default_customer_address2': order.customer_address2,
                 'default_customer_county': order.customer_county,
             }
-            customer_profile_form = CustomerProfileForm(profile_data, instance=profile)
+            customer_profile_form = CustomerProfileForm(
+                profile_data,
+                instance=profile
+            )
             if customer_profile_form.is_valid():
                 customer_profile_form.save()
 
-    messages.success(request, f'Your order has been successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.customer_email}.')
+    messages.success(
+        request,
+        f'Your order has been successfully processed! '
+        f'Your order number is {order_number}. '
+        f'A confirmation email will be sent to {order.customer_email}.'
+    )
 
     if 'bag' in request.session:
         del request.session['bag']

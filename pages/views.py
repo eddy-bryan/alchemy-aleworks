@@ -2,11 +2,13 @@ from django.conf import settings
 from django.shortcuts import render
 from inventory.models import Beer
 
+
 def taproom(request):
     """
     Render the Taproom page.
 
-    Retrieves the Google Maps API key from settings and passes it to the template context.
+    Retrieves the Google Maps API key from settings and passes it to the
+    template context.
 
     Args:
         request (HttpRequest): The HTTP request object.
@@ -20,6 +22,7 @@ def taproom(request):
     }
 
     return render(request, template, context)
+
 
 def about(request):
     """
@@ -39,6 +42,7 @@ def about(request):
     }
     return render(request, 'pages/about.html', context)
 
+
 def orders_and_returns(request):
     """
     Render the Orders and Returns page.
@@ -51,6 +55,7 @@ def orders_and_returns(request):
     """
     return render(request, 'pages/orders_and_returns.html')
 
+
 def privacy_policy(request):
     """
     Render the Privacy Policy page.
@@ -62,6 +67,7 @@ def privacy_policy(request):
         HttpResponse: Rendered response with the Privacy Policy page.
     """
     return render(request, 'pages/privacy_policy.html')
+
 
 def terms_and_conditions(request):
     """

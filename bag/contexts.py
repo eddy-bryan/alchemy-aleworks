@@ -4,13 +4,14 @@ from django.shortcuts import get_object_or_404
 
 from inventory.models import Beer, MerchItem
 
+
 def bag_contents(request):
     """
     Calculate and return the contents of the shopping bag.
 
     This function retrieves the items in the shopping bag from the session,
-    calculates the total cost, the number of products, and determines the delivery
-    cost based on the total value of the bag contents.
+    calculates the total cost, the number of products, and determines the
+    delivery cost based on the total value of the bag contents.
 
     Returns a context dictionary containing:
     - bag_items: List of items in the bag with their details.

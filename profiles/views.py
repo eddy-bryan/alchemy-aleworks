@@ -14,8 +14,8 @@ def profile(request):
     Display the user's profile.
 
     Retrieves the CustomerProfile instance associated with the logged-in user.
-    If the request method is POST, updates the profile information based on form data.
-    Displays a success message upon successful profile update.
+    If the request method is POST, updates the profile information based on
+    form data. Displays a success message upon successful profile update.
 
     Template: 'profiles/profile.html'
     Context:
@@ -41,6 +41,7 @@ def profile(request):
 
     return render(request, template, context)
 
+
 def order_history(request, order_number):
     """
     Display details of a past order.
@@ -55,7 +56,8 @@ def order_history(request, order_number):
     Template: 'checkout/checkout_success.html'
     Context:
         - order: Order instance corresponding to the provided order_number.
-        - from_profile: Boolean indicating if the order detail view was accessed from the user's profile.
+        - from_profile: Boolean indicating if the order detail view was
+                        accessed from the user's profile.
     """
     order = get_object_or_404(Order, order_number=order_number)
 

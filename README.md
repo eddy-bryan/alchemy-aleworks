@@ -541,6 +541,8 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ### HTML
 
+The validation checks for HTML markup were performed using the W3C Markup Validation Service. This service ensures that all HTML code adheres to the standards set by the World Wide Web Consortium (W3C), identifying any syntax errors, deprecated elements, or structural issues that could impact the rendering or functionality of the web pages.
+
 #### Home Page
 
 ![Home Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home.png)
@@ -609,6 +611,8 @@ Note: The validation warning about an empty header element on the Checkout page 
 
 ### CSS
 
+The CSS files in this project underwent validation using the W3C CSS Validation Service. This service verifies the validity of CSS code according to the CSS specifications outlined by W3C. It ensures that stylesheets are correctly written, free of syntax errors, and adhere to the standards, promoting consistency and compatibility across different browsers.
+
 #### base.css
 
 ![base.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/base-css.png)
@@ -626,6 +630,8 @@ Note: The validation warning about an empty header element on the Checkout page 
 ![profile.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profile-css.png)
 
 ### JavaScript
+
+For JavaScript code quality assurance, JSHint was used to perform validation checks. JSHint analyses JavaScript code for potential errors, coding conventions, and stylistic inconsistencies. It helps ensure that the JavaScript code is clean, efficient, and follows best practices, thereby enhancing readability and maintainability.
 
 #### age_verification_modal.js
 
@@ -665,7 +671,141 @@ Note: The validation warning about an empty header element on the Checkout page 
 
 ### Python
 
+Validation of Python code was conducted using Code Institute's Python Linter. This tool ensures adherence to Python coding standards and best practices, highlighting any syntax errors, style violations, or potential pitfalls in the code. By using this linter, the Python code is validated to be structured correctly, enhancing readability and maintainability throughout the development process.
 
+#### Alchemy Aleworks Main Project Folder
+
+#### settings.py
+
+![Alchemy Aleworks settings.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/settings.png)
+
+**Note:** 4 validator errors appear due to AllAuth password validator variables being significantly long.
+
+#### urls.py
+
+![Alchemy Aleworks urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/urls.png)
+
+#### views.py
+
+![Alchemy Aleworks views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/views.png)
+
+#### Bag App
+
+#### bag_tools.py
+
+![Bag bag_tools.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/bag-tools.png)
+
+#### contexts.py
+
+![Bag contexts.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/contexts.png)
+
+#### urls.py
+
+![Bag urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/urls.png)
+
+#### views.py
+
+![Bag views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/views.png)
+
+#### Checkout App
+
+#### admin.py
+
+![Checkout admin.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/admin.png)
+
+#### apps.py
+
+![Checkout apps.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/apps.png)
+
+#### forms.py
+
+![Checkout forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/forms.png)
+
+#### models.py
+
+![Checkout models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/models.png)
+
+#### signals.py
+
+![Checkout signals.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/signals.png)
+
+#### urls.py
+
+![Checkout urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/urls.png)
+
+#### views.py
+
+![Checkout views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/views.png)
+
+#### webhook_handler.py
+
+![Checkout webhook_handler.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/webhook-handler.png)
+
+**Note:** This warning is caused by the use of `iexact` lookup variables in Django queries. The `iexact` lookups are essential for case-insensitive exact matches and ensure the proper functioning of the queries. Reducing the length of these lines is not feasible without compromising readability and functionality.
+
+#### webhooks.py
+
+![Checkout webhooks.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/webhooks.png)
+
+#### Home App
+
+#### urls.py
+
+![Home urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home/urls.png)
+
+#### views.py
+
+![Home views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home/views.png)
+
+#### Inventory App
+
+#### admin.py
+
+![Inventory admin.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/admin.png)
+
+#### forms.py
+
+![Inventory forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/forms.png)
+
+#### models.py
+
+![Inventory models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/models.png)
+
+#### urls.py
+
+![Inventory urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/urls.png)
+
+#### views.py
+
+![Inventory views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/views.png)
+
+#### Pages App
+
+#### urls.py
+
+![Pages urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/pages/urls.png)
+
+#### views.py
+
+![Pages views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/pages/views.png)
+
+#### Profiles App
+
+#### forms.py
+
+![Profiles forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/forms.png)
+
+#### models.py
+
+![Profiles models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/models.png)
+
+#### urls.py
+
+![Profiles urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/urls.png)
+
+#### views.py
+
+![Profiles views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/views.png)
 
 ## Lighthouse
 
