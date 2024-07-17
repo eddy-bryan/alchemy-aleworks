@@ -539,9 +539,143 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ## Code Validator Checks
 
+### Home Page
 
+![Home Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home.png)
+
+### Beers Page
+
+![Beers Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/beers.png)
+
+### Beer Detail Page
+
+![Beer Detail Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/beer-detail.png)
+
+### Merch Page
+
+![Merch Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/merch.png)
+
+### Merch Detail Page
+
+![Merch Detail Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/merch-detail.png)
+
+### Taproom Page
+
+![Taproom Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/taproom.png)
+
+### About Page
+
+![About Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/about.png)
+
+### Add Beer Page
+
+![Add Beer Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/add-beer.png)
+
+### Add Merch Page
+
+![Add Merch Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/add-merch.png)
+
+### Bag Page
+
+![Bag Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag.png)
+
+### Checkout Page
+
+![Checkout Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout.png)
+
+Note: The validation warning about an empty header element on the Checkout page is false as the header element contains an icon.
+
+### Checkout Success Page
+
+![Checkout Success Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout-success.png)
+
+### Profile Page
+
+![Profile Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profile.png)
+
+### Orders and Returns Page
+
+![Orders and Returns Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/orders-and-returns.png)
+
+### Privacy Policy Page
+
+![Privacy Policy Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/privacy-policy.png)
+
+### Terms and Conditions Page
+
+![Terms and Conditions Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/terms-and-conditions.png)
 
 ## Lighthouse
+
+During testing, it was noted that the best practices score was impacted by the fact that the application uses third-party cookies from Stripe and MailChimp. These are essential for specific functionalities such as payment processing and marketing tools. While developer tools like Lighthouse may flag these cookies, it's important to understand that they are integral to the core features and operations of the project.
+
+### Home Page
+
+![Home Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/home.png)
+
+### Beers Page
+
+![Beers Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/beers.png)
+
+### Beer Detail Page
+
+![Beer Detail Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/beer-detail.png)
+
+### Merch Page
+
+![Merch Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/merch.png)
+
+### Merch Detail Page
+
+![Merch Detail Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/merch-detail.png)
+
+### Taproom Page
+
+![Taproom Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/taproom.png)
+
+### About Page
+
+![About Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/about.png)
+
+### Add Beer Page
+
+![Add Beer Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/add-beer.png)
+
+### Add Merch Page
+
+![Add Merch Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/add-merch.png)
+
+### Bag Page
+
+![Bag Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/bag.png)
+
+### Checkout Page
+
+![Checkout Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/checkout.png)
+
+**Note:** The lower accessibility score on this page is primarily influenced by the presence of Stripe payment processing elements `.__PrivateStripeElement-input`. These elements are essential for secure payment handling but may impact accessibility scores due to their interaction within the page structure.
+
+### Checkout Success Page
+
+![Checkout Success Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/checkout-success.png)
+
+### Profile Page
+
+![Profile Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/profile.png)
+
+**Note:** Select elements in our forms are rendered using Django Crispy Forms, which may lack explicit `<label>` elements but are programmatically associated with their corresponding form fields through attributes like `for` and `id`, ensuring accessibility to screen readers.
+
+### Orders and Returns Page
+
+![Orders and Returns Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/orders-and-returns.png)
+
+### Privacy Policy Page
+
+![Privacy Policy Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/privacy-policy.png)
+
+### Terms and Conditions Page
+
+![Terms and Conditions Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/terms-and-conditions.png)
 
 # Deployment
 

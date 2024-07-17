@@ -42,7 +42,7 @@
               <!-- If merch is a sized item, display size selector -->
               {% if merch.sized_item %}
               <div class="col-12 p-0 my-3">
-                <p class="card-text text-uppercase d-inline mr-2">Size:</p>
+                <label for="id_product_size" class="card-text text-uppercase d-inline mr-2">Size:</label>
                 <select name="product_size" id="id_product_size"
                   class="font-weight-normal text-right form-select rounded-0 border-black text-small">
                   <option value="xs">XS</option>
@@ -54,7 +54,7 @@
               </div>
               {% endif %}
               <!-- Quantity input field -->
-              <p class="card-text text-uppercase my-0">Quantity:</p>
+              <label for="id_qty_{{ merch.id }}" class="card-text text-uppercase my-0">Quantity:</label>
               <input class="form-control rounded-0 border-black mx-3 text-small" type="number" name="quantity" value="1"
                 min="1" max="99" data-item_id="{{ merch.id }}" id="id_qty_{{ merch.id }}" style="width: 60px;">
               <!-- Add to Cart button -->

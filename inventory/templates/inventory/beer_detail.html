@@ -38,7 +38,7 @@
           <div class="card-body p-0 mb-3 d-flex align-items-center">
             <form action="{% url 'add_to_bag' 'beer' beer.id %}" method="POST" class="d-flex align-items-center flex-wrap">
               {% csrf_token %}
-              <p class="card-text text-uppercase my-0">Quantity:</p>
+              <label for="id_qty_{{ beer.id }}" class="card-text text-uppercase my-0">Quantity:</label>
               <input class="form-control rounded-0 border-black mx-3 text-small" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ beer.id }}" id="id_qty_{{ beer.id }}" style="width: 60px;">
               <input type="submit" class="btn-gray form-control-button mx-0" value="Add to Cart">
               <input type="hidden" name="redirect_url" value="{{ request.path }}">
