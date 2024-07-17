@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extended_title %}| Beer{% endblock %}
+{% block extended_title %}| Beers{% endblock %}
 
 {% block content %}
 <div class="overflow-hidden position-relative py-4 bg-gray" id="our-beers-section">
@@ -119,7 +119,7 @@
 {% endblock %}
 
 {% block end_js %}
-<script type="text/javascript">
+<script>
   // Function to save scroll position
   function saveScrollPosition() {
     sessionStorage.setItem('scrollPosition', window.scrollY);

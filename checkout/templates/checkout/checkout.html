@@ -38,14 +38,14 @@
                             <td class="p-3 col-4 col-md-3">
                                 {% if item.product.image %}
                                 <!-- Display product image if available -->
-                                <img class="img-fluid rounded" src="{{ item.product.image_url }}">
+                                <img src="{{ item.product.image_url }}" class="img-fluid rounded" alt="{{ item.product.name }}">
                                 {% else %}
                                 {% if item.item_type == 'beer' %}
                                 <!-- Display default beer image if no image available -->
-                                <img src="{{ MEDIA_URL }}beers/no-beer.webp" class="img-fluid rounded">
+                                <img src="{{ MEDIA_URL }}beers/no-beer.webp" alt="{{ item.product.name }}" class="img-fluid rounded">
                                 {% elif item.item_type == 'merch' %}
                                 <!-- Display default merchandise image if no image available -->
-                                <img src="{{ MEDIA_URL }}merch/no-merch.webp" class="img-fluid rounded">
+                                <img src="{{ MEDIA_URL }}merch/no-merch.webp" alt="{{ item.product.name }}" class="img-fluid rounded">
                                 {% endif %}
                                 {% endif %}
                             </td>
@@ -76,7 +76,7 @@
                         {% endfor %}
                         <!-- Order Total Row -->
                         <tr>
-                            <td colspan="5" class="pt-5 text-right">
+                            <td colspan="4" class="pt-5 text-right">
                                 <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
                                 <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
                                 <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>

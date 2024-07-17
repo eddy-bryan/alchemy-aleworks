@@ -37,11 +37,6 @@
   {% endblock %}
 
   <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-
-    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-  </style>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -247,12 +242,12 @@
     {% endblock %}
 
     <!-- Age Verification Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="ageVerificationModal" tabindex="-1" role="dialog"
+      aria-labelledby="ageVerificationModalTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content rounded-0 text-center text-uppercase bg-gray">
           <div class="modal-header border-0">
-            <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Age Verification</h5>
+            <h5 class="modal-title mx-auto" id="ageVerificationModalTitle">Age Verification</h5>
           </div>
           <hr class="bg-black my-0">
           <div class="modal-body">
@@ -472,7 +467,7 @@
 
   <!-- Additional JavaScript loaded after page content -->
   {% block end_js %}
-  <script type="text/javascript">
+  <script>
     // Get the current year
     var currentYear = new Date().getFullYear();
     // Update the elements with class "copyright-year"
@@ -482,7 +477,7 @@
       copyrightYears[i].textContent = currentYear;
     }
   </script>
-  <script type="text/javascript">
+  <script>
     $(document).ready(function () {
       // Show the toast initially
       $('.toast').toast('show');
@@ -504,8 +499,8 @@
   </script>
 
   <!-- MailChimp Scripts -->
-  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-  <script type="text/javascript">
+  <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+  <script>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
@@ -525,7 +520,7 @@
     var $mcj = jQuery.noConflict(true);
   </script>
   <!-- Custom script to validate email addresses on MailChimp sign up form -->
-  <script type="text/javascript" src="{% static 'js/custom_validate_email.js' %}"></script>
+  <script src="{% static 'js/custom_validate_email.js' %}"></script>
   {% endblock %}
 </body>
 

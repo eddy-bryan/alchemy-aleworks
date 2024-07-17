@@ -27,9 +27,9 @@ $(document).ready(function () {
 
     // Check for the cookie and show/hide modal accordingly
     if (readCookie('age_check') === 'true') {
-        $('#exampleModalCenter').modal('hide');
+        $('#ageVerificationModal').modal('hide');
     } else {
-        $('#exampleModalCenter').modal({
+        $('#ageVerificationModal').modal({
             backdrop: 'static', // Prevent closing on backdrop click
             keyboard: false // Prevent closing with keyboard Esc key
         });
@@ -38,6 +38,6 @@ $(document).ready(function () {
     // Set the cookie when the "Yes" button is clicked and hide the modal
     $('#age-verify-button').click(function () {
         createCookie('age_check', 'true', 1);
-        $('#exampleModalCenter').modal('hide');
+        $('#ageVerificationModal').modal('hide');
     });
 });
