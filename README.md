@@ -539,6 +539,8 @@ The table below summarises the testing of user stories, comparing the expected o
 
 ## Code Validator Checks
 
+
+
 ## Lighthouse
 
 # Deployment

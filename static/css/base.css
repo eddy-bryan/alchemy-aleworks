@@ -89,7 +89,8 @@ th {
     height: 60px;
 }
 
-#contact-us li {
+#contact-us li,
+#contact-us-lg li {
     font-size: 0.7rem;
 }
 
