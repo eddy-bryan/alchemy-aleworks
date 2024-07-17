@@ -24,7 +24,9 @@ class CustomerProfileFormTests(SimpleTestCase):
         self.assertTrue(form.is_valid())
 
     def test_customer_profile_form_invalid(self):
-        """Test whether the customer profile form is invalid with invalid data."""
+        """
+        Test whether the customer profile form is invalid with invalid data.
+        """
         form_data = {
             'default_customer_postcode': '123456789012345678901',
             'default_customer_phone': '123456789012345678901'

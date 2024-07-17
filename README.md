@@ -24,7 +24,6 @@ A link to the live website can be found [here](https://8000-eddybryan-alchemyale
     - [Inventory](#inventory)
     - [Checkout](#checkout)
     - [Profiles](#profiles)
-- [Features](#features)
 - [Testing](#testing)
     - [User Stories Testing](#user-stories-testing)
     - [Unit Tests](#unit-tests)
@@ -106,6 +105,8 @@ This section outlines the implemented user stories that reflect the functionalit
 Here, you'll discover user stories slated for future implementation in upcoming project updates. These stories outline prospective enhancements and potential new functionalities planned for the website:
 
 - As a customer, I can receive personalised recommendations based on past purchases or preferences.
+
+[^ Back to top ^](#contents)
 
 ## Structure
 
@@ -304,6 +305,8 @@ The screenshot showcases the implemented About page of Alchemy Aleworks, closely
 
 ![Age Verification Modal Screenshot](../alchemy-aleworks/static/images/readme/age-check.png)
 
+[^ Back to top ^](#contents)
+
 # Agile Development Approach
 
 At Alchemy Aleworks, we embrace an Agile development approach to foster iterative improvement, flexibility, and collaboration with our stakeholders. This methodology allows us to continuously enhance our platform, adapt to evolving needs, and deliver value incrementally throughout the development lifecycle.
@@ -338,6 +341,8 @@ User stories in the Alchemy Aleworks project are categorised using different lab
 
 The user stories outlined above represent our planned features categorised by priority. We aim to continuously iterate and enhance our platform based on these priorities, ensuring we deliver value incrementally while maintaining flexibility to adapt to future needs and feedback.
 
+[^ Back to top ^](#contents)
+
 # Design Overview
 
 The design of Alchemy Aleworks is a harmonious blend of aesthetic sophistication and functional simplicity, reflecting the artisanal quality of our craft beers. The website is designed to provide an engaging and intuitive user experience, appealing to both beer connoisseurs and casual visitors.
@@ -361,6 +366,8 @@ The design of Alchemy Aleworks is a harmonious blend of aesthetic sophistication
 ### Favicon Creation
 
 - **Favicon.io**: Custom favicons are generated using Favicon.io, a tool that simplifies the process of creating small, iconic images displayed in web browser tabs. These favicons provide a cohesive branding experience and enhance the website's visual identity.
+
+[^ Back to top ^](#contents)
 
 # Technology Stack
 
@@ -400,6 +407,8 @@ The design of Alchemy Aleworks is a harmonious blend of aesthetic sophistication
 
 ### Additional Libraries
 **Django Countries**: Provides a database of country names and codes for use in forms and models, enhancing form accuracy and usability.
+
+[^ Back to top ^](#contents)
 
 # Data Models
 
@@ -451,6 +460,8 @@ The `CustomerProfile` model contains information about customers delivery inform
 
 ![CustomerProfile Model ERD](../alchemy-aleworks/static/images/readme/customerprofile-erd.png)
 
+[^ Back to top ^](#contents)
+
 # Testing
 
 ## User Stories Testing
@@ -487,9 +498,39 @@ The table below summarises the testing of user stories, comparing the expected o
 | Visitor can access the Returns and Delivery procedures page | Visitor should find information on returns and delivery procedures easily. | Returns and delivery procedures are clearly outlined. |
 | Visitor can access the privacy policy page | Visitor should be able to access the privacy policy of the website. | Privacy policy page is accessible.
 
+[^ Back to top ^](#contents)
+
 ## Unit Tests
 
+Below are screenshots showing the results of successful unit tests:
 
+#### Checkout App
+
+Form validation tests results:
+
+![Checkout App Unit Tests](../alchemy-aleworks/static/images/readme/checkout-tests.png)
+
+#### Inventory App
+
+Form validation tests results:
+
+![Inventory App Unit Tests](../alchemy-aleworks/static/images/readme/inventory-tests.png)
+
+#### Pages App
+
+Static page and template test results:
+
+![Pages App Unit Tests](../alchemy-aleworks/static/images/readme/pages-tests.png)
+
+#### Profiles App
+
+Form validation tests results:
+
+![Profiles App Unit Tests](../alchemy-aleworks/static/images/readme/profiles-tests.png)
+
+We aim to achieve extensive test coverage to guarantee the application's reliability and stability.
+
+[^ Back to top ^](#contents)
 
 ## Debugging and Issue Resolution
 
@@ -536,8 +577,7 @@ The table below summarises the testing of user stories, comparing the expected o
 - **Ensure that the current product does not display within the 'you may also like' suggestions when on the product detail page**
     - Added `exclude_id` to an optional conditional statement within the `get_random_beers` class method to optionally exclude the current `beer_id` passed to the view.
 
-### Known Remaining Bugs
-- **Success message displays when a merch item is delete, but not when a beer is deleted even though they are both coded identically.**
+[^ Back to top ^](#contents)
 
 ## Code Validator Checks
 
@@ -611,6 +651,8 @@ Note: The validation warning about an empty header element on the Checkout page 
 
 ![Terms and Conditions Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/terms-and-conditions.png)
 
+[^ Back to top ^](#contents)
+
 ### CSS
 
 The CSS files in this project underwent validation using the W3C CSS Validation Service. This service verifies the validity of CSS code according to the CSS specifications outlined by W3C. It ensures that stylesheets are correctly written, free of syntax errors, and adhere to the standards, promoting consistency and compatibility across different browsers.
@@ -630,6 +672,8 @@ The CSS files in this project underwent validation using the W3C CSS Validation 
 #### profile.css
 
 ![profile.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profile-css.png)
+
+[^ Back to top ^](#contents)
 
 ### JavaScript
 
@@ -670,6 +714,8 @@ For JavaScript code quality assurance, JSHint was used to perform validation che
 ![Additional Script Tags Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/additional-script-tags.png)
 
 **Note:** All warnings shown pertain exclusively to the MailChimp script.
+
+[^ Back to top ^](#contents)
 
 ### Python
 
@@ -809,6 +855,8 @@ Validation of Python code was conducted using Code Institute's Python Linter. Th
 
 ![Profiles views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/views.png)
 
+[^ Back to top ^](#contents)
+
 ## Lighthouse
 
 During testing, it was noted that the best practices score was impacted by the fact that the application uses third-party cookies from Stripe and MailChimp. These are essential for specific functionalities such as payment processing and marketing tools. While developer tools like Lighthouse may flag these cookies, it's important to understand that they are integral to the core features and operations of the project.
@@ -880,6 +928,8 @@ During testing, it was noted that the best practices score was impacted by the f
 #### Terms and Conditions Page
 
 ![Terms and Conditions Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/terms-and-conditions.png)
+
+[^ Back to top ^](#contents)
 
 # Deployment
 
