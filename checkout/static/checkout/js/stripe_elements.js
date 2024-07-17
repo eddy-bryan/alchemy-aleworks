@@ -141,6 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }).fail(function () {
             // Reload the page if there's an error (error message will be in Django messages)
             location.reload();
-        })
+        });
     });
 });
