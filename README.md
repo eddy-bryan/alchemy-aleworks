@@ -364,7 +364,42 @@ The design of Alchemy Aleworks is a harmonious blend of aesthetic sophistication
 
 # Technology Stack
 
+### Backend Framework
+**Django**: Utilized for its robust and scalable architecture, Django handles the server-side logic, data processing, and API management, ensuring a secure and efficient backend operation.
 
+### Frontend Framework
+**Bootstrap**: Employed for its responsive design capabilities and pre-styled components, Bootstrap ensures a consistent and visually appealing user interface across different devices and screen sizes.
+**JQuery**: Included for simplifying HTML document traversing, event handling, and animating, JQuery enhances the interactivity and responsiveness of the user interface.
+
+### Database Management
+**Code Institute's Database Maker**: This tool streamlined database management by providing an easy interface for users to input their email addresses and receive a new Postgres database URL. It simplified the process of accessing and managing the project's database, enhancing efficiency and convenience for developers.
+
+### Cloud Storage
+**S3**: Amazon S3 is used for storing static and media files, ensuring high availability, durability, and scalability.
+
+### Authentication and Authorisation
+**Django AllAuth**: Implemented for user authentication and authorisation, Django AllAuth provides a comprehensive solution for handling user registration, login, logout, and account management.
+
+### Payment Processing
+**Stripe**: Used for handling secure and reliable payment processing, ensuring smooth financial transactions on the platform.
+
+### Email Marketing
+**MailChimp**: Integrated for managing email marketing campaigns and newsletters, allowing effective communication with users.
+
+### Form Management
+**Django Crispy Forms**: Utilized for improving the styling and layout of Django forms, enhancing the user experience when interacting with forms on the site.
+
+### Geolocation Services
+**Google Maps API**: Incorporated to provide geolocation services, enabling users to find the brewery location and get directions easily.
+
+### Development Environment
+**IDE GitPod**: Used for its cloud-based development environment, GitPod provides an efficient and collaborative space for writing, running, and debugging code.
+
+### Deployment Platform
+**Heroku**: Heroku serves as the deployment platform for hosting the live application, providing a reliable and scalable environment that ensures the site is accessible to users. Its seamless integration with Django simplifies the deployment process and allows for efficient management of the application.
+
+### Additional Libraries
+**Django Countries**: Provides a database of country names and codes for use in forms and models, enhancing form accuracy and usability.
 
 # Data Models
 
@@ -455,6 +490,52 @@ The table below summarises the testing of user stories, comparing the expected o
 ## Unit Tests
 
 ## Debugging and Issue Resolution
+
+### Bug Fixes
+- **Images not adding to products added through product management**
+    - Fixed typos from `item.image.url` to `item.image_url`.
+
+- **Webhook not working when user is logged in**
+    - Corrected a typo in the code block that retrieves the customer's username.
+
+- **Spinner overlay not working due to jQuery fadeToggle() function not recognised**
+    - Changed to uncompressed jQuery CDN.
+
+- **Stripe elements not showing on HTML template**
+    - Wrapped stripe_element.js content within `document.addEventListener('DOMContentLoaded', function() {})` to ensure the page content is loaded beforehand.
+
+- **Error occurs when updating quantity and leaving the box blank in bag and detail pages**
+    - Implemented ValidationError logic.
+
+- **Messages do not show for adding an item to the bag that is the same item as an item that is already in the bag**
+    - Updated the template logic for displaying messages to show messages depending on their respective levels.
+
+- **Sized items do not allow updating quantities from within the shopping bag**
+    - Identified `item_types` from within contexts.py and passed `item_type` when updating quantities.
+
+- **Items with sizes not storing size attribute correctly**
+    - Moved `{% if sized_item %}` logic inside the form with add to bag action.
+
+- **Both beer and merch items share the same ID numbers, causing navigation issues**
+    - Added a simple adjustment to the URL pattern to include the appropriate 'beers/' or 'merch/' prefix.
+
+- **Overlapping IDs for beer and merch items issue in bag content**
+    - Changed product primary key ID values so that beers start at 1001 and merch at 2001. Added functionality to determine product type when adding items to the bag.
+
+- **random_beer and random_merch not showing in bag.html templates**
+    - Provided `random_beer` and `random_merch` as single objects using `random_beer[0]` and `random_merch[0]`.
+
+- **Sorting reverts back to all beers rather than the selected category**
+    - Preserved the `limited_edition` parameter as a hidden input within the sorting form and passed the `limited_edition` parameter as context in the beers view.
+
+- **Sorting reverts back to all merch rather than the selected category**
+    - Preserved the `category` parameter as a hidden input within the sorting form and passed the `category` parameter as context in the merch view.
+
+- **Ensure that the current product does not display within the 'you may also like' suggestions when on the product detail page**
+    - Added `exclude_id` to an optional conditional statement within the `get_random_beers` class method to optionally exclude the current `beer_id` passed to the view.
+
+### Known Remaining Bugs
+- **Success message displays when a merch item is delete, but not when a beer is deleted even though they are both coded identically.**
 
 ## Code Validator Checks
 
