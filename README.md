@@ -929,6 +929,14 @@ During testing, it was noted that the best practices score was impacted by the f
 
 ![Terms and Conditions Page Lighthouse Results](static/images/readme/lighthouse/terms-and-conditions.png)
 
+## Additional Tests
+
+#### MailChimp Subscription Form
+
+Below is a screenshot of the Mailchimp subscriber dashboard, demonstrating that the newsletter signup functionality on the website is working correctly.
+
+![Mail Chimp Email Subscriber Dashboard](static/images/readme/mailchimp.png)
+
 [^ Back to top ^](#contents)
 
 # Deployment
