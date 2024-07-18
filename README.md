@@ -126,7 +126,7 @@ The wireframe outlines Alchemy Aleworks' homepage design, intended to feature ke
 
 The screenshot reflects the actual implementation of Alchemy Aleworks' homepage, closely mirroring the wireframe design. It includes:
 - **Hero Section:** A visually striking image with overlaid text inviting visitors to explore the world of craft beers.
-- **Limited Edition Brews:** Showcases randomoised selection of limited edition beers with descriptions of type and alcohol content, encouraging exploration and purchase.
+- **Limited Edition Brews:** Showcases randomised selection of limited edition beers with descriptions of type and alcohol content, encouraging exploration and purchase.
 - **Taproom Gallery:** Displays images of the taproom, enticing visitors to visit and experience it firsthand.
 - **Our Story:** A narrative that captures the essence of Alchemy Aleworks' journey, blending historical inspiration with modern brewing techniques.
 - **Merchandise Section:** Highlights a randomised selection of branded merchandise items, providing options for enthusiasts to show their support.
