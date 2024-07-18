@@ -31,7 +31,7 @@ A link to the live website can be found [here](https://8000-eddybryan-alchemyale
     - [Code Validator Checks](#code-validator-checks)
     - [Lighthouse](#lighthouse)
 - [Deployment](#deployment)
-- [Credits](#credits)
+- [Credits and References](#credits-and-references)
 
 # Mission Statement
 
@@ -933,4 +933,157 @@ During testing, it was noted that the best practices score was impacted by the f
 
 # Deployment
 
-# Credits
+## Heroku
+The chosen hosting platform for this project was Heroku. Heroku is a cloud platform that enables developers to build, deploy, and scale web applications quickly and easily, without worrying about infrastructure management. To ensure thorough testing during the development process, the project was deployed early and at regular intervals throughout. The deployment process is covered in detail below.
+
+### Deploying With Heroku
+The following steps assume that you already have the necessary account setups for AWS, Stripe, and Google Maps API. If you do not, please refer to the relevant sections below for detailed guides on retrieving your keys:
+
+1. **Login or create an account with Heroku.**
+
+2. **Create a new app:**
+   - Navigate to the apps dashboard.
+   - Click the top right dropdown menu labelled **New** and select **Create new app**.
+   - Input your chosen app name in the appropriate field, select your closest region from the dropdown menu, and click **Create app**.
+
+3. **Set up Config Vars:**
+   - Go to the **Settings** tab within your newly created app.
+   - Scroll to the **Config Vars** section and click **Reveal Config Vars**.
+   - Add the following variables to your config vars (NOTE: All variables should be added without quotations):
+
+| KEY                    | VALUE                                                 |
+|------------------------|-------------------------------------------------------|
+| AWS_ACCESS_KEY_ID      | Your unique AWS access key ID                         |
+| AWS_SECRET_ACCESS_KEY  | Your unique AWS secret access key                     |
+| DATABASE_URL           | Your unique database URL `postgres:// <unique_value>` |
+| EMAIL_HOST_USER        | Your email host username                              |
+| EMAIL_HOST_PASS        | Your email host password                              |
+| GOOGLE_MAPS_API_KEY    | Your Google Maps API key                              |
+| SECRET_KEY             | Your unique secret key from your Django project       |
+| STRIPE_PUBLIC_KEY      | Your Stripe public key                                |
+| STRIPE_SECRET_KEY      | Your Stripe secret key                                |
+| STRIPE_WH_SECRET       | Your Stripe webhook secret                            |
+| USE_AWS                | `True`                                                |
+
+4. **Connect to GitHub:**
+   - Navigate to the **Deploy** tab within your Heroku app.
+   - Scroll to the **Deployment method** section and select **GitHub**.
+   - Select your repository to connect to and scroll to the **Manual deploy** section.
+   - Choose a branch to deploy from the dropdown menu and click **Deploy Branch**.
+
+### Retrieving Your AWS Keys
+
+1. **Create or login to your AWS account.**
+2. **Set up an S3 bucket:**
+   - Navigate to the S3 service and create a new bucket.
+   - Configure permissions to allow public access.
+3. **Retrieve your AWS keys:**
+   - Go to the IAM service.
+   - Create a new user with programmatic access and attach the appropriate policies.
+   - Retrieve the **Access Key ID** and **Secret Access Key** for the user.
+
+### Retrieving Your Stripe Keys
+
+1. **Create or login to your Stripe account.**
+2. **Get your API keys:**
+   - Navigate to the Developers section.
+   - Under the API keys tab, you will find your **Publishable key** and **Secret key**.
+3. **Set up webhook:**
+   - Create a webhook endpoint in the Stripe Dashboard for your application.
+   - Retrieve the **Webhook Secret** from the webhook settings.
+
+### Retrieving Your Google Maps API Key
+
+1. **Create or login to your Google Cloud account.**
+2. **Set up a new project:**
+   - Navigate to the Google Cloud Console.
+   - Create a new project or select an existing one.
+3. **Enable Google Maps API:**
+   - Go to the APIs & Services dashboard.
+   - Enable the Maps JavaScript API.
+4. **Retrieve your API key:**
+   - Navigate to the Credentials tab.
+   - Create a new API key and restrict it to your application.
+
+Following these steps ensures that you have all necessary environment variables configured for a successful deployment on Heroku.
+
+[^ Back to Deploying With Heroku ^](#deploying-with-heroku)
+
+[^ Back to top ^](#contents)
+
+# Credits and References
+
+## Media Sources
+
+- [Unsplash](https://unsplash.com/@elevatebeer)
+  - All images of the taproom and brewery were sourced from Unsplash.
+- [Canva](https://www.canva.com/)
+  - Utilised Canva for creating beer labels and generating label background images and product placeholder images.
+- [Smartmockups](https://smartmockups.com/)
+  - Used Smartmockups to create images of the beers using the beer labels.
+  - [Smartmockups Beer Image](https://smartmockups.com/mockup/qYV3e4UjAh)
+- [Logo.com](https://logo.com/)
+  - Created logos and apparel images using Logo.com.
+- [Favicon.io](https://favicon.io/)
+  - Generated favicons for the website using Favicon.io.
+- [Figma](https://www.figma.com/)
+  - Used to create the ERD's and Wireframes for this project.
+
+## Code Validators and References
+
+- [W3Schools](https://www.w3schools.com/)
+  - Used for HTML and CSS code validation.
+- [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
+  - Used for Python code validation.
+- [JSHint](https://jshint.com/)
+  - Used for JavaScript code validation.
+- [Stack Overflow](https://stackoverflow.com/)
+  - Community-driven Q&A for programming problems
+- [Heroku Documentation](https://devcenter.heroku.com/)
+  - Used for deploying the live project.
+- [Django Girls Tutorials](https://tutorial.djangogirls.org/)
+  - Referenced tutorials for learning Django.
+- [LearnDjango Tutorials](https://learndjango.com/)
+  - Referenced tutorials for learning Django.
+- [Bootstrap Documentation](https://getbootstrap.com/docs/)
+  - Referenced for designing responsive web pages and components.
+- [Django Documentation](https://docs.djangoproject.com/)
+  - Essential reference for Django development.
+- [Django AllAuth Documentation](https://django-allauth.readthedocs.io/en/latest/)
+  - Used for implementing user authentication and social account integration.
+- [jQuery Documentation](https://jquery.com/)
+  - Consulted for adding interactive elements to the website.
+
+## API's, Frameworks and Development Tools
+
+- [Django](https://www.djangoproject.com/)
+  - Used as the primary web framework for building the application's backend, handling data models, views, and the admin interface.
+- [Bootstrap](https://getbootstrap.com/)
+  - Utilised for responsive design and styling, providing pre-designed components and grid system to enhance the application's user interface.
+- [Stripe](https://stripe.com/)
+  - Used for payment processing and integrated Stripe API.
+- [AWS](https://aws.amazon.com/)
+  - Hosted static and media files on AWS [S3](https://aws.amazon.com/s3/).
+- [Google Maps API](https://developers.google.com/maps/documentation)
+  - Implemented for location-based features and services.
+- [XML Sitemaps](https://www.xml-sitemaps.com/)
+  - Used to generate the sitemap file for the website.
+- [Temp-Mail](https://temp-mail.org/en/)
+  - Generated temporary email addresses for testing purposes.
+- [Mailchimp](https://mailchimp.com/)
+  - Used Mailchimp to create the newsletter signup functionality.
+- Chrome Developer Tools
+  - Used for previewing code and generating lighthouse scores.
+
+## Additional Tools and References
+
+- Code Institute's Boutique Ado Walkthrough Project
+  - This project provided foundational knowledge and structure for building the e-commerce features in this project.
+- [Digital Ink](https://www.digital.ink/blog/age-verification-modal/)
+    - Age Verification Modal cookie logic is a modified version of the code snippet taken from the above link
+- Code Institute Database Maker
+  - Used to provide a database link for this project.
+- [GitHub](https://github.com/)
+  - Used as a platform for version control.
+
+[^ Back to top ^](#contents)
