@@ -4,7 +4,7 @@
 
 Welcome to Alchemy Aleworks, where craft beer meets alchemical inspiration. This platform celebrates the art of brewing through a diverse selection of finely crafted ales. Whether you're a seasoned beer enthusiast or a curious newcomer, Alchemy Aleworks offers a journey into the world of unique flavours and brewing traditions.
 
-A link to the live website can be found [here](https://8000-eddybryan-alchemyalewor-2ri08eofcjg.ws.codeinstitute-ide.net/).
+A link to the live website can be found [here](https://alchemy-aleworks-5bd2925999c2.herokuapp.com/).
 
 ## Contents
 
