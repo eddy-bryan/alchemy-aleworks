@@ -1,6 +1,6 @@
 # Alchemy Aleworks
 
-![Responsive Design](../alchemy-aleworks/static/images/readme/responsive-design.png)
+![Responsive Design](static/images/readme/responsive-design.png)
 
 Welcome to Alchemy Aleworks, where craft beer meets alchemical inspiration. This platform celebrates the art of brewing through a diverse selection of finely crafted ales. Whether you're a seasoned beer enthusiast or a curious newcomer, Alchemy Aleworks offers a journey into the world of unique flavours and brewing traditions.
 
@@ -39,7 +39,7 @@ Alchemy Aleworks is dedicated to crafting exceptional beers that blend ancient a
 
 # Business Model
 
-For detailed information on our e-commerce business model, please refer to the [Alchemy Aleworks E-commerce Business Model](../alchemy-aleworks/business_model.md).
+For detailed information on our e-commerce business model, please refer to the [Alchemy Aleworks E-commerce Business Model](business_model.md).
 
 # User Experience
 
@@ -116,13 +116,13 @@ Below, we present a combination of wireframe designs and screenshots showcasing 
 
 #### Wireframe
 
-![Home Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/homepage.png)
+![Home Page Wireframe](static/images/readme/wireframes/homepage.png)
 
 The wireframe outlines Alchemy Aleworks' homepage design, intended to feature key sections like the hero section with a compelling tagline and call-to-action buttons for shopping beers and merchandise, limited edition brews showcasing, taproom gallery images, a captivating story of the brewery, and a merchandise section.
 
 #### Screenshot
 
-![Home Page Screenshot](../alchemy-aleworks/static/images/readme/homepage.png)
+![Home Page Screenshot](static/images/readme/homepage.png)
 
 The screenshot reflects the actual implementation of Alchemy Aleworks' homepage, closely mirroring the wireframe design. It includes:
 - **Hero Section:** A visually striking image with overlaid text inviting visitors to explore the world of craft beers.
@@ -135,13 +135,13 @@ The screenshot reflects the actual implementation of Alchemy Aleworks' homepage,
 
 #### Wireframe
 
-![Beers Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/beers.png)
+![Beers Page Wireframe](static/images/readme/wireframes/beers.png)
 
 The wireframe illustrates the layout of Alchemy Aleworks' Beers page, designed to feature both the core range and limited edition beers. It includes sections for sorting options, beer cards displaying details such as name, type, alcohol content, and price, and navigation elements for user interaction.
 
 #### Screenshot
 
-![Beers Page Screenshot](../alchemy-aleworks/static/images/readme/beers.png)
+![Beers Page Screenshot](static/images/readme/beers.png)
 
 The screenshot showcases the implemented Beers page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 - **Core Range and Limited Edition Beers:** Displayed in separate sections with dedicated cards containing beer details and images.
@@ -152,13 +152,13 @@ The screenshot showcases the implemented Beers page of Alchemy Aleworks, closely
 
 #### Wireframe
 
-![Beer Detail Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/beer-detail.png)
+![Beer Detail Page Wireframe](static/images/readme/wireframes/beer-detail.png)
 
 The wireframe illustrates the layout of Alchemy Aleworks' Beer Detail page, designed to showcase detailed information about a specific beer. It includes sections for displaying the beer's image, name, description, type, alcohol content, price, and an option to add the beer to the cart.
 
 #### Screenshot
 
-![Beer Detail Page Screenshot](../alchemy-aleworks/static/images/readme/beer-detail.png)
+![Beer Detail Page Screenshot](static/images/readme/beer-detail.png)
 
 The screenshot showcases the implemented Beer Detail page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 - **Beer Image:** Displayed prominently at the top of the page, providing a visual representation of the beer.
@@ -172,13 +172,13 @@ The screenshot showcases the implemented Beer Detail page of Alchemy Aleworks, c
 
 #### Wireframe
 
-![Merchandise Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/merch.png)
+![Merchandise Page Wireframe](static/images/readme/wireframes/merch.png)
 
 The wireframe illustrates the layout of Alchemy Aleworks' Merch page, designed to showcase various merchandise categories such as apparel & accessories and drinkware. It includes sections for sorting options, merchandise cards displaying details such as name and price, and navigation elements for user interaction.
 
 #### Screenshot
 
-![Merchandise Page Screenshot](../alchemy-aleworks/static/images/readme/merch.png)
+![Merchandise Page Screenshot](static/images/readme/merch.png)
 
 The screenshot showcases the implemented Merch page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 
@@ -190,13 +190,13 @@ The screenshot showcases the implemented Merch page of Alchemy Aleworks, closely
 
 #### Wireframe
 
-![Merchandise Detail Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/merch-detail.png)
+![Merchandise Detail Page Wireframe](static/images/readme/wireframes/merch-detail.png)
 
 The wireframe outlines the layout of Alchemy Aleworks' Merch Detail page, designed to provide comprehensive information about a specific merchandise item. It includes sections for displaying the item's image, name, description, price, size (if applicable), and an option to add the item to the cart.
 
 #### Screenshot
 
-![Merchandise Detail Page Screenshot](../alchemy-aleworks/static/images/readme/merch-detail.png)
+![Merchandise Detail Page Screenshot](static/images/readme/merch-detail.png)
 
 The screenshot demonstrates the implemented Merch Detail page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 
@@ -211,13 +211,13 @@ The screenshot demonstrates the implemented Merch Detail page of Alchemy Alework
 
 #### Wireframe
 
-![Taproom Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/taproom.png)
+![Taproom Page Wireframe](static/images/readme/wireframes/taproom.png)
 
 The wireframe outlines the layout of Alchemy Aleworks' Taproom page, designed to encourage visitors to experience the brewery's taproom firsthand. It includes sections for taproom introduction, image gallery, opening times, and a map for location and directions.
 
 #### Screenshot
 
-![Taproom Page Screenshot](../alchemy-aleworks/static/images/readme/taproom.png)
+![Taproom Page Screenshot](static/images/readme/taproom.png)
 
 The screenshot demonstrates the implemented Taproom page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 
@@ -230,13 +230,13 @@ The screenshot demonstrates the implemented Taproom page of Alchemy Aleworks, cl
 
 #### Wireframe
 
-![About Page Wireframe](../alchemy-aleworks/static/images/readme/wireframes/about.png)
+![About Page Wireframe](static/images/readme/wireframes/about.png)
 
 The wireframe illustrates the layout of Alchemy Aleworks' About page, designed to tell the story of the brewery's journey from its humble beginnings to its current stature. It includes sections for introducing the brewery's history, showcasing images that capture its evolution, and featuring links to explore related content.
 
 #### Screenshot
 
-![About Page Screenshot](../alchemy-aleworks/static/images/readme/about.png)
+![About Page Screenshot](static/images/readme/about.png)
 
 The screenshot showcases the implemented About page of Alchemy Aleworks, closely resembling the wireframe design. Key elements include:
 
@@ -251,37 +251,37 @@ The screenshot showcases the implemented About page of Alchemy Aleworks, closely
 
 - **Purpose:** Allows users to review and manage items added to their shopping bag or cart before proceeding to checkout.
 
-![Bag Page Screenshot](../alchemy-aleworks/static/images/readme/bag.png)
+![Bag Page Screenshot](static/images/readme/bag.png)
 
 #### Checkout Page
 
 - **Purpose:** Allows users to review the items in their bag enter their delivery information and card details to purchase them. Users also have the option to securely store their delivery details to their profile, facilitating faster future purchases.
 
-![Checkout Page Screenshot](../alchemy-aleworks/static/images/readme/checkout.png)
+![Checkout Page Screenshot](static/images/readme/checkout.png)
 
-![Checkout Payment Screenshot](../alchemy-aleworks/static/images/readme/checkout-payment.png)
+![Checkout Payment Screenshot](static/images/readme/checkout-payment.png)
 
 #### Accounts Pages
 
 - **Purpose:** Enables users to authenticate themselves securely (login), create new accounts (signup), and securely log out from the website.
 
-![Login Screenshot](../alchemy-aleworks/static/images/readme/login.png)
+![Login Screenshot](static/images/readme/login.png)
 
-![Logout Screenshot](../alchemy-aleworks/static/images/readme/logout.png)
+![Logout Screenshot](static/images/readme/logout.png)
 
-![Register Screenshot](../alchemy-aleworks/static/images/readme/register.png)
+![Register Screenshot](static/images/readme/register.png)
 
 #### Profile Page
 
 - **Purpose:** Stores and displays users' personal details, such as editable delivery information and interactive order history with the ability to view previous order confirmation pages.
 
-![Profile Screenshot](../alchemy-aleworks/static/images/readme/profile.png)
+![Profile Screenshot](static/images/readme/profile.png)
 
 #### Terms and Conditions / Privacy Policy / Delivery and Returns Pages
 
 - **Purpose:** Offers users access to legal agreements and policies governing website usage, user data privacy, and product delivery and return terms.
 
-![Login Screenshot](../alchemy-aleworks/static/images/readme/privacy-policy.png)
+![Login Screenshot](static/images/readme/privacy-policy.png)
 
 ### Additional Features
 
@@ -289,21 +289,21 @@ The screenshot showcases the implemented About page of Alchemy Aleworks, closely
 
 - **Purpose:** The navigation bar enables seamless browsing across the website with intuitive menu options and dropdowns. It prominently showcases a centralised company logo and features interactive main menu options. On smaller devices, it transforms into a compact burger menu for ease of use. Additionally, it includes a secondary navigation menu with a search bar, account options (login/register/logout), and access for administrators to manage products. This menu also includes a shopping bag link that dynamically updates with a visible indicator, displaying the number of items currently in the user's bag.
 
-![Navbar Large Screenshot](../alchemy-aleworks/static/images/readme/nav-large.png)
+![Navbar Large Screenshot](static/images/readme/nav-large.png)
 
-![Navbar Small Screenshot](../alchemy-aleworks/static/images/readme/nav-small.png)
+![Navbar Small Screenshot](static/images/readme/nav-small.png)
 
 #### Footer
 
 - **Purpose:** Provides supplementary links and information such as contact details, social media links, and additional navigation menu items for enhanced user accessibility. Also privdes users with an option to sign up to the newsletter by inputting their email address into a form powered by MailChimp.
 
-![Footer Screenshot](../alchemy-aleworks/static/images/readme/footer.png)
+![Footer Screenshot](static/images/readme/footer.png)
 
 #### Age Verification Modal
 
 - **Purpose:** Utilises cookies to display an age verification prompt upon site entry, ensuring compliance with age-related content restrictions due to sale of alcoholic products.
 
-![Age Verification Modal Screenshot](../alchemy-aleworks/static/images/readme/age-check.png)
+![Age Verification Modal Screenshot](static/images/readme/age-check.png)
 
 [^ Back to top ^](#contents)
 
@@ -325,19 +325,19 @@ User stories in the Alchemy Aleworks project are categorised using different lab
 
 ### Must Have
 
-![Must Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/must-have.png)
+![Must Have User Stories](static/images/readme/user-stories/must-have.png)
 
 ### Should Have
 
-![Should Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/should-have.png)
+![Should Have User Stories](static/images/readme/user-stories/should-have.png)
 
 ### Could Have
 
-![Could Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/could-have.png)
+![Could Have User Stories](static/images/readme/user-stories/could-have.png)
 
 ### Won't Have
 
-![Would Have User Stories](../alchemy-aleworks/static/images/readme/user-stories/wont-have.png)
+![Would Have User Stories](static/images/readme/user-stories/wont-have.png)
 
 The user stories outlined above represent our planned features categorised by priority. We aim to continuously iterate and enhance our platform based on these priorities, ensuring we deliver value incrementally while maintaining flexibility to adapt to future needs and feedback.
 
@@ -416,7 +416,7 @@ The data models for Alchemy Aleworks are designed to efficiently manage and repr
 
 Below is an Entity Relationship Diagram create for this project:
 
-![Entity Relationship Diagram](../alchemy-aleworks/static/images/readme/erd.png)
+![Entity Relationship Diagram](static/images/readme/erd.png)
 
 ## Inventory
 
@@ -424,13 +424,13 @@ Below is an Entity Relationship Diagram create for this project:
 
 The `Beer` model contains detailed information about each beer available for purchase. This includes attributes such as the beer name, type, limited edition boolean, description, alcohol content (ABV), price, and available image.
 
-![Beer Model ERD](../alchemy-aleworks/static/images/readme/beer-erd.png)
+![Beer Model ERD](static/images/readme/beer-erd.png)
 
 ### MerchItem
 
 The `MerchItem` model represents the various merchandise products offered by Alchemy Aleworks, such as drinkware, apparel and accessories. This model includes attributes like product name, category, description, sized item boolean, price and image helping to organise the merchandise inventory.
 
-![MerchItem Model ERD](../alchemy-aleworks/static/images/readme/merchitem-erd.png)
+![MerchItem Model ERD](static/images/readme/merchitem-erd.png)
 
 ## Checkout
 
@@ -438,19 +438,19 @@ The `MerchItem` model represents the various merchandise products offered by Alc
 
 The `Order` model keeps track of customer orders. It includes customer details, order date, delivery fee, order total and grand total amount. This model links to the `CustomerProfile` model to allow autofilling of delivery information if the customer has chosen to save their details.
 
-![Order Model ERD](../alchemy-aleworks/static/images/readme/order-erd.png)
+![Order Model ERD](static/images/readme/order-erd.png)
 
 ### BeerLineItem
 
 The `BeerLineItem` model represents the specific beers within an order, capturing details such as quantity and price. This model is also linked to both the `Order` and `Beer` models. This model is essential for itemising beer purchases in customer orders.
 
-![BeerLineItem Model ERD](../alchemy-aleworks/static/images/readme/beerlineitem-erd.png)
+![BeerLineItem Model ERD](static/images/readme/beerlineitem-erd.png)
 
 ### MerchLineItem
 
 Similar to the `BeerLineItem`, the `MerchLineItem` model itemises the merchandise products within an order. It includes size, quantity and price. This model is also linked to both the `Order` and `MerchItem` models. Again, similar to the `BeerLineItem` model, this model is essential for itemising merchandise purchases in customer orders.
 
-![MerchLineItem Model ERD](../alchemy-aleworks/static/images/readme/merchlineitem-erd.png)
+![MerchLineItem Model ERD](static/images/readme/merchlineitem-erd.png)
 
 ## Profiles
 
@@ -458,7 +458,7 @@ Similar to the `BeerLineItem`, the `MerchLineItem` model itemises the merchandis
 
 The `CustomerProfile` model contains information about customers delivery information. This model supports streamlined checkouts and enhanced customer service.
 
-![CustomerProfile Model ERD](../alchemy-aleworks/static/images/readme/customerprofile-erd.png)
+![CustomerProfile Model ERD](static/images/readme/customerprofile-erd.png)
 
 [^ Back to top ^](#contents)
 
@@ -508,25 +508,25 @@ Below are screenshots showing the results of successful unit tests:
 
 Form validation tests results:
 
-![Checkout App Unit Tests](../alchemy-aleworks/static/images/readme/checkout-tests.png)
+![Checkout App Unit Tests](static/images/readme/checkout-tests.png)
 
 #### Inventory App
 
 Form validation tests results:
 
-![Inventory App Unit Tests](../alchemy-aleworks/static/images/readme/inventory-tests.png)
+![Inventory App Unit Tests](static/images/readme/inventory-tests.png)
 
 #### Pages App
 
 Static page and template test results:
 
-![Pages App Unit Tests](../alchemy-aleworks/static/images/readme/pages-tests.png)
+![Pages App Unit Tests](static/images/readme/pages-tests.png)
 
 #### Profiles App
 
 Form validation tests results:
 
-![Profiles App Unit Tests](../alchemy-aleworks/static/images/readme/profiles-tests.png)
+![Profiles App Unit Tests](static/images/readme/profiles-tests.png)
 
 We aim to achieve extensive test coverage to guarantee the application's reliability and stability.
 
@@ -587,69 +587,69 @@ The validation checks for HTML markup were performed using the W3C Markup Valida
 
 #### Home Page
 
-![Home Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home.png)
+![Home Page HTML Validator Results](static/images/readme/validator-checks/home.png)
 
 #### Beers Page
 
-![Beers Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/beers.png)
+![Beers Page HTML Validator Results](static/images/readme/validator-checks/beers.png)
 
 #### Beer Detail Page
 
-![Beer Detail Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/beer-detail.png)
+![Beer Detail Page HTML Validator Results](static/images/readme/validator-checks/beer-detail.png)
 
 #### Merch Page
 
-![Merch Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/merch.png)
+![Merch Page HTML Validator Results](static/images/readme/validator-checks/merch.png)
 
 #### Merch Detail Page
 
-![Merch Detail Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/merch-detail.png)
+![Merch Detail Page HTML Validator Results](static/images/readme/validator-checks/merch-detail.png)
 
 #### Taproom Page
 
-![Taproom Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/taproom.png)
+![Taproom Page HTML Validator Results](static/images/readme/validator-checks/taproom.png)
 
 #### About Page
 
-![About Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/about.png)
+![About Page HTML Validator Results](static/images/readme/validator-checks/about.png)
 
 #### Add Beer Page
 
-![Add Beer Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/add-beer.png)
+![Add Beer Page HTML Validator Results](static/images/readme/validator-checks/add-beer.png)
 
 #### Add Merch Page
 
-![Add Merch Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/add-merch.png)
+![Add Merch Page HTML Validator Results](static/images/readme/validator-checks/add-merch.png)
 
 #### Bag Page
 
-![Bag Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag.png)
+![Bag Page HTML Validator Results](static/images/readme/validator-checks/bag.png)
 
 #### Checkout Page
 
-![Checkout Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout.png)
+![Checkout Page HTML Validator Results](static/images/readme/validator-checks/checkout.png)
 
 Note: The validation warning about an empty header element on the Checkout page is false as the header element contains an icon.
 
 #### Checkout Success Page
 
-![Checkout Success Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout-success.png)
+![Checkout Success Page HTML Validator Results](static/images/readme/validator-checks/checkout-success.png)
 
 #### Profile Page
 
-![Profile Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profile.png)
+![Profile Page HTML Validator Results](static/images/readme/validator-checks/profile.png)
 
 #### Orders and Returns Page
 
-![Orders and Returns Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/orders-and-returns.png)
+![Orders and Returns Page HTML Validator Results](static/images/readme/validator-checks/orders-and-returns.png)
 
 #### Privacy Policy Page
 
-![Privacy Policy Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/privacy-policy.png)
+![Privacy Policy Page HTML Validator Results](static/images/readme/validator-checks/privacy-policy.png)
 
 #### Terms and Conditions Page
 
-![Terms and Conditions Page HTML Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/terms-and-conditions.png)
+![Terms and Conditions Page HTML Validator Results](static/images/readme/validator-checks/terms-and-conditions.png)
 
 [^ Back to top ^](#contents)
 
@@ -659,19 +659,19 @@ The CSS files in this project underwent validation using the W3C CSS Validation 
 
 #### base.css
 
-![base.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/base-css.png)
+![base.css Validator Results](static/images/readme/validator-checks/base-css.png)
 
 #### inventory.css
 
-![inventory.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory-css.png)
+![inventory.css Validator Results](static/images/readme/validator-checks/inventory-css.png)
 
 #### checkout.css
 
-![checkout.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout-css.png)
+![checkout.css Validator Results](static/images/readme/validator-checks/checkout-css.png)
 
 #### profile.css
 
-![profile.css Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profile-css.png)
+![profile.css Validator Results](static/images/readme/validator-checks/profile-css.png)
 
 [^ Back to top ^](#contents)
 
@@ -681,37 +681,37 @@ For JavaScript code quality assurance, JSHint was used to perform validation che
 
 #### age_verification_modal.js
 
-![Age Verification Modal Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/age-verification-modal.png)
+![Age Verification Modal Validator Results](static/images/readme/validator-checks/age-verification-modal.png)
 
 #### country_field.js
 
-![Country Field Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/country-field.png)
+![Country Field Validator Results](static/images/readme/validator-checks/country-field.png)
 
 **Note:** All warnings shown relate to complaints about ES6 syntax.
 
 #### custom_validate_email.js
 
-![Custom Validate Email Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/custom-validate-email.png)
+![Custom Validate Email Validator Results](static/images/readme/validator-checks/custom-validate-email.png)
 
 #### scroll_position.js
 
-![Scroll Position Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/scroll-position.png)
+![Scroll Position Validator Results](static/images/readme/validator-checks/scroll-position.png)
 
 **Note:** All warnings shown relate to complaints about ES6 syntax.
 
 #### stripe_elements.js
 
-![Stripe Elements Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/stripe-elements.png)
+![Stripe Elements Validator Results](static/images/readme/validator-checks/stripe-elements.png)
 
 **Note:** The undefined variable flagged is due to Stripe being initialised as an environment variable within the environment configuration files rather than directly in the JavaScript code. Additional warnings shown relate to complaints about ES6 syntax.
 
 #### age_verification_modal.js
 
-![Age Verification Modal Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/age-verification-modal.png)
+![Age Verification Modal Validator Results](static/images/readme/validator-checks/age-verification-modal.png)
 
 #### Additional Script Tags
 
-![Additional Script Tags Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/additional-script-tags.png)
+![Additional Script Tags Validator Results](static/images/readme/validator-checks/additional-script-tags.png)
 
 **Note:** All warnings shown pertain exclusively to the MailChimp script.
 
@@ -725,135 +725,135 @@ Validation of Python code was conducted using Code Institute's Python Linter. Th
 
 #### settings.py
 
-![Alchemy Aleworks settings.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/settings.png)
+![Alchemy Aleworks settings.py Validator Results](static/images/readme/validator-checks/alchemy-aleworks/settings.png)
 
 **Note:** 4 validator errors appear due to AllAuth password validator variables being significantly long.
 
 #### urls.py
 
-![Alchemy Aleworks urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/urls.png)
+![Alchemy Aleworks urls.py Validator Results](static/images/readme/validator-checks/alchemy-aleworks/urls.png)
 
 #### views.py
 
-![Alchemy Aleworks views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/alchemy-aleworks/views.png)
+![Alchemy Aleworks views.py Validator Results](static/images/readme/validator-checks/alchemy-aleworks/views.png)
 
 #### Bag App
 
 #### bag_tools.py
 
-![Bag bag_tools.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/bag-tools.png)
+![Bag bag_tools.py Validator Results](static/images/readme/validator-checks/bag/bag-tools.png)
 
 #### contexts.py
 
-![Bag contexts.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/contexts.png)
+![Bag contexts.py Validator Results](static/images/readme/validator-checks/bag/contexts.png)
 
 #### urls.py
 
-![Bag urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/urls.png)
+![Bag urls.py Validator Results](static/images/readme/validator-checks/bag/urls.png)
 
 #### views.py
 
-![Bag views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/bag/views.png)
+![Bag views.py Validator Results](static/images/readme/validator-checks/bag/views.png)
 
 #### Checkout App
 
 #### admin.py
 
-![Checkout admin.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/admin.png)
+![Checkout admin.py Validator Results](static/images/readme/validator-checks/checkout/admin.png)
 
 #### apps.py
 
-![Checkout apps.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/apps.png)
+![Checkout apps.py Validator Results](static/images/readme/validator-checks/checkout/apps.png)
 
 #### forms.py
 
-![Checkout forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/forms.png)
+![Checkout forms.py Validator Results](static/images/readme/validator-checks/checkout/forms.png)
 
 #### models.py
 
-![Checkout models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/models.png)
+![Checkout models.py Validator Results](static/images/readme/validator-checks/checkout/models.png)
 
 #### signals.py
 
-![Checkout signals.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/signals.png)
+![Checkout signals.py Validator Results](static/images/readme/validator-checks/checkout/signals.png)
 
 #### urls.py
 
-![Checkout urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/urls.png)
+![Checkout urls.py Validator Results](static/images/readme/validator-checks/checkout/urls.png)
 
 #### views.py
 
-![Checkout views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/views.png)
+![Checkout views.py Validator Results](static/images/readme/validator-checks/checkout/views.png)
 
 #### webhook_handler.py
 
-![Checkout webhook_handler.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/webhook-handler.png)
+![Checkout webhook_handler.py Validator Results](static/images/readme/validator-checks/checkout/webhook-handler.png)
 
 **Note:** This warning is caused by the use of `iexact` lookup variables in Django queries. The `iexact` lookups are essential for case-insensitive exact matches and ensure the proper functioning of the queries. Reducing the length of these lines is not feasible without compromising readability and functionality.
 
 #### webhooks.py
 
-![Checkout webhooks.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/checkout/webhooks.png)
+![Checkout webhooks.py Validator Results](static/images/readme/validator-checks/checkout/webhooks.png)
 
 #### Home App
 
 #### urls.py
 
-![Home urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home/urls.png)
+![Home urls.py Validator Results](static/images/readme/validator-checks/home/urls.png)
 
 #### views.py
 
-![Home views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/home/views.png)
+![Home views.py Validator Results](static/images/readme/validator-checks/home/views.png)
 
 #### Inventory App
 
 #### admin.py
 
-![Inventory admin.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/admin.png)
+![Inventory admin.py Validator Results](static/images/readme/validator-checks/inventory/admin.png)
 
 #### forms.py
 
-![Inventory forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/forms.png)
+![Inventory forms.py Validator Results](static/images/readme/validator-checks/inventory/forms.png)
 
 #### models.py
 
-![Inventory models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/models.png)
+![Inventory models.py Validator Results](static/images/readme/validator-checks/inventory/models.png)
 
 #### urls.py
 
-![Inventory urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/urls.png)
+![Inventory urls.py Validator Results](static/images/readme/validator-checks/inventory/urls.png)
 
 #### views.py
 
-![Inventory views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/inventory/views.png)
+![Inventory views.py Validator Results](static/images/readme/validator-checks/inventory/views.png)
 
 #### Pages App
 
 #### urls.py
 
-![Pages urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/pages/urls.png)
+![Pages urls.py Validator Results](static/images/readme/validator-checks/pages/urls.png)
 
 #### views.py
 
-![Pages views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/pages/views.png)
+![Pages views.py Validator Results](static/images/readme/validator-checks/pages/views.png)
 
 #### Profiles App
 
 #### forms.py
 
-![Profiles forms.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/forms.png)
+![Profiles forms.py Validator Results](static/images/readme/validator-checks/profiles/forms.png)
 
 #### models.py
 
-![Profiles models.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/models.png)
+![Profiles models.py Validator Results](static/images/readme/validator-checks/profiles/models.png)
 
 #### urls.py
 
-![Profiles urls.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/urls.png)
+![Profiles urls.py Validator Results](static/images/readme/validator-checks/profiles/urls.png)
 
 #### views.py
 
-![Profiles views.py Validator Results](../alchemy-aleworks/static/images/readme/validator-checks/profiles/views.png)
+![Profiles views.py Validator Results](static/images/readme/validator-checks/profiles/views.png)
 
 [^ Back to top ^](#contents)
 
@@ -863,71 +863,71 @@ During testing, it was noted that the best practices score was impacted by the f
 
 #### Home Page
 
-![Home Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/home.png)
+![Home Page Lighthouse Results](static/images/readme/lighthouse/home.png)
 
 #### Beers Page
 
-![Beers Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/beers.png)
+![Beers Page Lighthouse Results](static/images/readme/lighthouse/beers.png)
 
 #### Beer Detail Page
 
-![Beer Detail Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/beer-detail.png)
+![Beer Detail Page Lighthouse Results](static/images/readme/lighthouse/beer-detail.png)
 
 #### Merch Page
 
-![Merch Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/merch.png)
+![Merch Page Lighthouse Results](static/images/readme/lighthouse/merch.png)
 
 #### Merch Detail Page
 
-![Merch Detail Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/merch-detail.png)
+![Merch Detail Page Lighthouse Results](static/images/readme/lighthouse/merch-detail.png)
 
 #### Taproom Page
 
-![Taproom Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/taproom.png)
+![Taproom Page Lighthouse Results](static/images/readme/lighthouse/taproom.png)
 
 #### About Page
 
-![About Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/about.png)
+![About Page Lighthouse Results](static/images/readme/lighthouse/about.png)
 
 #### Add Beer Page
 
-![Add Beer Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/add-beer.png)
+![Add Beer Page Lighthouse Results](static/images/readme/lighthouse/add-beer.png)
 
 #### Add Merch Page
 
-![Add Merch Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/add-merch.png)
+![Add Merch Page Lighthouse Results](static/images/readme/lighthouse/add-merch.png)
 
 #### Bag Page
 
-![Bag Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/bag.png)
+![Bag Page Lighthouse Results](static/images/readme/lighthouse/bag.png)
 
 #### Checkout Page
 
-![Checkout Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/checkout.png)
+![Checkout Page Lighthouse Results](static/images/readme/lighthouse/checkout.png)
 
 **Note:** The lower accessibility score on this page is primarily influenced by the presence of Stripe payment processing elements `.__PrivateStripeElement-input`. These elements are essential for secure payment handling but may impact accessibility scores due to their interaction within the page structure.
 
 #### Checkout Success Page
 
-![Checkout Success Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/checkout-success.png)
+![Checkout Success Page Lighthouse Results](static/images/readme/lighthouse/checkout-success.png)
 
 #### Profile Page
 
-![Profile Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/profile.png)
+![Profile Page Lighthouse Results](static/images/readme/lighthouse/profile.png)
 
 **Note:** Select elements in our forms are rendered using Django Crispy Forms, which may lack explicit `<label>` elements but are programmatically associated with their corresponding form fields through attributes like `for` and `id`, ensuring accessibility to screen readers.
 
 #### Orders and Returns Page
 
-![Orders and Returns Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/orders-and-returns.png)
+![Orders and Returns Page Lighthouse Results](static/images/readme/lighthouse/orders-and-returns.png)
 
 #### Privacy Policy Page
 
-![Privacy Policy Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/privacy-policy.png)
+![Privacy Policy Page Lighthouse Results](static/images/readme/lighthouse/privacy-policy.png)
 
 #### Terms and Conditions Page
 
-![Terms and Conditions Page Lighthouse Results](../alchemy-aleworks/static/images/readme/lighthouse/terms-and-conditions.png)
+![Terms and Conditions Page Lighthouse Results](static/images/readme/lighthouse/terms-and-conditions.png)
 
 [^ Back to top ^](#contents)
 
