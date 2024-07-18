@@ -70,7 +70,7 @@ Alchemy Aleworks primarily serves the B2C (Business-to-Consumer) market, caterin
 
 ### Facebook Page
 
-![Alchemy Aleworks Facebook Page](../alchemy-aleworks/static/images/readme/facebook-page.png)
+![Alchemy Aleworks Facebook Page](static/images/readme/facebook-page.png)
 
 This image showcases Alchemy Aleworks' Facebook page, where we engage with our community of beer enthusiasts, share updates about our latest brews and merchandise, and interact with customers.
 
@@ -78,4 +78,4 @@ This image showcases Alchemy Aleworks' Facebook page, where we engage with our c
 
 Alchemy Aleworks' e-commerce model integrates online sales, physical engagement, and community involvement to create a cohesive experience for beer enthusiasts. By focusing on quality products, customer relationships, and innovative marketing strategies, the platform aims to sustain growth and foster a loyal customer base.
 
-[<< Back to README.md](../alchemy-aleworks/README.md)
+[<< Back to README.md](README.md)
